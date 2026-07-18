@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSA — Clinical-Stage Asset Intelligence | Catalyst Calendar Linked to the Ticker</title>
+  <meta name="description" content="A high-precision dataset linking ClinicalTrials.gov, openFDA, SEC EDGAR, and FDA substance identity to the drug asset and listed sponsor — with a forward catalyst calendar. Public-domain sources, redistribution-clean. Data, not investment advice." />
+  <meta name="keywords" content="clinical trial catalyst calendar, biotech catalyst dataset, drug asset to ticker, PDUFA calendar, clinical readout calendar, ClinicalTrials.gov dataset, openFDA sponsor, biotech data API" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clinical-stage-asset-intelligence.pages.dev/" />
+  <link rel="alternate" hreflang="en" href="https://clinical-stage-asset-intelligence.pages.dev/" />
+  <link rel="alternate" hreflang="x-default" href="https://clinical-stage-asset-intelligence.pages.dev/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <meta property="og:title" content="CSA — Clinical-Stage Asset Intelligence" />
+  <meta property="og:description" content="Clinical trials, FDA, and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar. Public-domain sources; data, not advice." />
+  <meta property="og:url" content="https://clinical-stage-asset-intelligence.pages.dev/" />
+  <meta property="og:site_name" content="CSA — Clinical-Stage Asset Intelligence" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CSA — Clinical-Stage Asset Intelligence" />
+  <meta name="twitter:description" content="The forward catalyst calendar, resolved to the ticker. High-precision, redistribution-clean." />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"CSA — Clinical-Stage Asset Intelligence","url":"https://clinical-stage-asset-intelligence.pages.dev","description":"Clinical-stage drug-asset and sponsor intelligence with a forward catalyst calendar, built on public-domain sources."}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Product","name":"CSA Clinical-Stage Asset Intelligence — Snapshot","description":"Active, industry-sponsored, Phase 3 clinical-stage assets across cardiometabolic, oncology and immunology, linked asset to trial to sponsor to listed ticker to FDA, with a forward catalyst calendar. CSV + JSON.","brand":{"@type":"Brand","name":"CSA"},"category":"Software > Data & Databases","offers":{"@type":"Offer","price":"499.00","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://clinical-stage-asset-intelligence.pages.dev/#pricing"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Dataset","name":"CSA — Clinical-Stage Asset Intelligence","description":"A precision linkage of ClinicalTrials.gov, openFDA, SEC EDGAR and GSRS/UNII to the drug asset and listed sponsor, with a forward catalyst calendar. v1 scope: active, industry-sponsored, Phase 3 trials in cardiometabolic, oncology and immunology. Every row carries a source URL.","url":"https://clinical-stage-asset-intelligence.pages.dev/","creator":{"@type":"Organization","name":"DataEngineered"},"license":"https://clinical-stage-asset-intelligence.pages.dev/#pricing","isAccessibleForFree":false,"sameAs":["CSA_KAGGLE_URL","CSA_HF_URL"],"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"CSA_KAGGLE_URL"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"CSA_HF_URL"}],"variableMeasured":["canonical asset id (active-moiety UNII)","asset name","NCT id","phase","status","estimated primary completion","lead sponsor","listed ticker","FDA approval status","catalyst event type","catalyst date","confidence","source URL"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What exactly is in the v1 snapshot?","acceptedAnswer":{"@type":"Answer","text":"v1 covers active, industry-sponsored, Phase 3 interventional trials in cardiometabolic, oncology and immunology: 2,268 trials resolved to 1,841 assets, 627 of them the sponsor's own asset linked to a listed ticker, plus 2,103 forward catalysts across 139 listed sponsors. Delivered as CSV and JSON with a scope manifest."}},
+    {"@type":"Question","name":"How is precision guaranteed?","acceptedAnswer":{"@type":"Answer","text":"Assets are keyed by their FDA-registered active-moiety UNII set, not fuzzy name matching. A post-clustering guard makes it hold by construction: no resolved asset spans two different active moieties, audited to zero cross-molecule merges on the full run. Uncertain pairs are held for review rather than merged."}},
+    {"@type":"Question","name":"Is the data clean to license and redistribute?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every primary source is U.S. Government or public domain: ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR, and GSRS/UNII. No license-encumbered source (DrugBank, ChEMBL, MedDRA) is included."}},
+    {"@type":"Question","name":"Is this investment advice?","acceptedAnswer":{"@type":"Answer","text":"No. CSA is information, not investment advice and not a recommendation. Estimated catalyst dates such as protocol primary-completion dates routinely slip and are graded by confidence. Verify anything material against the source URL on each row."}}
+  ]}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <style>
+    :root {
+      --ground:#F4F6F6; --surface:#FFFFFF; --surface-2:#ECF1F0;
+      --ink:#131A1D; --ink-2:#4A585C; --ink-3:#6B797D;
+      --line:#D6DEDD; --line-2:#E4EAE9;
+      --accent:#0F6E6A; --accent-bright:#0E938A;
+      --good:#1E8A53; --warn:#A9761A; --risk:#B44B3C;
+      --good-bg:#E7F2EB; --warn-bg:#F6EEDD;
+      --font-sans:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+      --font-mono:'IBM Plex Mono', ui-monospace, "Cascadia Code", Menlo, monospace;
+      --maxw:1200px;
+    }
+    html.dark {
+      --ground:#0B1315; --surface:#101A1C; --surface-2:#162325;
+      --ink:#E7EEED; --ink-2:#9BABAA; --ink-3:#758484;
+      --line:#213032; --line-2:#1A282A;
+      --accent:#2BB3A8; --accent-bright:#48D2C6;
+      --good:#39B571; --warn:#D69A3A; --risk:#DB6857;
+      --good-bg:#12251C; --warn-bg:#26200F;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      background:var(--ground); color:var(--ink);
+      font-family:var(--font-sans); line-height:1.6; font-size:16px;
+      -webkit-font-smoothing:antialiased;
+      transition:background .3s ease, color .3s ease; overflow-x:hidden;
+    }
+    a { color:inherit; text-decoration:none; }
+    .mono { font-family:var(--font-mono); }
+    :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+
+    .eyebrow {
+      font-family:var(--font-mono); font-size:11px; letter-spacing:.16em;
+      text-transform:uppercase; color:var(--accent); font-weight:600;
+    }
+    .container { max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+    /* header */
+    header {
+      position:sticky; top:0; z-index:50;
+      background:color-mix(in srgb, var(--ground) 86%, transparent);
+      backdrop-filter:blur(12px); border-bottom:1px solid var(--line);
+    }
+    .header-inner { max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:15px 28px; }
+    .brand { display:flex; align-items:baseline; gap:13px; }
+    .brand-mark { font-weight:700; font-size:1.2rem; letter-spacing:-.02em; }
+    .brand-mark .accent { color:var(--accent); }
+    .brand-tag { font-family:var(--font-mono); font-size:.58rem; text-transform:uppercase; letter-spacing:.16em; color:var(--ink-3); border-left:1px solid var(--line); padding-left:13px; }
+    nav { display:flex; align-items:center; gap:24px; }
+    nav a { font-family:var(--font-mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.11em; color:var(--ink-2); }
+    nav a:hover { color:var(--accent); }
+    .theme-toggle { background:none; border:1px solid var(--line); color:var(--ink); padding:7px 12px; font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; cursor:pointer; transition:all .2s; }
+    .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
+    @media (max-width:860px){ nav .nav-link { display:none; } }
+
+    section { border-bottom:1px solid var(--line); padding:72px 0; }
+    .sec-alt { background:var(--surface-2); }
+    .plate { display:flex; align-items:center; gap:14px; margin-bottom:38px; font-family:var(--font-mono); font-size:.64rem; text-transform:uppercase; letter-spacing:.18em; color:var(--ink-3); }
+    .plate .no { color:var(--accent); font-weight:600; }
+    .plate h2 { font:inherit; margin:0; color:inherit; font-weight:inherit; letter-spacing:inherit; }
+    .plate .line { flex:1; height:1px; background:var(--line); }
+    .plate .dot { width:8px; height:8px; background:var(--accent); border-radius:50%; }
+
+    /* hero */
+    .hero-grid { display:grid; grid-template-columns:1.02fr .98fr; gap:54px; align-items:center; }
+    @media (max-width:940px){ .hero-grid { grid-template-columns:1fr; gap:40px; } }
+    h1 { font-size:clamp(2.5rem,5.4vw,4.1rem); line-height:1.02; font-weight:700; letter-spacing:-.03em; }
+    h1 .accent { color:var(--accent); }
+    .hero-sub { margin-top:22px; max-width:34rem; font-size:1.04rem; color:var(--ink-2); }
+    .hero-sub strong { color:var(--ink); font-weight:600; }
+    .cta-group { margin-top:30px; display:flex; gap:13px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:15px 22px; font-family:var(--font-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.09em; border:1px solid var(--ink); cursor:pointer; transition:all .2s; }
+    .btn-primary { background:var(--accent); color:#04110F; border-color:var(--accent); font-weight:600; }
+    html.dark .btn-primary { color:#04110F; }
+    .btn-primary:hover { transform:translateY(-2px); }
+    .btn-outline { background:transparent; color:var(--ink); }
+    .btn-outline:hover { background:var(--surface); }
+    .hero-fine { margin-top:15px; font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.07em; color:var(--ink-3); }
+
+    /* catalyst-timeline signature */
+    .console { background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:22px; box-shadow:0 1px 0 var(--line); }
+    .console-top { display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.13em; color:var(--ink-3); border-bottom:1px solid var(--line); padding-bottom:12px; }
+    .timeline { margin-top:8px; }
+    .timeline svg { display:block; width:100%; height:118px; overflow:visible; }
+    .tl-legend { display:flex; gap:16px; margin-top:12px; font-family:var(--font-mono); font-size:.58rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); flex-wrap:wrap; }
+    .tl-legend b { color:var(--ink-2); font-weight:600; }
+
+    /* stat strip */
+    .strip { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:44px; }
+    .stat { background:var(--surface); padding:20px 18px; }
+    .stat .v { font-family:var(--font-mono); font-size:clamp(1.4rem,3vw,1.9rem); font-weight:600; font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
+    .stat .v.good { color:var(--good); }
+    .stat .k { font-family:var(--font-mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.09em; color:var(--ink-3); margin-top:6px; }
+    @media (max-width:640px){ .strip { grid-template-columns:repeat(2,1fr); } }
+
+    /* method cards */
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    @media (max-width:820px){ .cards { grid-template-columns:1fr; } }
+    .card { border:1px solid var(--line); background:var(--surface); padding:26px; border-radius:10px; }
+    .card .tag { font-family:var(--font-mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); font-weight:600; }
+    .card h3 { font-size:1.15rem; margin:11px 0 9px; letter-spacing:-.01em; }
+    .card p { color:var(--ink-2); font-size:.9rem; }
+    .card .proof { margin-top:14px; padding-top:13px; border-top:1px dashed var(--line); font-family:var(--font-mono); font-size:.72rem; color:var(--ink-3); }
+    .card .proof b { color:var(--ink); }
+
+    /* calendar table */
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; margin-top:8px; }
+    table { width:100%; border-collapse:collapse; font-size:.84rem; text-align:left; }
+    th,td { padding:13px 16px; border-bottom:1px solid var(--line-2); white-space:nowrap; }
+    thead th { background:var(--surface-2); font-family:var(--font-mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-3); font-weight:600; }
+    tbody tr:last-child td { border-bottom:none; }
+    td.mono, td .mono { font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
+    .tk { font-family:var(--font-mono); font-weight:600; color:var(--accent); }
+    .pill { font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; padding:2px 8px; border:1px solid currentColor; border-radius:20px; }
+    .pill.readout { color:var(--accent); }
+    .pill.pdufa { color:var(--warn); }
+    .conf { font-family:var(--font-mono); font-size:.68rem; color:var(--ink-3); }
+
+    /* pricing */
+    .tiers { display:grid; grid-template-columns:1.1fr .9fr; gap:20px; }
+    @media (max-width:820px){ .tiers { grid-template-columns:1fr; } }
+    .tier { border:1px solid var(--line); background:var(--surface); border-radius:12px; padding:34px; }
+    .tier.feature { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent) inset; }
+    .tier-label { font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); font-weight:600; }
+    .tier-name { font-size:1.5rem; font-weight:700; margin-top:10px; letter-spacing:-.01em; }
+    .tier-note { font-family:var(--font-mono); font-size:.68rem; color:var(--ink-3); margin-top:5px; }
+    .tier-price { font-family:var(--font-mono); font-size:2.6rem; font-weight:600; color:var(--accent); margin:18px 0; letter-spacing:-.02em; }
+    .tier-price.custom { font-size:1.5rem; }
+    .flist { list-style:none; display:flex; flex-direction:column; gap:11px; margin:0 0 26px; font-size:.88rem; color:var(--ink-2); }
+    .flist li { display:flex; gap:10px; align-items:flex-start; }
+    .flist li::before { content:"▸"; color:var(--accent); flex-shrink:0; }
+    .flist code { font-family:var(--font-mono); font-size:.82em; color:var(--ink-3); }
+    .buy { width:100%; justify-content:center; padding:18px; }
+    .pay-note { margin-top:15px; text-align:center; font-family:var(--font-mono); font-size:.62rem; color:var(--ink-3); line-height:1.7; }
+    .pay-note a { color:var(--accent); text-decoration:underline; }
+
+    /* faq */
+    .faq { display:flex; flex-direction:column; gap:16px; max-width:900px; }
+    .qa { border:1px solid var(--line); border-left:3px solid var(--accent); background:var(--surface); border-radius:8px; padding:20px 22px; }
+    .qa h4 { font-size:1.02rem; font-weight:600; }
+    .qa p { margin-top:8px; font-size:.9rem; color:var(--ink-2); }
+    .qa code { font-family:var(--font-mono); font-size:.85em; color:var(--ink-3); }
+
+    /* contact form */
+    .form { display:flex; flex-direction:column; gap:14px; max-width:620px; margin:0 auto; }
+    .frow { display:flex; flex-direction:column; gap:6px; }
+    .flabel { font-family:var(--font-mono); font-size:.62rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-2); }
+    .finput, .fselect, .ftext { width:100%; padding:13px 15px; background:var(--ground); border:1px solid var(--line); color:var(--ink); font-family:var(--font-sans); font-size:.9rem; border-radius:6px; transition:border-color .2s; }
+    .finput:focus, .fselect:focus, .ftext:focus { outline:none; border-color:var(--accent); }
+    .success { display:none; margin-top:20px; padding:24px; border:1px solid var(--accent); background:var(--surface); border-radius:8px; text-align:center; }
+    .success .t { font-weight:700; color:var(--accent); }
+
+    /* advice rail */
+    .advice { background:var(--warn-bg); border:1px solid color-mix(in srgb, var(--warn) 32%, var(--line)); border-radius:10px; padding:18px 22px; display:flex; gap:14px; align-items:flex-start; }
+    .advice .mk { font-family:var(--font-mono); font-weight:700; color:var(--warn); }
+    .advice p { font-size:.86rem; color:var(--ink-2); }
+    .advice b { color:var(--ink); }
+
+    footer { padding:40px 0; }
+    .foot { max-width:var(--maxw); margin:0 auto; padding:0 28px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-family:var(--font-mono); font-size:.68rem; color:var(--ink-3); }
+    .foot a { text-decoration:underline; }
+    .foot-strip { max-width:var(--maxw); margin:18px auto 0; padding:0 28px; font-family:var(--font-mono); font-size:.62rem; color:var(--ink-3); }
+
+    @media (prefers-reduced-motion:reduce){ * { transition:none !important; } .btn-primary:hover { transform:none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark"><span class="accent">CSA</span></span>
+        <span class="brand-tag">Clinical-Stage Asset Intelligence</span>
+      </a>
+      <nav>
+        <a href="#method" class="nav-link">Method</a>
+        <a href="#calendar" class="nav-link">Calendar</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <button class="theme-toggle" onclick="toggleTheme()"><span id="theme-label">Light</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 01 · Hero -->
+  <section id="top">
+    <div class="container">
+      <div class="plate"><span class="dot"></span><span><span class="no">01</span> · The Instrument</span><span class="line"></span><span>Data, not advice</span></div>
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Clinical trials · FDA · SEC — one graph</div>
+          <h1 style="margin-top:14px;">The catalyst calendar,<br/>resolved to the <span class="accent">ticker</span>.</h1>
+          <p class="hero-sub">
+            CSA stitches <strong>ClinicalTrials.gov</strong>, <strong>openFDA</strong>, <strong>SEC EDGAR</strong>, and FDA substance identity into one <strong>asset ↔ sponsor ↔ ticker</strong> graph — with a forward catalyst calendar. Anyone can pull one registry; the <strong>join</strong> and the <strong>freshness</strong> are the product.
+          </p>
+          <div class="cta-group">
+            <a href="#pricing" class="btn btn-primary"><span>Get the Snapshot</span><span>↗</span></a>
+            <a href="#calendar" class="btn btn-outline"><span>See the calendar</span></a>
+          </div>
+          <p class="hero-fine">One-time snapshot · CSV + JSON · public-domain sources · monthly editions</p>
+        </div>
+
+        <div class="console" aria-label="Forward catalyst calendar illustration">
+          <div class="console-top"><span>Forward Catalyst Calendar</span><span>v1 · 2,103 events</span></div>
+          <div class="timeline">
+            <svg viewBox="0 0 520 118" preserveAspectRatio="none" role="img" aria-label="Timeline of upcoming catalysts">
+              <line x1="8" y1="92" x2="512" y2="92" stroke="var(--line)" stroke-width="1.5"/>
+              <g stroke="var(--ink-3)" stroke-width="1">
+                <line x1="60" y1="88" x2="60" y2="96"/><line x1="160" y1="88" x2="160" y2="96"/>
+                <line x1="260" y1="88" x2="260" y2="96"/><line x1="360" y1="88" x2="360" y2="96"/>
+                <line x1="460" y1="88" x2="460" y2="96"/>
+              </g>
+              <!-- event stems + dots -->
+              <g stroke="var(--accent)" stroke-width="1.5">
+                <line x1="70" y1="92" x2="70" y2="52"/><line x1="120" y1="92" x2="120" y2="66"/>
+                <line x1="210" y1="92" x2="210" y2="40"/><line x1="300" y1="92" x2="300" y2="60"/>
+                <line x1="390" y1="92" x2="390" y2="48"/><line x1="452" y1="92" x2="452" y2="70"/>
+              </g>
+              <g fill="var(--accent-bright)">
+                <circle cx="70" cy="52" r="5"/><circle cx="210" cy="40" r="5"/><circle cx="390" cy="48" r="5"/>
+              </g>
+              <g fill="var(--accent)" opacity=".55">
+                <circle cx="120" cy="66" r="4"/><circle cx="300" cy="60" r="4"/><circle cx="452" cy="70" r="4"/>
+              </g>
+              <g font-family="'IBM Plex Mono', monospace" font-size="9" fill="var(--ink-2)">
+                <text x="70" y="44" text-anchor="middle">BMY</text>
+                <text x="210" y="32" text-anchor="middle">REGN</text>
+                <text x="390" y="40" text-anchor="middle">AZN</text>
+              </g>
+              <g font-family="'IBM Plex Mono', monospace" font-size="8" fill="var(--ink-3)" text-anchor="middle">
+                <text x="60" y="110">2026</text><text x="160" y="110">Q4</text>
+                <text x="260" y="110">2027</text><text x="360" y="110">Q3</text><text x="460" y="110">2028</text>
+              </g>
+            </svg>
+          </div>
+          <div class="tl-legend">
+            <span><b>●</b> company-disclosed (8-K)</span>
+            <span><b>○</b> protocol readout (est.)</span>
+            <span>MOVED · ADDED · FIRED tracked per refresh</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="strip">
+        <div class="stat"><div class="v">627</div><div class="k">tradeable-core assets</div></div>
+        <div class="stat"><div class="v">2,103</div><div class="k">forward catalysts</div></div>
+        <div class="stat"><div class="v">139</div><div class="k">listed sponsors</div></div>
+        <div class="stat"><div class="v good">0</div><div class="k">cross-molecule merges</div></div>
+      </div>
+      <p class="hero-fine" style="margin-top:14px;">v1 scope: active · industry-sponsored · Phase 3 · cardiometabolic, oncology, immunology — 2,268 trials → 1,841 resolved assets.</p>
+    </div>
+  </section>
+
+  <!-- 02 · Method / the moat -->
+  <section class="sec-alt" id="method">
+    <div class="container">
+      <div class="plate"><span class="dot"></span><h2><span class="no">02</span> · How It Links</h2><span class="line"></span><span>The moat</span></div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">Asset identity</div>
+          <h3>Active-moiety resolution</h3>
+          <p>Codes, INNs, salts, brands, and combinations collapse to a canonical asset keyed by its FDA-registered active-moiety UNII set — authoritative, not fuzzy. A post-clustering guard makes it hold by construction.</p>
+          <div class="proof"><b>AMG 890</b> = olpasiran · <b>0</b> cross-molecule merges (audited)</div>
+        </div>
+        <div class="card">
+          <div class="tag">Ownership</div>
+          <h3>Sponsor → listed ticker</h3>
+          <p>Trial sponsors resolve to the current tradable owner — through acquisitions, to the primary US listing, not the OTC grey line. Comparator and background drugs are flagged, never misattributed.</p>
+          <div class="proof"><b>Karuna</b> → BMY (acquired) · comparator ≠ sponsor asset</div>
+        </div>
+        <div class="card">
+          <div class="tag">Freshness</div>
+          <h3>Dual-channel catalysts</h3>
+          <p>Two precision-first channels: <b>SEC 8-K</b> disclosure text (PDUFA, AdComm, announced readouts) and <b>ClinicalTrials.gov</b> protocol readouts. Every row carries its source and trial id.</p>
+          <div class="proof"><b>PDUFA</b> + <b>READOUT</b> · <code>source</code> + <code>nct_id</code> per row</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · Sample calendar -->
+  <section id="calendar">
+    <div class="container">
+      <div class="plate"><span class="dot"></span><h2><span class="no">03</span> · The Calendar (sample)</h2><span class="line"></span><span>Real rows from v1</span></div>
+      <p style="color:var(--ink-2); max-width:60ch; margin-bottom:22px; font-size:.95rem;">A handful of real upcoming catalysts from the dataset. The full snapshot carries <strong>2,103 forward events</strong> across <strong>139 listed sponsors</strong>, each with a confidence grade and a source URL to re-verify.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Date</th><th>Ticker</th><th>Asset</th><th>Event</th><th>Window</th><th>Confidence</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">2026-07-25</td><td><span class="tk">BMY</span></td><td>deucravacitinib</td><td><span class="pill readout">Readout</span></td><td class="mono">Jul 25, 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2026-07-27</td><td><span class="tk">REGN</span></td><td>fianlimab</td><td><span class="pill readout">Readout</span></td><td class="mono">Jul 27, 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2026-07-31</td><td><span class="tk">JAZZ</span></td><td>zanidatamab</td><td><span class="pill readout">Readout</span></td><td class="mono">Jul 31, 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2026-09-30</td><td><span class="tk">AZN</span></td><td>datopotamab deruxtecan</td><td><span class="pill readout">Readout</span></td><td class="mono">Sep 30, 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2026-11-30</td><td><span class="tk">NAMS</span></td><td>obicetrapib</td><td><span class="pill readout">Readout</span></td><td class="mono">Nov 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2026-12-21</td><td><span class="tk">PFE</span></td><td>ritlecitinib</td><td><span class="pill readout">Readout</span></td><td class="mono">Dec 21, 2026</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2027-12-01</td><td><span class="tk">RVMD</span></td><td>daraxonrasib</td><td><span class="pill readout">Readout</span></td><td class="mono">Dec 1, 2027</td><td class="conf">medium</td></tr>
+            <tr><td class="mono">2028-08-24</td><td><span class="tk">NVS</span></td><td>pelacarsen</td><td><span class="pill readout">Readout</span></td><td class="mono">Aug 24, 2028</td><td class="conf">medium</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="hero-fine" style="margin-top:16px;">Subscribers get the <b>delta feed</b> too — MOVED (a slipped date), ADDED, FIRED, REMOVED — the change report is the recurring product.</p>
+      <p style="text-align:center; margin-top:24px; font-size:.92rem; color:var(--ink-2);">
+        Kick the tires first — explore the <b>free 150-catalyst sample</b> on
+        <a href="CSA_KAGGLE_URL" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;">Kaggle</a>
+        or <a href="CSA_HF_URL" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;">Hugging Face</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- 04 · Pricing -->
+  <section class="sec-alt" id="pricing">
+    <div class="container">
+      <div class="plate"><span class="dot"></span><h2><span class="no">04</span> · Access</h2><span class="line"></span><span>Snapshot + API</span></div>
+      <div class="tiers">
+        <div class="tier feature">
+          <div class="tier-label">Tier 1 · Self-serve snapshot</div>
+          <div class="tier-name">v1 Snapshot</div>
+          <div class="tier-note">One-time download · edition 2026.07</div>
+          <div class="tier-price"><span class="js-price">$499</span></div>
+          <ul class="flist">
+            <li><b>2,268 Phase 3 trials → 1,841 resolved assets</b> across cardiometabolic, oncology &amp; immunology.</li>
+            <li><b>627 tradeable-core assets</b> (sponsor's own, linked to a listed ticker) across 139 sponsors.</li>
+            <li><b>2,103 forward catalysts</b> with confidence grade + source URL per row.</li>
+            <li><code>asset_master</code> · <code>catalyst_calendar</code> · <code>regulatory_events</code> · scope manifest — <b>CSV + JSON</b>.</li>
+            <li>Active-moiety keyed, <b>0 cross-molecule merges</b>; public-domain sources, redistribution-clean license.</li>
+          </ul>
+          <!-- go-live: replace href with the real Stripe payment link -->
+          <a href="https://buy.stripe.com/REPLACE_WITH_CSA_PAYMENT_LINK" class="btn btn-primary buy"><span>Buy Now · Instant Download · <span class="js-price">$499</span> →</span></a>
+          <p class="pay-note">
+            Secure card checkout via Stripe · delivered instantly after payment.<br>
+            Need an invoice or crypto? <a href="#contact">Contact us</a>.
+          </p>
+        </div>
+
+        <div class="tier">
+          <div class="tier-label">Tier 2 · API &amp; Enterprise</div>
+          <div class="tier-name">Custom &amp; Fresh</div>
+          <div class="tier-note">Built to your coverage &amp; cadence</div>
+          <div class="tier-price custom">Let's talk</div>
+          <ul class="flist">
+            <li><b>Monthly refresh + the delta feed</b> — moved/added/fired/removed, the freshness layer.</li>
+            <li><b>More coverage:</b> Phase 2, additional therapeutic areas, on your schedule.</li>
+            <li><b>API delivery</b> or a schema mapped to your stack; custom therapeutic-area gold sets.</li>
+            <li>Commercial terms, precision SLAs, and support.</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline buy" onclick="presetTopic('API / Enterprise')"><span>Request access →</span></a>
+        </div>
+      </div>
+
+      <div class="advice" style="margin-top:28px;">
+        <span class="mk">!</span>
+        <p><b>Data, not investment advice.</b> CSA is information, not a recommendation to buy, sell, or hold any security. Estimated catalyst dates (e.g. protocol primary-completion dates) routinely slip and are graded by confidence — verify anything material against the source URL on each row before acting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="plate"><span class="dot"></span><h2><span class="no">05</span> · FAQ</h2><span class="line"></span><span>The honest version</span></div>
+      <div class="faq">
+        <div class="qa"><h4>What exactly is in the v1 snapshot?</h4><p>Active, industry-sponsored, Phase 3 interventional trials in cardiometabolic, oncology and immunology: <b>2,268 trials</b> resolved to <b>1,841 assets</b>, <b>627</b> of them the sponsor's own asset linked to a listed ticker, plus <b>2,103 forward catalysts</b> across <b>139 sponsors</b>. CSV + JSON with a scope manifest. Phase 2 and more areas are the roadmap.</p></div>
+        <div class="qa"><h4>How do you guarantee the asset↔ticker link is right?</h4><p>Assets are keyed by their FDA-registered <b>active-moiety UNII set</b>, not fuzzy name matching, and a post-clustering guard means <b>no asset spans two different active moieties</b> — audited to <b>0 cross-molecule merges</b> on the full run. Uncertain pairs are held for review rather than merged. Precision is the guarantee that matters; a wrong link is the costly error.</p></div>
+        <div class="qa"><h4>Is the data clean to license and redistribute?</h4><p>Yes. Every primary source is U.S. Government / public domain: <code>ClinicalTrials.gov</code>, <code>openFDA</code>, <code>SEC EDGAR</code>, <code>GSRS/UNII</code>. No license-encumbered source (DrugBank, ChEMBL, MedDRA) is included. Your commercial license ships inside the archive.</p></div>
+        <div class="qa"><h4>Are the catalyst dates reliable?</h4><p>They're graded. Company-disclosed exact dates (from 8-Ks) rank above protocol primary-completion estimates, which <b>routinely slip</b> — so they carry a lower confidence and are never presented as commitments. Every row links to its <code>source_url</code> so you can re-verify.</p></div>
+        <div class="qa"><h4>Is this investment advice?</h4><p><b>No.</b> CSA is a dataset — information, not advice or a recommendation. See the notice above and the license inside the archive.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · Contact -->
+  <section class="sec-alt" id="contact">
+    <div class="container" style="max-width:760px;">
+      <div class="plate" style="justify-content:center;"><span class="dot"></span><h2><span class="no">06</span> · Contact</h2><span class="line"></span></div>
+      <p style="text-align:center; color:var(--ink-2); font-size:.92rem;">API access, more coverage, an enterprise license, or an invoice — reach the desk at <code class="mono">&lt;CSA_CONTACT_EMAIL&gt;</code>.</p>
+      <form id="csaForm" class="form" style="margin-top:26px;" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleForm(event)">
+        <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_PLACEHOLDER" />
+        <input type="hidden" name="subject" value="New CSA inquiry" />
+        <input type="hidden" name="from_name" value="CSA public site" />
+        <input type="hidden" name="brand_desk" value="&lt;CSA_CONTACT_EMAIL&gt;" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="frow"><label class="flabel" for="cName">Name / firm *</label><input class="finput" id="cName" name="name" required placeholder="Alex Chen, Example Capital" /></div>
+        <div class="frow"><label class="flabel" for="cEmail">Email *</label><input class="finput" id="cEmail" name="email" type="email" required placeholder="alex@examplecap.com" /></div>
+        <div class="frow"><label class="flabel" for="cTopic">Topic *</label>
+          <select class="fselect" id="cTopic" name="topic" required>
+            <option>Snapshot question / sample</option>
+            <option>API / Enterprise</option>
+            <option>Custom coverage (Phase 2, more areas)</option>
+            <option>Invoice / crypto payment</option>
+            <option>Data correction</option>
+          </select>
+        </div>
+        <div class="frow"><label class="flabel" for="cMsg">Message *</label><textarea class="ftext" id="cMsg" name="message" rows="4" required placeholder="What are you building, and what coverage do you need?" style="resize:vertical;"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="justify-content:center; padding:16px;"><span>Send →</span></button>
+      </form>
+      <div id="csaSuccess" class="success"><div class="t">✓ Message sent</div><p style="margin-top:8px; font-size:.88rem; color:var(--ink-2);">Thanks — we'll reply within one business day.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div><strong>CSA</strong> — Clinical-Stage Asset Intelligence · © 2026 DataEngineered</div>
+      <div><a href="#method">Method</a> · <a href="#calendar">Calendar</a> · <a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a> · <a href="/sitemap.xml">Sitemap</a></div>
+    </div>
+    <div class="foot-strip">Data, not investment advice. Built entirely on public-domain sources (ClinicalTrials.gov, openFDA, SEC EDGAR, GSRS/UNII). Figures reflect the v1 2026.07 edition.</div>
+  </footer>
+
+  <script>
+    // Snapshot price — single source of truth. If changed, also update the Stripe
+    // link and the JSON-LD Product offer above.
+    const SNAPSHOT_PRICE = "$499";
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".js-price").forEach(function (el) { el.textContent = SNAPSHOT_PRICE; });
+    });
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const label = document.getElementById("theme-label");
+      if (html.classList.contains("dark")) { html.classList.remove("dark"); label.textContent = "Dark"; }
+      else { html.classList.add("dark"); label.textContent = "Light"; }
+    }
+
+    function presetTopic(v) {
+      const t = document.getElementById("cTopic");
+      if (t) t.value = v;
+    }
+
+    // Contact form: POST to Web3Forms; on any provider error, fall back to a
+    // prefilled mailto so a message is never silently lost.
+    function handleForm(e) {
+      e.preventDefault();
+      const form = document.getElementById("csaForm");
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      const data = Object.fromEntries(new FormData(form).entries());
+      const ctrl = new AbortController();
+      const to = setTimeout(() => ctrl.abort(), 7000);
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data),
+        signal: ctrl.signal
+      }).then(r => { clearTimeout(to); if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(j => { if (!j || j.success !== true) throw new Error("no confirm");
+          form.style.display = "none"; document.getElementById("csaSuccess").style.display = "block"; })
+        .catch(err => {
+          clearTimeout(to); btn.disabled = false;
+          console.warn("form provider unreachable — email fallback:", err);
+          const subj = encodeURIComponent("CSA inquiry: " + (data.topic || ""));
+          let body = "";
+          for (const [k, v] of Object.entries(data)) { if (k !== "access_key" && k !== "botcheck") body += k + ": " + (v || "") + "\n"; }
+          window.location.href = "mailto:<CSA_CONTACT_EMAIL>?subject=" + subj + "&body=" + encodeURIComponent(body);
+        });
+    }
+  </script>
+</body>
+</html>
