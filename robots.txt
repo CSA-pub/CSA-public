@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://clinical-stage-asset-intelligence.pages.dev/sitemap.xml
+Sitemap: https://csa-public.pages.dev/sitemap.xml
