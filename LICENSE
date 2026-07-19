@@ -1,0 +1,43 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+(sample data & documentation in this repository only)
+
+Copyright (c) 2026 DataEngineered — CSA (Clinical-Stage Asset Intelligence)
+
+The sample data in `samples/` and the documentation in this repository (the
+"Sample") are licensed under the Creative Commons Attribution-NonCommercial 4.0
+International License.
+
+You are free to:
+  - Share  — copy and redistribute the Sample in any medium or format
+  - Adapt  — remix, transform, and build upon the Sample
+
+Under the following terms:
+  - Attribution  — You must give appropriate credit to "CSA — Clinical-Stage
+    Asset Intelligence (csa-public.pages.dev)", provide a link to this license,
+    and indicate if changes were made.
+  - NonCommercial — You may not use the Sample for commercial purposes.
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+Full license deed:  https://creativecommons.org/licenses/by-nc/4.0/
+Full legal code:    https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+THE SAMPLE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+NOT INVESTMENT ADVICE. CSA is a dataset — information, not a recommendation to
+buy, sell, or hold any security, and not financial, investment, or trading
+advice. Estimated catalyst dates routinely change; verify anything material
+against each row's source URL before relying on it.
+
+The underlying primary data (ClinicalTrials.gov, openFDA / Drugs@FDA, SEC EDGAR,
+FDA GSRS/UNII) is U.S. Government / public domain. The linkage, active-moiety
+resolution, and catalyst compilation are DataEngineered's own work.
+
+---
+
+NOTE: This license covers ONLY the sample data (`samples/`) and the documentation
+in this public repository. The full CSA dataset is a separate commercial product
+licensed via https://csa-public.pages.dev and is NOT covered by this license.
