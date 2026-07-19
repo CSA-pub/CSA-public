@@ -1,0 +1,21 @@
+# This is the PUBLIC showcase repo — never commit the full dataset or any
+# pipeline source here. Only the sample, docs, generated pages, and assets belong.
+
+# Full dataset / exports (paid deliverable — keep OUT of this repo)
+csa-snapshot-*.zip
+csa_full_*.*
+*.sqlite
+*.sqlite3
+data/v1_snapshot/
+# ...but DO keep the public sample
+!samples/catalyst_calendar_sample.csv
+!samples/asset_master_sample.csv
+
+# OS / tooling
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+
+# Internal / Working documentation (kept local, never pushed)
+SEO Optimisation/

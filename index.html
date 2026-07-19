@@ -11,15 +11,22 @@
   <link rel="alternate" hreflang="en" href="https://csa-public.pages.dev/" />
   <link rel="alternate" hreflang="x-default" href="https://csa-public.pages.dev/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0B1315" />
 
   <meta property="og:title" content="CSA — Clinical-Stage Asset Intelligence" />
   <meta property="og:description" content="Clinical trials, FDA, and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar. Public-domain sources; data, not advice." />
   <meta property="og:url" content="https://csa-public.pages.dev/" />
   <meta property="og:site_name" content="CSA — Clinical-Stage Asset Intelligence" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://csa-public.pages.dev/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="CSA — Clinical-Stage Asset Intelligence: a forward catalyst calendar linked to the drug asset and listed sponsor" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="CSA — Clinical-Stage Asset Intelligence" />
   <meta name="twitter:description" content="The forward catalyst calendar, resolved to the ticker. High-precision, redistribution-clean." />
+  <meta name="twitter:image" content="https://csa-public.pages.dev/og-image.png" />
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"CSA — Clinical-Stage Asset Intelligence","url":"https://csa-public.pages.dev","description":"Clinical-stage drug-asset and sponsor intelligence with a forward catalyst calendar, built on public-domain sources."}
@@ -496,6 +503,17 @@
           for (const [k, v] of Object.entries(data)) { if (k !== "access_key" && k !== "botcheck") body += k + ": " + (v || "") + "\n"; }
           window.location.href = "mailto:roasterdb@proton.me?subject=" + subj + "&body=" + encodeURIComponent(body);
         });
+    }
+  </script>
+
+  <script>
+    // PWA service worker — offline resilience + fast repeat loads.
+    // The worker never caches redirected responses (Cloudflare clean-URL 308s),
+    // so it can't trigger net::ERR_FAILED on navigations.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
     }
   </script>
 </body>
