@@ -1,0 +1,22 @@
+# CSA — Clinical-Stage Asset Intelligence
+
+> A dataset that links ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR and FDA GSRS/UNII down to the individual drug asset and the listed sponsor behind it, and compiles a forward catalyst calendar — upcoming trial readouts and FDA decision dates — with a graded date and a source URL on every row.
+
+## What it is
+- One row per forward catalyst, linked to a drug `asset` and its listed sponsor `ticker`, with an `event_type` (READOUT / PDUFA), a graded `confidence`, a `date_precision`, and a `source_url` to re-verify.
+- Assets are keyed to their FDA-registered active-moiety UNII set (GSRS), not fuzzy names; a moiety-consistency guard means no asset spans two moieties — audited to 0 cross-molecule merges. Precision over recall: uncertain pairs are held for review, never auto-merged.
+- Sponsors resolve through acquisitions to the primary US listing, so an asset maps to a tradeable ticker.
+- Dual catalyst channels: `sec_8k` (SEC 8-K disclosure text) and `clinicaltrials` (active late-phase protocol primary-completion). Every row names its source.
+- v1 scope: active, industry-sponsored, Phase-3 interventional trials in cardiometabolic, oncology and immunology. Phase 2 and more areas are the monthly expansion.
+
+## Key pages
+- [Landing & pricing](https://csa-public.pages.dev/): what's inside, scope, and how to buy.
+- [Free sample on Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample): 150 nearest-term catalysts plus a starter notebook.
+- [Free sample on Hugging Face](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample).
+
+## Pricing & licensing
+- Free sample: 150 catalysts, CC-BY-NC-4.0.
+- Full snapshot: $499 one-time (CSV + JSON), commercial license — 2,103 forward catalysts, 1,841 assets, 627 asset↔ticker tradeable core, across 139 listed sponsors.
+- API & Enterprise: monthly refresh + delta feed, Phase 2 & more areas, API delivery — quoted per engagement.
+- Contact: roasterdb@proton.me
+- CSA is data, not investment advice. Estimated catalyst dates routinely slip; verify against each row's source_url.
