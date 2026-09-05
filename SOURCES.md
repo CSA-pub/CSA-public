@@ -28,6 +28,6 @@ All four primary sources are **U.S. Government / public domain**, so the underly
 facts carry no attribution obligation. The **linkage, active-moiety resolution, and
 catalyst compilation are DataEngineered's own work**; the free sample and this
 documentation are licensed **CC-BY-NC-4.0** (see [`LICENSE`](LICENSE)). Attribution
-to *CSA — Clinical-Stage Asset Intelligence (csa-public.pages.dev)* is appreciated.
+to *CSA — Clinical-Stage Asset Intelligence (csa.dataengineered.io)* is appreciated.
 
 *CSA is data, not investment advice.*

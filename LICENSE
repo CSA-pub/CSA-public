@@ -13,7 +13,7 @@ You are free to:
 
 Under the following terms:
   - Attribution  — You must give appropriate credit to "CSA — Clinical-Stage
-    Asset Intelligence (csa-public.pages.dev)", provide a link to this license,
+    Asset Intelligence (csa.dataengineered.io)", provide a link to this license,
     and indicate if changes were made.
   - NonCommercial — You may not use the Sample for commercial purposes.
 
@@ -40,4 +40,4 @@ resolution, and catalyst compilation are DataEngineered's own work.
 
 NOTE: This license covers ONLY the sample data (`samples/`) and the documentation
 in this public repository. The full CSA dataset is a separate commercial product
-licensed via https://csa-public.pages.dev and is NOT covered by this license.
+licensed via https://csa.dataengineered.io and is NOT covered by this license.

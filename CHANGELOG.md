@@ -26,4 +26,4 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
   (with a [starter notebook](https://www.kaggle.com/code/ahtiticheamine/csa-clinical-stage-asset-intelligence-starter))
   and [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample).
 
-Full dataset & updates: [csa-public.pages.dev](https://csa-public.pages.dev)
+Full dataset & updates: [csa.dataengineered.io](https://csa.dataengineered.io)

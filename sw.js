@@ -12,7 +12,7 @@
  * served from the cache.
  */
 
-const CACHE_NAME = 'csa-public-cache-v2026.07.1';
+const CACHE_NAME = 'csa-public-cache-v2026.09.1';
 const CORE_ASSETS = [
   '/',
   '/favicon.svg',

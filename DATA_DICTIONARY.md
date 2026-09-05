@@ -68,6 +68,6 @@ FDA regulatory events matched to the resolved assets: `asset`,
 - **Dates are graded, not guaranteed.** Company-disclosed exact dates (8-K) outrank protocol primary-completion estimates, which routinely slip — hence the `confidence` and `date_precision` columns and a `source_url` on every row.
 - **Redistribution-clean.** No license-encumbered source (DrugBank, ChEMBL, MedDRA) is used.
 
-Full dataset: **[csa-public.pages.dev](https://csa-public.pages.dev)** · Questions or corrections: **[roasterdb@proton.me](mailto:roasterdb@proton.me)**
+Full dataset: **[csa.dataengineered.io](https://csa.dataengineered.io)** · Questions or corrections: **[roasterdb@proton.me](mailto:roasterdb@proton.me)**
 
 *CSA is data, not investment advice.*

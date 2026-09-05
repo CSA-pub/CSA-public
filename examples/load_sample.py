@@ -3,7 +3,7 @@
     python examples/load_sample.py
 
 No dependencies beyond the Python standard library.
-Full dataset: https://csa-public.pages.dev
+Full dataset: https://csa.dataengineered.io
 
 CSA is data, not investment advice. Estimated catalyst dates routinely slip and
 are graded by `confidence` — verify anything material against each row's source_url.

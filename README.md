@@ -12,9 +12,9 @@
 [![Kaggle notebook](https://img.shields.io/badge/Kaggle-starter%20notebook-20beff.svg)](https://www.kaggle.com/code/ahtiticheamine/csa-clinical-stage-asset-intelligence-starter)
 [![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](CHANGELOG.md)
 [![Precision: 0 bad merges](https://img.shields.io/badge/Precision-0%20cross--molecule%20merges-0f6e6a.svg)](#how-the-linkage-is-built)
-[![Get the data](https://img.shields.io/badge/Get%20the%20data-CSA-2bb3a8.svg)](https://csa-public.pages.dev)
+[![Get the data](https://img.shields.io/badge/Get%20the%20data-CSA-2bb3a8.svg)](https://csa.dataengineered.io)
 
-**[→ Get the full dataset at csa-public.pages.dev](https://csa-public.pages.dev)**
+**[→ Get the full dataset at csa.dataengineered.io](https://csa.dataengineered.io)**
 
 </div>
 
@@ -37,7 +37,7 @@ The guiding principle is **precision over recall**: a *wrong* asset↔ticker lin
 | Trials resolved | **2,268** | (linked) |
 | Formats | CSV · JSON | CSV |
 
-The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_sample.csv) is the **150 nearest-term catalysts** across 50 listed sponsors — a real taste of the schema and quality — with the [`samples/asset_master_sample.csv`](samples/asset_master_sample.csv) linkage rows behind them. Explore it on the [Kaggle dataset](https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample) (with a [starter notebook](https://www.kaggle.com/code/ahtiticheamine/csa-clinical-stage-asset-intelligence-starter)) or the [🤗 Hugging Face dataset](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample). The full snapshot is at **[csa-public.pages.dev](https://csa-public.pages.dev)**.
+The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_sample.csv) is the **150 nearest-term catalysts** across 50 listed sponsors — a real taste of the schema and quality — with the [`samples/asset_master_sample.csv`](samples/asset_master_sample.csv) linkage rows behind them. Explore it on the [Kaggle dataset](https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample) (with a [starter notebook](https://www.kaggle.com/code/ahtiticheamine/csa-clinical-stage-asset-intelligence-starter)) or the [🤗 Hugging Face dataset](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample). The full snapshot is at **[csa.dataengineered.io](https://csa.dataengineered.io)**.
 
 ## Scope (the honest version)
 
@@ -64,7 +64,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | **Snapshot** | Full 2,103 catalysts · 1,841 assets · 627 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
 | **API & Enterprise** | Monthly refresh + delta feed · Phase 2 & more areas · API delivery · custom gold sets | **Let's talk** |
 
-**[→ Get it at csa-public.pages.dev](https://csa-public.pages.dev)** · or email **[roasterdb@proton.me](mailto:roasterdb@proton.me)** for API / enterprise / invoice.
+**[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or email **[roasterdb@proton.me](mailto:roasterdb@proton.me)** for API / enterprise / invoice.
 
 ## Use cases
 
@@ -89,7 +89,7 @@ A fuller example is in [`examples/load_sample.py`](examples/load_sample.py).
 ## License
 
 - **Sample data & docs in this repo:** CC-BY-NC-4.0 — free to use and share with attribution, non-commercial (see [`LICENSE`](LICENSE)).
-- **Full dataset:** commercial license, available at [csa-public.pages.dev](https://csa-public.pages.dev). Distributed as derived factual attributes with per-row source attribution.
+- **Full dataset:** commercial license, available at [csa.dataengineered.io](https://csa.dataengineered.io). Distributed as derived factual attributes with per-row source attribution.
 - **Not investment advice.** CSA is a dataset, not a recommendation. Estimated dates slip; verify against each row's `source_url`.
 
 Spotted a wrong asset↔ticker link or a slipped date? Email **[roasterdb@proton.me](mailto:roasterdb@proton.me)** — linkage corrections are the highest priority.

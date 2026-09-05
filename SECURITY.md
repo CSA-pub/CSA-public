@@ -5,7 +5,7 @@
 We take the integrity of the CSA data seriously. If you discover any of the
 following, please report it privately:
 
-- A security vulnerability in the site ([csa-public.pages.dev](https://csa-public.pages.dev))
+- A security vulnerability in the site ([csa.dataengineered.io](https://csa.dataengineered.io))
   or in anything published in this repository (e.g. the starter notebook).
 - A data concern — including an **incorrect asset↔ticker link** that could mislead
   someone about which security an asset maps to.

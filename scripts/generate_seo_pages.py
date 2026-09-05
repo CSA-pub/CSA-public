@@ -27,7 +27,7 @@ import os
 import re
 from collections import defaultdict
 
-SITE = "https://csa-public.pages.dev"
+SITE = "https://csa.dataengineered.io"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAL_CSV = os.path.join(ROOT, "samples", "catalyst_calendar_sample.csv")
 MAS_CSV = os.path.join(ROOT, "samples", "asset_master_sample.csv")
@@ -224,7 +224,7 @@ ADVICE = """      <div class="advice">
 
 FOOTER = """  <footer>
     <div class="container">
-      <p>CSA &mdash; Clinical-Stage Asset Intelligence &middot; <a href="/#pricing">Full snapshot ($499)</a> &middot; <a href="/">csa-public.pages.dev</a></p>
+      <p>CSA &mdash; Clinical-Stage Asset Intelligence &middot; <a href="/#pricing">Full snapshot ($499)</a> &middot; <a href="/">csa.dataengineered.io</a></p>
     </div>
   </footer>
 </body>

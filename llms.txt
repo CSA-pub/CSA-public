@@ -10,7 +10,7 @@
 - v1 scope: active, industry-sponsored, Phase-3 interventional trials in cardiometabolic, oncology and immunology. Phase 2 and more areas are the monthly expansion.
 
 ## Key pages
-- [Landing & pricing](https://csa-public.pages.dev/): what's inside, scope, and how to buy.
+- [Landing & pricing](https://csa.dataengineered.io/): what's inside, scope, and how to buy.
 - [Free sample on Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample): 150 nearest-term catalysts plus a starter notebook.
 - [Free sample on Hugging Face](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample).
 
