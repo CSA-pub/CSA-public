@@ -64,7 +64,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | **Snapshot** | Full 2,103 catalysts · 1,841 assets · 627 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
 | **API & Enterprise** | Monthly refresh + delta feed · Phase 2 & more areas · API delivery · custom gold sets | **Let's talk** |
 
-**[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or email **[roasterdb@proton.me](mailto:roasterdb@proton.me)** for API / enterprise / invoice.
+**[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or email **[csa@dataengineered.io](mailto:csa@dataengineered.io)** for API / enterprise / invoice.
 
 ## Use cases
 
@@ -92,4 +92,4 @@ A fuller example is in [`examples/load_sample.py`](examples/load_sample.py).
 - **Full dataset:** commercial license, available at [csa.dataengineered.io](https://csa.dataengineered.io). Distributed as derived factual attributes with per-row source attribution.
 - **Not investment advice.** CSA is a dataset, not a recommendation. Estimated dates slip; verify against each row's `source_url`.
 
-Spotted a wrong asset↔ticker link or a slipped date? Email **[roasterdb@proton.me](mailto:roasterdb@proton.me)** — linkage corrections are the highest priority.
+Spotted a wrong asset↔ticker link or a slipped date? Email **[csa@dataengineered.io](mailto:csa@dataengineered.io)** — linkage corrections are the highest priority.

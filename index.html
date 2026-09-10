@@ -425,7 +425,7 @@
   <section class="sec-alt" id="contact">
     <div class="container" style="max-width:760px;">
       <div class="plate" style="justify-content:center;"><span class="dot"></span><h2><span class="no">06</span> · Contact</h2><span class="line"></span></div>
-      <p style="text-align:center; color:var(--ink-2); font-size:.92rem;">API access, more coverage, an enterprise license, or an invoice — reach the desk at <a class="mono" href="mailto:roasterdb@proton.me" style="color:var(--accent);">roasterdb@proton.me</a>.</p>
+      <p style="text-align:center; color:var(--ink-2); font-size:.92rem;">API access, more coverage, an enterprise license, or an invoice — reach the desk at <a class="mono" href="mailto:csa@dataengineered.io" style="color:var(--accent);">csa@dataengineered.io</a>.</p>
       <form id="csaForm" class="form" style="margin-top:26px;" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleForm(event)">
         <input type="hidden" name="access_key" value="bf34ff48-fcc6-4823-b386-9ae3d0712797" />
         <input type="hidden" name="subject" value="New CSA inquiry" />
@@ -502,7 +502,7 @@
           const subj = encodeURIComponent("CSA inquiry: " + (data.topic || ""));
           let body = "";
           for (const [k, v] of Object.entries(data)) { if (k !== "access_key" && k !== "botcheck") body += k + ": " + (v || "") + "\n"; }
-          window.location.href = "mailto:roasterdb@proton.me?subject=" + subj + "&body=" + encodeURIComponent(body);
+          window.location.href = "mailto:csa@dataengineered.io?subject=" + subj + "&body=" + encodeURIComponent(body);
         });
     }
   </script>

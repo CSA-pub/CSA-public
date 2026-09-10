@@ -11,7 +11,7 @@ following, please report it privately:
   someone about which security an asset maps to.
 - Any suspected leak of the full (paid) dataset or pipeline source.
 
-**Please email: roasterdb@proton.me**
+**Please email: csa@dataengineered.io**
 
 Do **not** open a public GitHub issue for security-sensitive reports.
 

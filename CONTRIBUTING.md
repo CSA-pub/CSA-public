@@ -28,7 +28,7 @@ and informs custom builds.
 
 ## Correction or removal requests
 
-To request a record be corrected, email **roasterdb@proton.me** (or open an issue).
+To request a record be corrected, email **csa@dataengineered.io** (or open an issue).
 
 ## Pull request guidelines
 
@@ -43,6 +43,6 @@ By contributing, you agree that your contributions to the sample and docs are
 licensed under **CC-BY-NC-4.0**, the same license as this repository (see
 [`LICENSE`](LICENSE)).
 
-Questions? **roasterdb@proton.me** · full dataset: [csa.dataengineered.io](https://csa.dataengineered.io)
+Questions? **csa@dataengineered.io** · full dataset: [csa.dataengineered.io](https://csa.dataengineered.io)
 
 *CSA is data, not investment advice.*
