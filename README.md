@@ -16,6 +16,8 @@
 
 **[→ Get the full dataset at csa.dataengineered.io](https://csa.dataengineered.io)**
 
+**Free sample:** [150 catalysts](samples/catalyst_calendar_sample.csv) · **Full dataset: $499 one-time** → [Buy on Stripe](https://buy.stripe.com/dRmcN67BefzwazV2I83840d)
+
 </div>
 
 ---
