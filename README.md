@@ -64,7 +64,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | :--- | :--- | :--- |
 | **Sample** | 150 nearest-term catalysts (this repo) | Free |
 | **Snapshot** | Full 2,103 catalysts · 1,841 assets · 627 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
-| **API & Enterprise** | New editions + delta feed · Phase 2 & more areas · API delivery · custom gold sets | **Let's talk** |
+| **API & enterprise terms** | New editions + delta feed · Phase 2 & more areas · API delivery · custom gold sets — use the [contact form](https://csa.dataengineered.io/#contact) | quoted per engagement |
 
 **[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or use the [contact form](https://csa.dataengineered.io/#contact) (csa@dataengineered.io) for API / enterprise / invoice.
 

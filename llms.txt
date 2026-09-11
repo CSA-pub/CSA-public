@@ -17,6 +17,6 @@
 ## Pricing & licensing
 - Free sample: 150 catalysts, CC-BY-NC-4.0.
 - Full snapshot: $499 one-time (CSV + JSON), commercial license — 2,103 forward catalysts, 1,841 assets, 627 asset↔ticker tradeable core, across 139 listed sponsors.
-- API & Enterprise: monthly refresh + delta feed, Phase 2 & more areas, API delivery — quoted per engagement.
+- API or enterprise terms (new editions + delta feed, Phase 2 & more areas, API delivery): use the contact form https://csa.dataengineered.io/#contact — quoted per engagement, no listed price.
 - Contact: csa@dataengineered.io
 - CSA is data, not investment advice. Estimated catalyst dates routinely slip; verify against each row's source_url.
