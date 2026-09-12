@@ -113,18 +113,18 @@ PAGE = """<!DOCTYPE html>
   <meta name="description" content="{desc}" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0B1315" />
-  <link rel="canonical" href="{base}/{slug}" />
-  <link rel="alternate" hreflang="en" href="{base}/{slug}" />
-  <link rel="alternate" hreflang="x-default" href="{base}/{slug}" />
+  <link rel="canonical" href="{base}/{slug}/" />
+  <link rel="alternate" hreflang="en" href="{base}/{slug}/" />
+  <link rel="alternate" hreflang="x-default" href="{base}/{slug}/" />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{desc}" />
-  <meta property="og:url" content="{base}/{slug}" />
+  <meta property="og:url" content="{base}/{slug}/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{base}/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
-  {{"@context": "https://schema.org", "@type": "CollectionPage", "name": {jname}, "description": {jdesc}, "url": "{base}/{slug}", "isPartOf": {{"@type": "WebSite", "name": "CSA", "url": "{base}"}}, "publisher": {{"@type": "Organization", "name": "DataEngineered", "url": "{base}"}}}}
+  {{"@context": "https://schema.org", "@type": "CollectionPage", "name": {jname}, "description": {jdesc}, "url": "{base}/{slug}/", "isPartOf": {{"@type": "WebSite", "name": "CSA", "url": "{base}"}}, "publisher": {{"@type": "Organization", "name": "DataEngineered", "url": "{base}"}}}}
   </script>
   <style>
 {style}
@@ -245,8 +245,8 @@ def update_homepage(counts):
         '      <p style="color:var(--ink-2); max-width:60ch; margin:26px 0 14px; font-size:.95rem;">'
         'Every tracked catalyst and every listed sponsor has its own source-linked page.</p>\n'
         '      <div class="cta-group">\n'
-        '        <a class="btn btn-outline" href="/catalysts">Catalyst directory ({c})</a>\n'
-        '        <a class="btn btn-outline" href="/sponsors">Sponsor directory ({s})</a>\n'
+        '        <a class="btn btn-outline" href="/catalysts/">Catalyst directory ({c})</a>\n'
+        '        <a class="btn btn-outline" href="/sponsors/">Sponsor directory ({s})</a>\n'
         '      </div>\n'
         '      {end}'
     ).format(begin=BEGIN, end=END, c=counts["catalysts"], s=counts["sponsors"])
@@ -266,7 +266,7 @@ def update_sitemap(counts):
     src = SITEMAP.read_text(encoding="utf-8")
     added = []
     for slug in ("catalysts", "sponsors"):
-        loc = "%s/%s" % (BASE, slug)
+        loc = "%s/%s/" % (BASE, slug)
         if "<loc>%s</loc>" % loc in src:
             continue
         entry = ("<url>\n<loc>%s</loc>\n<changefreq>weekly</changefreq>\n"
