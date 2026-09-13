@@ -67,6 +67,17 @@ def pretty_company(name: str) -> str:
     return " ".join(out) or name
 
 
+def format_phase(phase_raw):
+    """'PHASE2;PHASE3' -> 'Phase 2/3'; 'PHASE3' -> 'Phase 3'; '' -> ''. Only reformats
+    the raw semicolon-delimited value already in the record -- never fabricates or
+    drops a phase, and never repeats the 'Phase' word per segment."""
+    parts = [p.strip() for p in (phase_raw or "").split(";") if p.strip()]
+    if not parts:
+        return ""
+    nums = [re.sub(r"(?i)^phase\s*", "", p) for p in parts]
+    return "Phase " + "/".join(nums)
+
+
 def quarter_of(date_str):
     """'2026-07-18' -> 'Q3 2026'. Empty/unparseable input returns ''."""
     m = re.match(r"^(\d{4})-(\d{2})-\d{2}$", (date_str or "").strip())
@@ -125,7 +136,7 @@ def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
     n_assets = len(all_assets)
     phases = []
     for _a, _slug, _c, _nxt, phase in items:
-        lbl = (phase or "").replace("PHASE", "Phase ").strip()
+        lbl = format_phase(phase)
         if lbl and lbl not in phases:
             phases.append(lbl)
 
@@ -392,7 +403,7 @@ def main():
         status = (mrow.get("status") or "").strip()
         conditions = (mrow.get("conditions") or "").strip()
         nct = nxt.get("nct_id", "").strip()
-        phase_lbl = phase.replace("PHASE", "Phase ") if phase else "clinical-stage"
+        phase_lbl = format_phase(phase) if phase else "clinical-stage"
         etype = nxt.get("event_type", "").strip() or "catalyst"
 
         asset_meta[asset] = {
@@ -433,7 +444,8 @@ def main():
         desc_tail = []
         if phase_lbl and phase_lbl != "clinical-stage":
             desc_tail.append(phase_lbl)
-        desc_tail.append(f"sponsored by {company_disp} ({ticker})")
+        desc_tail.append(f"sponsored by {company_disp}" if company_disp == ticker
+                          else f"sponsored by {company_disp} ({ticker})")
         if confidence:
             desc_tail.append(f"{confidence} confidence")
         # Reserve room for the disclaimer suffix so fit_desc's cut never lands
@@ -609,7 +621,7 @@ def main():
 
         phases = []
         for _a, _slug, _c, _nxt, phase in items:
-            lbl = (phase or "").replace("PHASE", "Phase ").strip()
+            lbl = format_phase(phase)
             if lbl and lbl not in phases:
                 phases.append(lbl)
         cat_word = "catalyst" if n_cats == 1 else "catalysts"
@@ -628,7 +640,7 @@ def main():
         # related: every one of this sponsor's own catalysts (uncapped, per the
         # brief), up to 2 sponsors with a readout in the same quarter, padded to
         # >=3 with real name-order neighbours if needed, then the sponsor hub.
-        related_items = [(f"../catalysts/{slug2}", a2, ((phase2 or "").replace("PHASE", "Phase ").strip() or None))
+        related_items = [(f"../catalysts/{slug2}", a2, (format_phase(phase2) or None))
                           for a2, slug2, _c2, _n2, phase2 in items]
         used_tickers = {ticker}
         q = smeta["quarter"]
@@ -650,7 +662,7 @@ def main():
 
         cards = ""
         for asset, slug, _c, nxt, phase in items:
-            phase_lbl = (phase or "").replace("PHASE", "Phase ") or "clinical-stage"
+            phase_lbl = format_phase(phase) or "clinical-stage"
             cards += f"""
         <div class="acard">
           <a class="name" href="../catalysts/{slug}">{esc(asset)}</a>
