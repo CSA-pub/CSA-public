@@ -20,9 +20,13 @@ Run from the repo root:  python scripts/generate_hubs.py
 """
 
 import html as htmllib
+import os
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from seo_common import fit_title
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "index.html"
@@ -36,7 +40,11 @@ SECTIONS = [
     {
         "slug": "catalysts",
         "h1": "Catalyst directory",
-        "title": "Catalyst Directory — Every Tracked Clinical-Stage Readout | CSA",
+        # title is fit via seo_common.fit_title once the entry count (n) is known --
+        # see build_section() -- so it stays <=60 chars instead of the fixed string
+        # this used to be ("Catalyst Directory — Every Tracked Clinical-Stage
+        # Readout | CSA", 63 chars, over budget).
+        "title_options": lambda n: [f"{n} clinical-stage catalysts", "catalyst directory"],
         "desc": ("Every forward clinical and regulatory catalyst tracked by CSA, each linked "
                  "to its own source-linked record. Not investment advice."),
         "lede": ("One page per tracked forward catalyst. Each record carries the trial phase, "
@@ -47,7 +55,7 @@ SECTIONS = [
     {
         "slug": "sponsors",
         "h1": "Sponsor directory",
-        "title": "Sponsor Directory — Listed Clinical-Stage Sponsors | CSA",
+        "title_options": lambda n: [f"{n} sponsors", "directory"],
         "desc": ("Every listed sponsor tracked by CSA, each with its forward clinical-stage "
                  "catalysts and pipeline. Not investment advice."),
         "lede": ("One page per listed sponsor, with the forward catalysts tracked against it. "
@@ -204,6 +212,7 @@ def build_section(sec):
 
     entries = [read_entry(p) for p in pages]
     entries.sort(key=lambda e: e["name"].lower())
+    n = len(entries)
 
     items = []
     for e in entries:
@@ -213,10 +222,14 @@ def build_section(sec):
             % (htmllib.escape(e["slug"]), htmllib.escape(e["name"]), d_html)
         )
 
+    # <title> and og:title share this one value (the PAGE template inserts {title}
+    # into both), so they can't drift out of sync.
+    title = fit_title(sec["h1"], sec["title_options"](n), "CSA")
+
     page = PAGE.format(
         base=BASE,
         slug=sec["slug"],
-        title=htmllib.escape(sec["title"]),
+        title=htmllib.escape(title),
         desc=htmllib.escape(sec["desc"]),
         jname='"%s"' % sec["h1"],
         jdesc='"%s"' % sec["desc"].replace('"', "'"),
