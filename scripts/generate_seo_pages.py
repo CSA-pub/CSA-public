@@ -28,7 +28,7 @@ import sys
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from seo_common import fit_title, fit_desc, write_sitemap, related_block
+from seo_common import fit_title, fit_desc, write_sitemap, related_block, DESC_MAX
 
 SITE = "https://csa.dataengineered.io"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -436,8 +436,11 @@ def main():
         desc_tail.append(f"sponsored by {company_disp} ({ticker})")
         if confidence:
             desc_tail.append(f"{confidence} confidence")
-        desc = esc(fit_desc(f"{etype.lower()} for {asset} expected {window}, {', '.join(desc_tail)}. "
-                             "Not investment advice."))
+        # Reserve room for the disclaimer suffix so fit_desc's cut never lands
+        # inside it (it was truncating mid-word, or dropping it outright).
+        suffix = " Not investment advice."
+        desc_text = f"{etype.lower()} for {asset} expected {window}, {', '.join(desc_tail)}."
+        desc = esc(fit_desc(desc_text, DESC_MAX - len(suffix)) + suffix)
 
         # related: reciprocal link to the sponsor, up to 2 same-indication assets,
         # up to 2 same-quarter-readout assets, capped at 5, padded to >=3 with
@@ -568,7 +571,9 @@ def main():
             f.write(page)
         sitemap_entries.append((url, os.path.join(CAT_DIR, f"{slug}.html"), "monthly", "0.8"))
 
-    # ---- pass 1: sponsor metadata, precomputed the same way as assets ----------
+    # ---- sponsor pass 1: precompute every sponsor's metadata up front, for the
+    # same reason as the asset pass 1 above (related blocks need to compare one
+    # sponsor's fields against every other sponsor's) --------------------------
     by_ticker = defaultdict(list)
     for asset, (slug, ticker, company_disp, nxt, phase) in asset_index.items():
         by_ticker[ticker].append((asset, slug, company_disp, nxt, phase))
@@ -612,8 +617,11 @@ def main():
         desc_raw = f"{n_cats} forward {cat_word} tracked for {company_disp} ({ticker}) across {n_assets} {asset_word}"
         if phases:
             desc_raw += f" in {', '.join(phases)}"
-        desc_raw += f", nearest readout {nearest}. Not investment advice."
-        desc = esc(fit_desc(desc_raw))
+        desc_raw += f", nearest readout {nearest}."
+        # Reserve room for the disclaimer suffix so fit_desc's cut never lands
+        # inside it (it was truncating mid-word, or dropping it outright).
+        suffix = " Not investment advice."
+        desc = esc(fit_desc(desc_raw, DESC_MAX - len(suffix)) + suffix)
 
         prose_html = sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset)
 
