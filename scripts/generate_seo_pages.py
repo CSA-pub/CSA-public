@@ -599,7 +599,7 @@ def main():
         title = esc(fit_title(company_disp, [f"({ticker}) catalysts & pipeline", f"({ticker}) catalysts", "catalysts"], "CSA"))
         if title in used_sponsor_titles:
             title = esc(fit_title(f"{company_disp} ({ticker})",
-                                   [f"catalysts & pipeline", "catalysts"], "CSA"))
+                                   ["catalysts & pipeline", "catalysts"], "CSA"))
         used_sponsor_titles.add(title)
 
         phases = []
