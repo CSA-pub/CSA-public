@@ -20,12 +20,15 @@ no dependencies beyond the standard library.
 """
 
 import csv
-import datetime
 import html
 import json
 import os
 import re
-from collections import defaultdict
+import sys
+from collections import Counter, defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from seo_common import fit_title, fit_desc, write_sitemap, related_block
 
 SITE = "https://csa.dataengineered.io"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -62,6 +65,110 @@ def pretty_company(name: str) -> str:
         else:
             out.append(w.capitalize())
     return " ".join(out) or name
+
+
+def quarter_of(date_str):
+    """'2026-07-18' -> 'Q3 2026'. Empty/unparseable input returns ''."""
+    m = re.match(r"^(\d{4})-(\d{2})-\d{2}$", (date_str or "").strip())
+    if not m:
+        return ""
+    year, month = int(m.group(1)), int(m.group(2))
+    return f"Q{(month - 1) // 3 + 1} {year}"
+
+
+def primary_condition(conditions):
+    """First listed condition, trimmed -- used only to match records, never displayed
+    in place of the record's own text."""
+    conditions = (conditions or "").strip()
+    if not conditions:
+        return ""
+    return (conditions.split(";")[0] if ";" in conditions else conditions).strip()
+
+
+def pad_related(items, pool, index_of, self_key, href_of, label_of, minimum=3):
+    """Top up `items` (list of (href, label, reason_or_None)) to at least `minimum`
+    entries by walking outward from the record's own position in `pool` (sorted by
+    display name), alternating previous/next and wrapping around. Only used when the
+    field-based related items fall short -- the padding links are real neighbouring
+    records, never invented, just labelled by their (real) adjacency rather than a
+    shared field."""
+    if len(items) >= minimum:
+        return items
+    have = {href for href, _, _ in items}
+    n = len(pool)
+    i = index_of[self_key]
+    dist = 1
+    while len(items) < minimum and dist < n:
+        for j in (i - dist, i + dist):
+            if len(items) >= minimum:
+                break
+            cand = pool[j % n]
+            href = href_of(cand)
+            if href in have:
+                continue
+            items.append((href, label_of(cand), "neighbouring record"))
+            have.add(href)
+        dist += 1
+    return items
+
+
+def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
+    """Unique, data-derived summary of a sponsor's forward-catalyst footprint, built
+    only from its own rows (catalyst count, phase mix, next readout, confidence mix,
+    tracked indications). Only emits clauses for fields that are actually populated
+    -- empty fields are omitted, never faked. One fixed sentence structure per fact;
+    uniqueness across sponsors comes from the differing field values themselves, not
+    from varied wording."""
+    all_assets = sorted({a for a, *_ in items})
+    all_cats = [c for a in all_assets for c in c_by_asset[a]]
+    n_cats = len(all_cats)
+    n_assets = len(all_assets)
+    phases = []
+    for _a, _slug, _c, _nxt, phase in items:
+        lbl = (phase or "").replace("PHASE", "Phase ").strip()
+        if lbl and lbl not in phases:
+            phases.append(lbl)
+
+    nxt = items[0][3]
+    window = (nxt.get("event_window") or nxt.get("event_date") or "").strip()
+    precision = (nxt.get("date_precision") or "").strip()
+    etype = (nxt.get("event_type") or "").strip()
+
+    cat_word = "catalyst" if n_cats == 1 else "catalysts"
+    asset_word = "asset" if n_assets == 1 else "assets"
+    s1 = f"CSA tracks {n_cats} forward {esc(cat_word)} for {esc(company_disp)} across {n_assets} clinical-stage {esc(asset_word)}"
+    if phases:
+        s1 += f", spanning {', '.join(esc(p) for p in phases)}"
+    s1 += "."
+
+    s2 = f"The nearest is a {esc(etype).lower()} expected {esc(window)}"
+    if precision:
+        s2 += f" ({esc(precision)} precision)"
+    s2 += "."
+
+    sentences = [s1, s2]
+
+    conf_counts = Counter((c.get("confidence") or "").strip() for c in all_cats
+                          if (c.get("confidence") or "").strip())
+    if conf_counts:
+        parts = [f"{n} {esc(c).lower()}" for c, n in sorted(conf_counts.items(), key=lambda kv: (-kv[1], kv[0]))]
+        sentences.append(f"Confidence across its tracked catalysts breaks down as {', '.join(parts)}.")
+
+    indications = []
+    for a in all_assets:
+        for m in m_by_asset.get(a, []):
+            cond = primary_condition(m.get("conditions"))
+            if cond and cond not in indications:
+                indications.append(cond)
+    if indications:
+        shown = indications[:3]
+        s4 = f"Tracked indications include {', '.join(esc(x) for x in shown)}"
+        if len(indications) > 3:
+            s4 += f", and {len(indications) - 3} more"
+        s4 += "."
+        sentences.append(s4)
+
+    return f'<p class="sub" style="margin-top:20px;max-width:74ch;line-height:1.7;color:var(--ink-2);">{" ".join(sentences)}</p>'
 
 
 def catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, conditions, nct, etype, mrows):
@@ -170,10 +277,17 @@ h1{font-size:2.35rem;font-weight:700;letter-spacing:-.022em;margin:12px 0 6px;te
 .cta p{color:var(--ink-2);margin-bottom:16px}
 footer{margin-top:52px;border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--ink-3);font-size:.84rem}
 footer a{color:var(--accent);text-decoration:none}
+.related{margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
+.related h2{font-family:var(--font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:var(--ink-3);font-weight:600;margin-bottom:12px}
+.related ul{list-style:none;display:flex;flex-wrap:wrap;gap:9px 14px}
+.related li{font-size:.88rem}
+.related a{color:var(--accent);text-decoration:none}
+.related a:hover{text-decoration:underline}
+.related-why{color:var(--ink-3);font-size:.9em}
 """
 
 
-def head(title, desc, keywords, url, og_type, jsonld_blocks):
+def head(title, desc, url, og_type, jsonld_blocks):
     ld = "\n".join(
         '  <script type="application/ld+json">\n  ' + json.dumps(b, ensure_ascii=False) + "\n  </script>"
         for b in jsonld_blocks
@@ -185,7 +299,6 @@ def head(title, desc, keywords, url, og_type, jsonld_blocks):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content="{desc}" />
-  <meta name="keywords" content="{keywords}" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#0B1315" />
   <link rel="canonical" href="{url}" />
@@ -250,12 +363,17 @@ def main():
     for c in cal:
         c_by_asset[c["asset"]].append(c)
 
-    today = datetime.date.today().isoformat()
-    sitemap = [(SITE + "/", "1.0", "weekly")]
+    sitemap_entries = [
+        (SITE + "/", os.path.join(ROOT, "index.html"), "weekly", "1.0"),
+        (SITE + "/catalysts/", os.path.join(CAT_DIR, "index.html"), "weekly", "0.9"),
+        (SITE + "/sponsors/", os.path.join(SPON_DIR, "index.html"), "weekly", "0.9"),
+    ]
     used_slugs = {}
 
-    # ---- asset detail pages -------------------------------------------------
-    asset_index = {}  # asset -> (slug, ticker, next catalyst)
+    # ---- pass 1: precompute every asset's metadata up front. The related block
+    # on each page compares one asset against every other, so all of it has to be
+    # known before any page is written. ------------------------------------------
+    asset_meta = {}
     for asset, cats in c_by_asset.items():
         cats = sorted(cats, key=lambda c: c["event_date"])
         nxt = cats[0]
@@ -274,18 +392,86 @@ def main():
         status = (mrow.get("status") or "").strip()
         conditions = (mrow.get("conditions") or "").strip()
         nct = nxt.get("nct_id", "").strip()
+        phase_lbl = phase.replace("PHASE", "Phase ") if phase else "clinical-stage"
+        etype = nxt.get("event_type", "").strip() or "catalyst"
+
+        asset_meta[asset] = {
+            "cats": cats, "nxt": nxt, "ticker": ticker, "slug": slug,
+            "mrows": mrows, "mrow": mrow, "company_disp": company_disp,
+            "phase": phase, "phase_lbl": phase_lbl, "status": status,
+            "conditions": conditions, "nct": nct, "etype": etype,
+            "condition": primary_condition(conditions),
+            "quarter": quarter_of(nxt.get("event_date")),
+        }
+
+    assets_by_name = sorted(asset_meta.keys(), key=lambda a: a.lower())
+    asset_pos = {a: i for i, a in enumerate(assets_by_name)}
+    used_titles = set()
+
+    # ---- asset detail pages -------------------------------------------------
+    asset_index = {}  # asset -> (slug, ticker, next catalyst)
+    for asset, meta in asset_meta.items():
+        cats, nxt, ticker, slug = meta["cats"], meta["nxt"], meta["ticker"], meta["slug"]
+        mrows, mrow, company_disp = meta["mrows"], meta["mrow"], meta["company_disp"]
+        phase, phase_lbl, status = meta["phase"], meta["phase_lbl"], meta["status"]
+        conditions, nct, etype = meta["conditions"], meta["nct"], meta["etype"]
         url = f"{SITE}/catalysts/{slug}"
         asset_index[asset] = (slug, ticker, company_disp, nxt, phase)
 
-        phase_lbl = phase.replace("PHASE", "Phase ") if phase else "clinical-stage"
-        etype = nxt.get("event_type", "").strip() or "catalyst"
-        title = f"{esc(asset)} — {phase_lbl} {etype.title()} Catalyst ({esc(ticker)}) | CSA"
-        desc = (f"Forward catalyst for {esc(asset)} (sponsor {esc(company_disp)}, {esc(ticker)}): "
-                f"{etype.lower()} expected {esc(nxt.get('event_window') or nxt.get('event_date'))}, "
-                f"from trial {esc(nct)}. Source-linked, confidence {esc(nxt.get('confidence'))}. "
-                f"Not investment advice.")
-        kw = (f"{asset}, {ticker}, {company_disp}, {asset} catalyst, {asset} {phase_lbl} readout, "
-              f"{asset} clinical trial, {nct}, biotech catalyst calendar, {etype.lower()}")
+        # title: try the entity as-is, then disambiguate with the NCT id on a
+        # (rare) collision after truncation/rounding, so every title stays unique.
+        title = esc(fit_title(asset, [f"{phase_lbl} catalyst ({ticker})", f"{phase_lbl} catalyst", "catalyst"], "CSA"))
+        if title in used_titles and nct:
+            title = esc(fit_title(f"{asset} ({nct})",
+                                   [f"{phase_lbl} catalyst ({ticker})", f"{phase_lbl} catalyst", "catalyst"], "CSA"))
+        used_titles.add(title)
+
+        # description: lead with the most distinctive fact (event type + expected
+        # date), then phase / sponsor+ticker / confidence, all from this row only.
+        window = (nxt.get("event_window") or nxt.get("event_date") or "").strip()
+        confidence = (nxt.get("confidence") or "").strip()
+        desc_tail = []
+        if phase_lbl and phase_lbl != "clinical-stage":
+            desc_tail.append(phase_lbl)
+        desc_tail.append(f"sponsored by {company_disp} ({ticker})")
+        if confidence:
+            desc_tail.append(f"{confidence} confidence")
+        desc = esc(fit_desc(f"{etype.lower()} for {asset} expected {window}, {', '.join(desc_tail)}. "
+                             "Not investment advice."))
+
+        # related: reciprocal link to the sponsor, up to 2 same-indication assets,
+        # up to 2 same-quarter-readout assets, capped at 5, padded to >=3 with
+        # real name-order neighbours if the CSV doesn't offer enough matches, then
+        # the catalyst directory hub.
+        related_items = [(f"../sponsors/{slugify(ticker)}", f"{company_disp} ({ticker})", "sponsor")]
+        used_assets = {asset}
+        cond = meta["condition"]
+        added = 0
+        if cond:
+            for a2, m2 in asset_meta.items():
+                if added >= 2:
+                    break
+                if a2 in used_assets or m2["condition"].lower() != cond.lower():
+                    continue
+                related_items.append((f"../catalysts/{m2['slug']}", a2, m2["condition"]))
+                used_assets.add(a2)
+                added += 1
+        q = meta["quarter"]
+        added = 0
+        if q:
+            for a2, m2 in asset_meta.items():
+                if added >= 2:
+                    break
+                if a2 in used_assets or m2["quarter"] != q:
+                    continue
+                related_items.append((f"../catalysts/{m2['slug']}", a2, q))
+                used_assets.add(a2)
+                added += 1
+        related_items = related_items[:5]
+        related_items = pad_related(related_items, assets_by_name, asset_pos, asset,
+                                     lambda a2: f"../catalysts/{asset_meta[a2]['slug']}", lambda a2: a2)
+        related_items.append(("../catalysts/", "All tracked catalysts", None))
+        related_html = related_block(related_items, "Related catalysts and sponsor", limit=None)
 
         ct = nxt.get("event_type", ""); cd = nxt.get("event_date", "")
         ld_dataset = {
@@ -373,33 +559,86 @@ def main():
       &nbsp;
       <a class="btn" href="../sponsors/{slugify(ticker)}">More {esc(ticker)} catalysts</a>
     </div>
+    {related_html}
   </main>
 {FOOTER}"""
 
-        page = head(title, desc, kw, url, "article", [ld_dataset, ld_crumbs]) + "\n" + body
+        page = head(title, desc, url, "article", [ld_dataset, ld_crumbs]) + "\n" + body
         with open(os.path.join(CAT_DIR, f"{slug}.html"), "w", encoding="utf-8") as f:
             f.write(page)
-        sitemap.append((url, "0.8", "monthly"))
+        sitemap_entries.append((url, os.path.join(CAT_DIR, f"{slug}.html"), "monthly", "0.8"))
 
-    # ---- sponsor hub pages --------------------------------------------------
+    # ---- pass 1: sponsor metadata, precomputed the same way as assets ----------
     by_ticker = defaultdict(list)
     for asset, (slug, ticker, company_disp, nxt, phase) in asset_index.items():
         by_ticker[ticker].append((asset, slug, company_disp, nxt, phase))
 
+    sponsor_meta = {}
     for ticker, items in by_ticker.items():
         items = sorted(items, key=lambda x: x[3]["event_date"])
         company_disp = items[0][2]
+        nearest_date = items[0][3]["event_date"]
+        sponsor_meta[ticker] = {
+            "items": items, "company_disp": company_disp,
+            "nearest_date": nearest_date, "quarter": quarter_of(nearest_date),
+        }
+
+    sponsors_by_name = sorted(sponsor_meta.keys(), key=lambda t: sponsor_meta[t]["company_disp"].lower())
+    sponsor_pos = {t: i for i, t in enumerate(sponsors_by_name)}
+    used_sponsor_titles = set()
+
+    # ---- sponsor hub pages --------------------------------------------------
+    for ticker, smeta in sponsor_meta.items():
+        items = smeta["items"]
+        company_disp = smeta["company_disp"]
         n_assets = len({a for a, *_ in items})
         n_cats = sum(len(c_by_asset[a]) for a, *_ in items)
-        nearest = items[0][3]["event_date"]
+        nearest = smeta["nearest_date"]
         url = f"{SITE}/sponsors/{slugify(ticker)}"
 
-        title = f"{esc(company_disp)} ({esc(ticker)}) — Clinical-Stage Catalysts & Pipeline | CSA"
-        desc = (f"Forward clinical-stage catalysts for {esc(company_disp)} ({esc(ticker)}): "
-                f"{n_cats} tracked readouts across {n_assets} assets, nearest {esc(nearest)}. "
-                f"Each linked to its trial and source. Not investment advice.")
-        kw = (f"{ticker}, {company_disp}, {ticker} pipeline, {ticker} catalysts, {ticker} clinical trials, "
-              f"{ticker} readout calendar, biotech catalyst calendar")
+        title = esc(fit_title(company_disp, [f"({ticker}) catalysts & pipeline", f"({ticker}) catalysts", "catalysts"], "CSA"))
+        if title in used_sponsor_titles:
+            title = esc(fit_title(f"{company_disp} ({ticker})",
+                                   [f"catalysts & pipeline", "catalysts"], "CSA"))
+        used_sponsor_titles.add(title)
+
+        phases = []
+        for _a, _slug, _c, _nxt, phase in items:
+            lbl = (phase or "").replace("PHASE", "Phase ").strip()
+            if lbl and lbl not in phases:
+                phases.append(lbl)
+        cat_word = "catalyst" if n_cats == 1 else "catalysts"
+        asset_word = "asset" if n_assets == 1 else "assets"
+        desc_raw = f"{n_cats} forward {cat_word} tracked for {company_disp} ({ticker}) across {n_assets} {asset_word}"
+        if phases:
+            desc_raw += f" in {', '.join(phases)}"
+        desc_raw += f", nearest readout {nearest}. Not investment advice."
+        desc = esc(fit_desc(desc_raw))
+
+        prose_html = sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset)
+
+        # related: every one of this sponsor's own catalysts (uncapped, per the
+        # brief), up to 2 sponsors with a readout in the same quarter, padded to
+        # >=3 with real name-order neighbours if needed, then the sponsor hub.
+        related_items = [(f"../catalysts/{slug2}", a2, ((phase2 or "").replace("PHASE", "Phase ").strip() or None))
+                          for a2, slug2, _c2, _n2, phase2 in items]
+        used_tickers = {ticker}
+        q = smeta["quarter"]
+        added = 0
+        if q:
+            for t2, sm2 in sponsor_meta.items():
+                if added >= 2:
+                    break
+                if t2 in used_tickers or sm2["quarter"] != q:
+                    continue
+                related_items.append((f"../sponsors/{slugify(t2)}", f"{sm2['company_disp']} ({t2})", q))
+                used_tickers.add(t2)
+                added += 1
+        related_items = pad_related(related_items, sponsors_by_name, sponsor_pos, ticker,
+                                     lambda t2: f"../sponsors/{slugify(t2)}",
+                                     lambda t2: f"{sponsor_meta[t2]['company_disp']} ({t2})")
+        related_items.append(("../sponsors/", "All sponsors", None))
+        related_html = related_block(related_items, "Related sponsors and catalysts", limit=None)
 
         cards = ""
         for asset, slug, _c, nxt, phase in items:
@@ -447,6 +686,7 @@ def main():
         <div class="stat"><div class="n">{esc(nearest)}</div><div class="l">Nearest catalyst</div></div>
       </div>
     </section>
+    {prose_html}
     <div class="assetgrid">{cards}
     </div>
 {ADVICE}
@@ -454,26 +694,20 @@ def main():
       <p>This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <b>139 listed sponsors</b> and <b>2,103 forward catalysts</b>.</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
     </div>
+    {related_html}
   </main>
 {FOOTER}"""
 
-        page = head(title, desc, kw, url, "website", [ld_collection, ld_crumbs, ld_list]) + "\n" + body
+        page = head(title, desc, url, "website", [ld_collection, ld_crumbs, ld_list]) + "\n" + body
         with open(os.path.join(SPON_DIR, f"{slugify(ticker)}.html"), "w", encoding="utf-8") as f:
             f.write(page)
-        sitemap.insert(1, (url, "0.9", "monthly"))
+        sitemap_entries.append((url, os.path.join(SPON_DIR, f"{slugify(ticker)}.html"), "monthly", "0.9"))
 
     # ---- sitemap ------------------------------------------------------------
-    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
-             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, prio, freq in sitemap:
-        lines.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>"
-                     f"\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>")
-    lines.append("</urlset>")
-    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+    n = write_sitemap(ROOT, sitemap_entries)
 
     print(f"Generated {len(c_by_asset)} catalyst pages + {len(by_ticker)} sponsor hubs; "
-          f"sitemap has {len(sitemap)} URLs.")
+          f"sitemap has {n} URLs.")
 
 
 if __name__ == "__main__":

@@ -263,19 +263,12 @@ def update_homepage(counts):
 
 
 def update_sitemap(counts):
-    src = SITEMAP.read_text(encoding="utf-8")
-    added = []
-    for slug in ("catalysts", "sponsors"):
-        loc = "%s/%s/" % (BASE, slug)
-        if "<loc>%s</loc>" % loc in src:
-            continue
-        entry = ("<url>\n<loc>%s</loc>\n<changefreq>weekly</changefreq>\n"
-                 "<priority>0.9</priority>\n</url>\n" % loc)
-        src = src.replace("</urlset>", entry + "</urlset>", 1)
-        added.append(slug)
-    if added:
-        SITEMAP.write_text(src, encoding="utf-8", newline="")
-    return added
+    """No-op: scripts/generate_seo_pages.py now writes the whole sitemap (via
+    seo_common.write_sitemap), including the /catalysts/ and /sponsors/ hub
+    URLs with a git-derived lastmod. Kept as a function (rather than removed)
+    so main() doesn't need to change, and so a caller running only this script
+    gets a clear no-op instead of a missing-attribute error."""
+    return []
 
 
 def main():
