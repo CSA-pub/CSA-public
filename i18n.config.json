@@ -1,0 +1,20 @@
+{
+  "base_url": "https://csa.dataengineered.io",
+  "locales": [
+    "es",
+    "de",
+    "fr",
+    "pt-br"
+  ],
+  "include": [
+    "index.html",
+    "404.html",
+    "catalysts/*.html",
+    "sponsors/*.html"
+  ],
+  "exclude": [],
+  "not_found": "404.html",
+  "sitemap": "sitemap.xml",
+  "min_coverage": 0.9,
+  "notranslate": []
+}
