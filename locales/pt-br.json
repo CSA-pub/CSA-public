@@ -149,6 +149,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "24065a7709bdd324": {
+  "src": "What are you building, and what coverage do you need?",
+  "t": "O que você está construindo e de que cobertura precisa?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
  "248b430e10501c8f": {
   "src": "Phase {0} catalyst",
   "t": "Catalisador de fase {0}",
