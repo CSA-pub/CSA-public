@@ -327,6 +327,12 @@
     .flist li { display:flex; gap:10px; align-items:flex-start; }
     .flist li::before { content:"▸"; color:var(--accent); flex-shrink:0; }
     .flist code { font-family:var(--font-mono); font-size:.82em; color:var(--ink-3); }
+    /* phones: a flex li makes every text run and <code> its own unwrappable item, so lay it out as a block;
+       nav rows (incl. the footer language list) wrap instead of widening the page */
+    @media (max-width:640px){
+      .flist li { display:block; position:relative; padding-left:20px; } .flist li::before { position:absolute; left:0; }
+      nav { flex-wrap:wrap; row-gap:8px; }
+    }
     .buy { width:100%; justify-content:center; padding:18px; }
     .pay-note { margin-top:15px; text-align:center; font-family:var(--font-mono); font-size:.62rem; color:var(--ink-3); line-height:1.7; }
     .pay-note a { color:var(--accent); text-decoration:underline; }
