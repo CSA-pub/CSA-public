@@ -53,6 +53,13 @@ def esc(text) -> str:
     return html.escape(str(text if text is not None else "").strip())
 
 
+def data(value) -> str:
+    """A data value (asset, sponsor, ticker, NCT id, CSV enum, condition, disclosed
+    window) inside page copy: translate="no" keeps it verbatim in the localized copies
+    made by scripts/i18n_common.py, which translate only the words around it."""
+    return f'<span translate="no">{esc(value)}</span>'
+
+
 def pretty_company(name: str) -> str:
     """Display-only title-casing that keeps corporate suffixes/acronyms upper."""
     out = []
@@ -105,7 +112,7 @@ def pad_related(items, pool, index_of, self_key, href_of, label_of, minimum=3):
     shared field."""
     if len(items) >= minimum:
         return items
-    have = {href for href, _, _ in items}
+    have = {item[0] for item in items}
     n = len(pool)
     i = index_of[self_key]
     dist = 1
@@ -117,7 +124,7 @@ def pad_related(items, pool, index_of, self_key, href_of, label_of, minimum=3):
             href = href_of(cand)
             if href in have:
                 continue
-            items.append((href, label_of(cand), "neighbouring record"))
+            items.append((href, label_of(cand), "neighbouring record", False))
             have.add(href)
         dist += 1
     return items
@@ -147,14 +154,14 @@ def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
 
     cat_word = "catalyst" if n_cats == 1 else "catalysts"
     asset_word = "asset" if n_assets == 1 else "assets"
-    s1 = f"CSA tracks {n_cats} forward {esc(cat_word)} for {esc(company_disp)} across {n_assets} clinical-stage {esc(asset_word)}"
+    s1 = f"CSA tracks {n_cats} forward {esc(cat_word)} for {data(company_disp)} across {n_assets} clinical-stage {esc(asset_word)}"
     if phases:
         s1 += f", spanning {', '.join(esc(p) for p in phases)}"
     s1 += "."
 
-    s2 = f"The nearest is a {esc(etype).lower()} expected {esc(window)}"
+    s2 = f"The nearest is a {data(etype.lower())} expected {data(window)}"
     if precision:
-        s2 += f" ({esc(precision)} precision)"
+        s2 += f" ({data(precision)} precision)"
     s2 += "."
 
     sentences = [s1, s2]
@@ -162,7 +169,7 @@ def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
     conf_counts = Counter((c.get("confidence") or "").strip() for c in all_cats
                           if (c.get("confidence") or "").strip())
     if conf_counts:
-        parts = [f"{n} {esc(c).lower()}" for c, n in sorted(conf_counts.items(), key=lambda kv: (-kv[1], kv[0]))]
+        parts = [f"{n} {data(c.lower())}" for c, n in sorted(conf_counts.items(), key=lambda kv: (-kv[1], kv[0]))]
         sentences.append(f"Confidence across its tracked catalysts breaks down as {', '.join(parts)}.")
 
     indications = []
@@ -173,13 +180,15 @@ def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
                 indications.append(cond)
     if indications:
         shown = indications[:3]
-        s4 = f"Tracked indications include {', '.join(esc(x) for x in shown)}"
+        s4 = f"Tracked indications include {', '.join(data(x) for x in shown)}"
         if len(indications) > 3:
             s4 += f", and {len(indications) - 3} more"
         s4 += "."
         sentences.append(s4)
 
-    return f'<p class="sub" style="margin-top:20px;max-width:74ch;line-height:1.7;color:var(--ink-2);">{" ".join(sentences)}</p>'
+    # one <span> per sentence: each optional clause is its own translation segment
+    body = " ".join(f"<span>{x}</span>" for x in sentences)
+    return f'<p class="sub" style="margin-top:20px;max-width:74ch;line-height:1.7;color:var(--ink-2);">{body}</p>'
 
 
 def catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, conditions, nct, etype, mrows):
@@ -189,35 +198,38 @@ def catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, co
     window = (nxt.get("event_window") or nxt.get("event_date") or "").strip()
     precision = (nxt.get("date_precision") or "").strip()
     conf = (nxt.get("confidence") or "").strip()
-    p = (f"{esc(asset)} is a clinical-stage drug asset sponsored by {esc(company_disp)}, "
-         f"listed as {esc(ticker)}.")
+    sentences = [f"{data(asset)} is a clinical-stage drug asset sponsored by {data(company_disp)}, "
+                 f"listed as {data(ticker)}."]
     cat_word = "catalyst" if n == 1 else "catalysts"
-    p += f" CSA tracks {n} forward {cat_word} for it — the nearest is a {esc(etype).lower()} expected {esc(window)}"
+    p = f"CSA tracks {n} forward {cat_word} for it — the nearest is a {data(etype.lower())} expected {data(window)}"
     extras = []
     if precision:
-        extras.append(f"{esc(precision)} precision")
+        extras.append(f"{data(precision)} precision")
     if conf:
-        extras.append(f"{esc(conf)} confidence")
+        extras.append(f"{data(conf)} confidence")
     if extras:
         p += f" ({', '.join(extras)})"
     if nct:
-        p += f", tied to trial {esc(nct)}"
+        p += f", tied to trial {data(nct)}"
     p += "."
+    sentences.append(p)
     detail = []
     if phase_lbl and phase_lbl != "clinical-stage":
         detail.append(f"in {esc(phase_lbl)}")
     if status:
-        detail.append(f"currently {esc(status).lower().replace('_', ' ')}")
+        detail.append(f"currently {data(status.lower().replace('_', ' '))}")
     if detail:
-        s = f" The asset is {' and '.join(detail)}"
+        s = f"The asset is {' and '.join(detail)}"
         if conditions:
             cond = conditions.split(";")[0].strip() if ";" in conditions else conditions
-            s += f", studied in {esc(cond[:120])}"
+            s += f", studied in {data(cond[:120])}"
         s += "."
-        p += s
+        sentences.append(s)
     if trials > 1:
-        p += f" It appears across {trials} tracked trials in the CSA sample."
-    return f'<p class="sub" style="margin-top:20px;max-width:74ch;line-height:1.7;color:var(--ink-2);">{p}</p>'
+        sentences.append(f"It appears across {trials} tracked trials in the CSA sample.")
+    # one <span> per sentence: each optional clause is its own translation segment
+    body = " ".join(f"<span>{x}</span>" for x in sentences)
+    return f'<p class="sub" style="margin-top:20px;max-width:74ch;line-height:1.7;color:var(--ink-2);">{body}</p>'
 
 
 CSS = """
@@ -459,7 +471,7 @@ def main():
         # up to 2 same-quarter-readout assets, capped at 5, padded to >=3 with
         # real name-order neighbours if the CSV doesn't offer enough matches, then
         # the catalyst directory hub.
-        related_items = [(f"../sponsors/{slugify(ticker)}", f"{company_disp} ({ticker})", "sponsor")]
+        related_items = [(f"../sponsors/{slugify(ticker)}", f"{company_disp} ({ticker})", "sponsor", False)]
         used_assets = {asset}
         cond = meta["condition"]
         added = 0
@@ -469,7 +481,7 @@ def main():
                     break
                 if a2 in used_assets or m2["condition"].lower() != cond.lower():
                     continue
-                related_items.append((f"../catalysts/{m2['slug']}", a2, m2["condition"]))
+                related_items.append((f"../catalysts/{m2['slug']}", a2, m2["condition"], False))
                 used_assets.add(a2)
                 added += 1
         q = meta["quarter"]
@@ -480,7 +492,7 @@ def main():
                     break
                 if a2 in used_assets or m2["quarter"] != q:
                     continue
-                related_items.append((f"../catalysts/{m2['slug']}", a2, q))
+                related_items.append((f"../catalysts/{m2['slug']}", a2, q, False))
                 used_assets.add(a2)
                 added += 1
         related_items = related_items[:5]
@@ -488,6 +500,12 @@ def main():
                                      lambda a2: f"../catalysts/{asset_meta[a2]['slug']}", lambda a2: a2)
         related_items.append(("../catalysts/", "All tracked catalysts", None))
         related_html = related_block(related_items, "Related catalysts and sponsor", limit=None)
+        # a shared-indication reason is a condition name (data), not site copy
+        for _h, _l, why, *_ in related_items:
+            if why and why not in ("sponsor", "neighbouring record") and not re.fullmatch(r"Q\d \d{4}", why):
+                related_html = related_html.replace(
+                    f'<span class="related-why">— {html.escape(why)}</span>',
+                    f'<span class="related-why">— <span translate="no">{html.escape(why)}</span></span>')
 
         ct = nxt.get("event_type", ""); cd = nxt.get("event_date", "")
         ld_dataset = {
@@ -517,13 +535,13 @@ def main():
         rows_html = ""
         if len(cats) > 1:
             trs = "".join(
-                f"<tr><td>{esc(c['event_date'])}</td><td>{esc(c.get('event_type'))}</td>"
-                f"<td>{esc(c.get('confidence'))}</td>"
-                f"<td><a href=\"{esc(c.get('source_url'))}\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent)\">{esc(c.get('nct_id'))}</a></td></tr>"
+                f"<tr><td>{esc(c['event_date'])}</td><td translate=\"no\">{esc(c.get('event_type'))}</td>"
+                f"<td translate=\"no\">{esc(c.get('confidence'))}</td>"
+                f"<td><a href=\"{esc(c.get('source_url'))}\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent)\" translate=\"no\">{esc(c.get('nct_id'))}</a></td></tr>"
                 for c in cats)
             rows_html = f"""
       <div class="card" style="margin-top:22px">
-        <h3>All tracked catalysts for {esc(asset)}</h3>
+        <h3>All tracked catalysts for {data(asset)}</h3>
         <table class="tbl"><thead><tr><th>Date</th><th>Event</th><th>Confidence</th><th>Trial</th></tr></thead>
         <tbody>{trs}</tbody></table>
       </div>"""
@@ -532,39 +550,39 @@ def main():
         body = f"""<body>
 {NAV}
   <main class="container">
-    <div class="crumbs"><a href="/">Home</a> / <a href="../sponsors/{slugify(ticker)}">{esc(company_disp)} ({esc(ticker)})</a> / <span>{esc(asset)}</span></div>
+    <div class="crumbs"><a href="/">Home</a> / <a href="../sponsors/{slugify(ticker)}" translate="no">{esc(company_disp)} ({esc(ticker)})</a> / <span translate="no">{esc(asset)}</span></div>
     <section class="hero">
-      <span class="eyebrow">Forward catalyst &middot; {esc(ticker)}</span>
-      <h1>{esc(asset)}</h1>
-      <p class="sub">Sponsor <b>{esc(company_disp)}</b> &middot; listed as <b>{esc(ticker)}</b></p>
+      <span class="eyebrow">Forward catalyst &middot; {data(ticker)}</span>
+      <h1 translate="no">{esc(asset)}</h1>
+      <p class="sub">Sponsor <b translate="no">{esc(company_disp)}</b> &middot; listed as <b translate="no">{esc(ticker)}</b></p>
       <div class="badges">
-        <span class="badge accent">{esc(etype)}</span>
+        <span class="badge accent" translate="no">{esc(etype)}</span>
         <span class="badge">{esc(phase_lbl)}</span>
-        <span class="badge">Confidence: {esc(nxt.get('confidence'))}</span>
-        <span class="badge">Source: {esc(nxt.get('source'))}</span>
+        <span class="badge">Confidence: {data(nxt.get('confidence'))}</span>
+        <span class="badge">Source: {data(nxt.get('source'))}</span>
       </div>
     </section>
     {catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, conditions, nct, etype, mrows)}
     <div class="grid2">
       <div class="card">
         <h3>Next catalyst</h3>
-        <div class="row"><span class="k">Event type</span><span class="v accent">{esc(etype)}</span></div>
-        <div class="row"><span class="k">Expected date</span><span class="v">{esc(nxt.get('event_date'))}</span></div>
-        <div class="row"><span class="k">As disclosed</span><span class="v">{esc(nxt.get('event_window'))}</span></div>
-        <div class="row"><span class="k">Date precision</span><span class="v">{esc(nxt.get('date_precision'))}</span></div>
-        <div class="row"><span class="k">Confidence</span><span class="v">{esc(nxt.get('confidence'))}</span></div>
+        <div class="row"><span class="k">Event type</span><span class="v accent" translate="no">{esc(etype)}</span></div>
+        <div class="row"><span class="k">Expected date</span><span class="v" translate="no">{esc(nxt.get('event_date'))}</span></div>
+        <div class="row"><span class="k">As disclosed</span><span class="v" translate="no">{esc(nxt.get('event_window'))}</span></div>
+        <div class="row"><span class="k">Date precision</span><span class="v" translate="no">{esc(nxt.get('date_precision'))}</span></div>
+        <div class="row"><span class="k">Confidence</span><span class="v" translate="no">{esc(nxt.get('confidence'))}</span></div>
         <div style="margin-top:18px">
           <a class="btn" href="{esc(nxt.get('source_url'))}" target="_blank" rel="noopener">Verify at source &rarr;</a>
         </div>
       </div>
       <div class="card">
         <h3>Trial &amp; sponsor</h3>
-        <div class="row"><span class="k">Trial (NCT)</span><span class="v">{esc(nct) or '&mdash;'}</span></div>
-        <div class="row"><span class="k">Phase</span><span class="v">{esc(phase) or '&mdash;'}</span></div>
-        <div class="row"><span class="k">Status</span><span class="v">{esc(status) or '&mdash;'}</span></div>
-        <div class="row"><span class="k">Lead sponsor</span><span class="v">{esc(mrow.get('sponsor_raw')) or '&mdash;'}</span></div>
-        <div class="row"><span class="k">Listed as</span><span class="v accent">{esc(ticker)}</span></div>
-        <div class="row"><span class="k">Condition(s)</span><span class="v" style="max-width:58%">{cond_disp}</span></div>
+        <div class="row"><span class="k">Trial (NCT)</span><span class="v" translate="no">{esc(nct) or '&mdash;'}</span></div>
+        <div class="row"><span class="k">Phase</span><span class="v" translate="no">{esc(phase) or '&mdash;'}</span></div>
+        <div class="row"><span class="k">Status</span><span class="v" translate="no">{esc(status) or '&mdash;'}</span></div>
+        <div class="row"><span class="k">Lead sponsor</span><span class="v" translate="no">{esc(mrow.get('sponsor_raw')) or '&mdash;'}</span></div>
+        <div class="row"><span class="k">Listed as</span><span class="v accent" translate="no">{esc(ticker)}</span></div>
+        <div class="row"><span class="k">Condition(s)</span><span class="v" style="max-width:58%" translate="no">{cond_disp}</span></div>
       </div>
     </div>
 {rows_html}
@@ -573,7 +591,7 @@ def main():
       <p>This is one row of the free CSA sample. The full snapshot carries <b>2,103 forward catalysts</b> across <b>139 listed sponsors</b>.</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
       &nbsp;
-      <a class="btn" href="../sponsors/{slugify(ticker)}">More {esc(ticker)} catalysts</a>
+      <a class="btn" href="../sponsors/{slugify(ticker)}">More {data(ticker)} catalysts</a>
     </div>
     {related_html}
   </main>
@@ -641,7 +659,7 @@ def main():
         # related: every one of this sponsor's own catalysts (uncapped, per the
         # brief), up to 2 sponsors with a readout in the same quarter, padded to
         # >=3 with real name-order neighbours if needed, then the sponsor hub.
-        related_items = [(f"../catalysts/{slug2}", a2, (format_phase(phase2) or None))
+        related_items = [(f"../catalysts/{slug2}", a2, (format_phase(phase2) or None), False)
                           for a2, slug2, _c2, _n2, phase2 in items]
         used_tickers = {ticker}
         q = smeta["quarter"]
@@ -652,7 +670,7 @@ def main():
                     break
                 if t2 in used_tickers or sm2["quarter"] != q:
                     continue
-                related_items.append((f"../sponsors/{slugify(t2)}", f"{sm2['company_disp']} ({t2})", q))
+                related_items.append((f"../sponsors/{slugify(t2)}", f"{sm2['company_disp']} ({t2})", q, False))
                 used_tickers.add(t2)
                 added += 1
         related_items = pad_related(related_items, sponsors_by_name, sponsor_pos, ticker,
@@ -666,8 +684,8 @@ def main():
             phase_lbl = format_phase(phase) or "clinical-stage"
             cards += f"""
         <div class="acard">
-          <a class="name" href="../catalysts/{slug}">{esc(asset)}</a>
-          <div class="meta"><span>{esc(nxt.get('event_type'))} &middot; {esc(phase_lbl)}</span><span>{esc(nxt.get('event_date'))}</span></div>
+          <a class="name" href="../catalysts/{slug}" translate="no">{esc(asset)}</a>
+          <div class="meta"><span>{data(nxt.get('event_type'))} &middot; {esc(phase_lbl)}</span><span>{esc(nxt.get('event_date'))}</span></div>
         </div>"""
 
         ld_collection = {
@@ -696,11 +714,11 @@ def main():
         body = f"""<body>
 {NAV}
   <main class="container">
-    <div class="crumbs"><a href="/">Home</a> / <span>{esc(company_disp)} ({esc(ticker)})</span></div>
+    <div class="crumbs"><a href="/">Home</a> / <span translate="no">{esc(company_disp)} ({esc(ticker)})</span></div>
     <section class="hero">
-      <span class="eyebrow">Sponsor pipeline &middot; {esc(ticker)}</span>
-      <h1>{esc(company_disp)}</h1>
-      <p class="sub">Forward clinical-stage catalysts linked to <b>{esc(ticker)}</b></p>
+      <span class="eyebrow">Sponsor pipeline &middot; {data(ticker)}</span>
+      <h1 translate="no">{esc(company_disp)}</h1>
+      <p class="sub">Forward clinical-stage catalysts linked to <b translate="no">{esc(ticker)}</b></p>
       <div class="statbar">
         <div class="stat"><div class="n">{n_cats}</div><div class="l">Tracked catalysts (sample)</div></div>
         <div class="stat"><div class="n">{n_assets}</div><div class="l">Clinical-stage assets</div></div>

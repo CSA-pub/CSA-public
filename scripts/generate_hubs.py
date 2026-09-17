@@ -217,9 +217,14 @@ def build_section(sec):
 
     items = []
     for e in entries:
-        d_html = ('<span class="d">%s</span>' % htmllib.escape(e["desc"])) if e["desc"] else ""
+        # The entry name (asset / sponsor) and any parenthesised ticker or trial id in the
+        # descriptor are data: translate="no" keeps them verbatim in localized copies
+        # (scripts/i18n_common.py); only the descriptor words around them get translated.
+        d_html = ('<span class="d">%s</span>' % re.sub(
+            r"\(([^()]+)\)", r'(<span translate="no">\1</span>)', htmllib.escape(e["desc"]))
+        ) if e["desc"] else ""
         items.append(
-            '      <li><a href="%s"><span class="n">%s</span>%s</a></li>'
+            '      <li><a href="%s"><span class="n" translate="no">%s</span>%s</a></li>'
             % (htmllib.escape(e["slug"]), htmllib.escape(e["name"]), d_html)
         )
 

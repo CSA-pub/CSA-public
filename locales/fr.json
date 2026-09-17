@@ -1,0 +1,1322 @@
+{
+ "03688ba6aa340b87": {
+  "src": "FAQ",
+  "t": "FAQ",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "05330cf4ef61bb63": {
+  "src": "<0>○</0> protocol readout (est.)",
+  "t": "<0>○</0> résultats selon le protocole (est.)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "05f2b7acde01d330": {
+  "src": "{0} for {1} expected {2}, Phase {3}, sponsored by {4}, {5} confidence. Not investment advice.",
+  "t": "{0} pour {1} prévu {2}, phase {3}, promoteur {4}, confiance {5}. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "068edac04f397ebc": {
+  "src": "Every forward clinical and regulatory catalyst tracked by CSA, each linked to its own source-linked record. Not investment advice.",
+  "t": "Tous les catalyseurs cliniques et réglementaires à venir suivis par CSA, chacun avec sa propre fiche et son lien source. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "08a3763e21157253": {
+  "src": "Sponsor directory",
+  "t": "Répertoire des promoteurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "09c5b30fbc993c4d": {
+  "src": "As disclosed",
+  "t": "Tel que publié",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0b941ea96a6f2ce8": {
+  "src": "Expected date",
+  "t": "Date prévue",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0bfc71a1a50a66b5": {
+  "src": "One-time snapshot · CSV + JSON · public-domain sources · edition {0}",
+  "t": "Snapshot à paiement unique · CSV + JSON · sources du domaine public · édition {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0c63bdfc95a615fb": {
+  "src": "Catalyst directory",
+  "t": "Répertoire des catalyseurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0d6d7ee9606ecb18": {
+  "src": "Active, industry-sponsored, Phase {0} interventional trials in cardiometabolic, oncology and immunology: <1>{2} trials</1> resolved to <3>{4} assets</3>, <5>{6}</5> of them the sponsor's own asset linked to a listed ticker, plus <7>{8} forward catalysts</7> across <9>{10} sponsors</9>. CSV + JSON with a scope manifest. Phase {11} and more areas are the roadmap.",
+  "t": "Essais interventionnels de phase {0} actifs et financés par l’industrie en cardiométabolisme, oncologie et immunologie : <1>{2} essais</1> résolus en <3>{4} actifs</3>, dont <5>{6}</5> actifs propres au promoteur liés à un ticker coté, plus <7>{8} catalyseurs à venir</7> répartis sur <9>{10} promoteurs</9>. CSV + JSON avec un manifeste de périmètre. La phase {11} et d’autres domaines figurent dans la feuille de route.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0e629b566e5490ff": {
+  "src": "Listed as",
+  "t": "Coté sous",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0eebf8dc69174ccc": {
+  "src": "Is the data clean to license and redistribute?",
+  "t": "Les données peuvent-elles être licenciées et redistribuées sans restriction ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "0fb3d4d56e007151": {
+  "src": "Date precision",
+  "t": "Précision de la date",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1287c76df02994ce": {
+  "src": "CSA tracks {0} forward catalysts for {1} across {2} clinical-stage assets, spanning Phase {3}.",
+  "t": "CSA suit {0} catalyseurs à venir pour {1} sur {2} actifs en phase clinique, en phase {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "12cccddedbdf902f": {
+  "src": "Sponsor {0} · listed as {1}",
+  "t": "Promoteur {0} · coté sous {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "131111646a39dca4": {
+  "src": "Trial (NCT)",
+  "t": "Essai (NCT)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1637a7ad826c81d0": {
+  "src": "The honest version",
+  "t": "En toute franchise",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "166ccdbd0767c259": {
+  "src": "{0} · {1} · {2} · scope manifest — <3>CSV + JSON</3>.",
+  "t": "{0} · {1} · {2} · manifeste de périmètre — <3>CSV + JSON</3>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "178aca1654c1c46e": {
+  "src": "{0} — ({1}) catalysts | CSA",
+  "t": "{0} — ({1}) catalyseurs | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "1c8fd4ee763adb3b": {
+  "src": "{0} events",
+  "t": "{0} événements",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "207237597e0f7534": {
+  "src": "CSA stitches <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2>, and FDA substance identity into one <3>asset ↔ sponsor ↔ ticker</3> graph — with a forward catalyst calendar. Anyone can pull one registry; the <4>join</4> and the <5>freshness</5> are the product.",
+  "t": "CSA relie <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2> et l’identité des substances de la FDA en un seul graphe <3>actif ↔ promoteur ↔ ticker</3> — avec un calendrier des catalyseurs à venir. N’importe qui peut interroger un registre ; la <4>jointure</4> et la <5>fraîcheur</5> sont le produit.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "20f9e192df3188f0": {
+  "src": "<0>{1} Phase {2} trials → {3} resolved assets</0> across cardiometabolic, oncology &amp; immunology.",
+  "t": "<0>{1} essais de phase {2} → {3} actifs résolus</0> en cardiométabolisme, oncologie &amp; immunologie.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "21384f4788b07856": {
+  "src": "<0>{1}</0> · Contact",
+  "t": "<0>{1}</0> · Contact",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "22882557126b059f": {
+  "src": "CSA tracks {0} forward catalysts for {1} across {2} clinical-stage assets, spanning Phase {3}, Phase {4}.",
+  "t": "CSA suit {0} catalyseurs à venir pour {1} sur {2} actifs en phase clinique, en phase {3}, phase {4}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "23f657cb1808bbd1": {
+  "src": "Event type",
+  "t": "Type d’événement",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "24065a7709bdd324": {
+  "src": "What are you building, and what coverage do you need?",
+  "t": "Que développez-vous, et de quelle couverture avez-vous besoin ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "248b430e10501c8f": {
+  "src": "Phase {0} catalyst",
+  "t": "Catalyseur de phase {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "26c96849f79629ec": {
+  "src": "{0} = {1} · <2>{3}</2> cross-molecule merges (audited)",
+  "t": "{0} = {1} · <2>{3}</2> fusions inter-molécules (auditées)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2727f7963ef94e2d": {
+  "src": "Confidence: {0}",
+  "t": "Confiance : {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2839be47049e0116": {
+  "src": "{0} Snapshot",
+  "t": "Snapshot {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "299048be51597061": {
+  "src": "<0>{1} tradeable-core assets</0> (sponsor's own, linked to a listed ticker) across {2} sponsors.",
+  "t": "<0>{1} actifs cœurs négociables</0> (propres au promoteur, liés à un ticker coté) répartis sur {2} promoteurs.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2a32c7edb752c522": {
+  "src": "<0>CSA</0> — Clinical-Stage Asset Intelligence · © {1} DataEngineered",
+  "t": "<0>CSA</0> — Clinical-Stage Asset Intelligence · © {1} DataEngineered",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2accec270d75401a": {
+  "src": "Our form provider is unreachable right now. Please write to {0} with:",
+  "t": "Notre prestataire de formulaires est actuellement injoignable. Écrivez-nous à {0} en indiquant :",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "2d7e5e5fc4761518": {
+  "src": "{0} · Phase {1}",
+  "t": "{0} · Phase {1}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "30a4f292052dd3b5": {
+  "src": "<0>{1}</0> · FAQ",
+  "t": "<0>{1}</0> · FAQ",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "34ac37f56e147bf6": {
+  "src": "Back to home",
+  "t": "Retour à l’accueil",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3682f10d6f49f32d": {
+  "src": "cross-molecule merges",
+  "t": "fusions inter-molécules",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3935f865d74576b4": {
+  "src": "This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <0>{1} listed sponsors</0> and <2>{3} forward catalysts</2>.",
+  "t": "Les catalyseurs de ce promoteur sont un extrait de l’échantillon gratuit de CSA. Le snapshot complet couvre <0>{1} promoteurs cotés</0> et <2>{3} catalyseurs à venir</2>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "394f73c1440352de": {
+  "src": "Tracked indications include {0}, {1}, {2}, and {3} more.",
+  "t": "Les indications suivies incluent {0}, {1}, {2} et {3} autres.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3b5a28e65386d847": {
+  "src": "Forward catalyst · {0}",
+  "t": "Catalyseur à venir · {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3d0d9e41291ae9e8": {
+  "src": "({0}) catalysts &amp; pipeline",
+  "t": "({0}) catalyseurs &amp; pipeline",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3e90e4cbf473c861": {
+  "src": "Ownership",
+  "t": "Propriété",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3ea564a84e7530da": {
+  "src": "CSA tracks {0} forward catalysts for it — the nearest is a {1} expected {2} ({3} precision, {4} confidence), tied to trial {5}.",
+  "t": "CSA suit {0} catalyseurs à venir pour cet actif — le plus proche : {1}, prévu {2} (précision {3}, confiance {4}), lié à l’essai {5}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3ea716a640f28384": {
+  "src": "CSA — Clinical-Stage Asset Intelligence: a forward catalyst calendar linked to the drug asset and listed sponsor",
+  "t": "CSA — Clinical-Stage Asset Intelligence : un calendrier des catalyseurs à venir lié à l’actif médicamenteux et au promoteur coté",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "3efdd9aeb0b128fd": {
+  "src": "Forward clinical-stage catalysts linked to {0}",
+  "t": "Catalyseurs à venir en phase clinique liés à {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4049fc5cb3a596f4": {
+  "src": "Tier {0} · Self-serve snapshot",
+  "t": "Niveau {0} · Snapshot en libre-service",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "406f432e71aad026": {
+  "src": "Data, not investment advice. Built entirely on public-domain sources (ClinicalTrials.gov, openFDA, SEC EDGAR, GSRS/UNII). Figures reflect the {0} edition.",
+  "t": "Des données, pas un conseil en investissement. Entièrement construit sur des sources du domaine public (ClinicalTrials.gov, openFDA, SEC EDGAR, GSRS/UNII). Les chiffres correspondent à l’édition {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "41dfc0a6c9270794": {
+  "src": "Window",
+  "t": "Fenêtre",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "424493a0babf7fd8": {
+  "src": "Invoice / crypto payment",
+  "t": "Facture / paiement en crypto",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4426afd90a77a35f": {
+  "src": "Asset",
+  "t": "Actif",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4451a2962b414938": {
+  "src": "Custom coverage (Phase {0}, more areas)",
+  "t": "Couverture sur mesure (phase {0}, autres domaines)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "45dd7609943ebe87": {
+  "src": "CSA — Clinical-Stage Asset Intelligence",
+  "t": "CSA — Clinical-Stage Asset Intelligence",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4603b861521d35ac": {
+  "src": "Every listed sponsor tracked by CSA, each with its forward clinical-stage catalysts and pipeline. Not investment advice.",
+  "t": "Tous les promoteurs cotés suivis par CSA, chacun avec ses catalyseurs à venir en phase clinique et son pipeline. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "481c3bc3915bfc64": {
+  "src": "<0>{1} forward catalysts</0> with confidence grade + source URL per row.",
+  "t": "<0>{1} catalyseurs à venir</0> avec niveau de confiance + URL source par ligne.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "488c4207f3a45a19": {
+  "src": "Data, not advice",
+  "t": "Des données, pas un conseil",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4957beb5f795e6bb": {
+  "src": "All sponsors",
+  "t": "Tous les promoteurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "49e927b22fce7a2c": {
+  "src": "Tracked catalysts (sample)",
+  "t": "Catalyseurs suivis (échantillon)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "49f88b25b4c0771f": {
+  "src": "Related catalysts and sponsor",
+  "t": "Catalyseurs et promoteur associés",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4b892fe0c040fa8a": {
+  "src": "Directory",
+  "t": "Répertoire",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4ba9a5973a98f004": {
+  "src": "Tracked indications include {0}, {1}.",
+  "t": "Les indications suivies incluent {0}, {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4cf1d96e56f530e7": {
+  "src": "Sponsor → listed ticker",
+  "t": "Promoteur → ticker coté",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4e68437b289b25b7": {
+  "src": "{0} — catalyst | CSA",
+  "t": "{0} — catalyseur | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4f25f8fad96a36e4": {
+  "src": "CSA Clinical-Stage Asset Intelligence — Snapshot",
+  "t": "CSA Clinical-Stage Asset Intelligence — Snapshot",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "4f674405a8aa3b10": {
+  "src": "Are the catalyst dates reliable?",
+  "t": "Les dates des catalyseurs sont-elles fiables ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "514d61d50dff4d85": {
+  "src": "Clinical trials, FDA, and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar. Public-domain sources; data, not advice.",
+  "t": "Essais cliniques, FDA et SEC liés à l’actif médicamenteux et au promoteur coté, avec un calendrier des catalyseurs. Sources publiques ; des données, pas un conseil.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "51931b9be654ef52": {
+  "src": "Catalyst directory — {0} clinical-stage catalysts | CSA",
+  "t": "Répertoire des catalyseurs — {0} catalyseurs cliniques | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "52c21630e9fffeba": {
+  "src": "The asset is in Phase {0} and currently {1}, studied in {2}.",
+  "t": "L’actif est en phase {0}, actuellement au statut {1}, et étudié dans les indications suivantes : {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5586cf3db2afa20f": {
+  "src": "Ticker",
+  "t": "Ticker",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "56018948fd200f88": {
+  "src": "{0} + {1} · {2} + {3} per row",
+  "t": "{0} + {1} · {2} + {3} par ligne",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "57a1b6516acb16e8": {
+  "src": "Confidence across its tracked catalysts breaks down as {0} {1}.",
+  "t": "La confiance de ses catalyseurs suivis se répartit ainsi : {0} {1}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "57c06452a416a7dc": {
+  "src": "Yes. Every primary source is U.S. Government or public domain: ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR, and GSRS/UNII. No license-encumbered source (DrugBank, ChEMBL, MedDRA) is included.",
+  "t": "Oui. Toutes les sources primaires proviennent du gouvernement américain ou du domaine public : ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR et GSRS/UNII. Aucune source soumise à licence (DrugBank, ChEMBL, MedDRA) n’est incluse.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "592221d6351ed897": {
+  "src": "— neighbouring record",
+  "t": "— fiche voisine",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5996b9af79ea6571": {
+  "src": "Tracked indications include {0}, {1}, {2}.",
+  "t": "Les indications suivies incluent {0}, {1}, {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5a07a7c0a797cf41": {
+  "src": "A precision linkage of ClinicalTrials.gov, openFDA, SEC EDGAR and GSRS/UNII to the drug asset and listed sponsor, with a forward catalyst calendar. {0} scope: active, industry-sponsored, Phase {1} trials in cardiometabolic, oncology and immunology. Every row carries a source URL.",
+  "t": "Une mise en relation précise de ClinicalTrials.gov, openFDA, SEC EDGAR et GSRS/UNII avec l’actif médicamenteux et le promoteur coté, avec un calendrier des catalyseurs à venir. Périmètre {0} : essais de phase {1} actifs et financés par l’industrie en cardiométabolisme, oncologie et immunologie. Chaque ligne comporte une URL source.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5a44c5ae7e08b880": {
+  "src": "tradeable-core assets",
+  "t": "actifs cœurs négociables",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b31d064a7205303": {
+  "src": "Condition(s)",
+  "t": "Pathologie(s)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b43bb8b8e28cacf": {
+  "src": "— sponsor",
+  "t": "— promoteur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b8d2481ae4f0b44": {
+  "src": "Part of the DataEngineered catalog →",
+  "t": "Fait partie du catalogue DataEngineered →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5b968bd2c47b3621": {
+  "src": "Freshness",
+  "t": "Fraîcheur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5c15987bce88b736": {
+  "src": "Secure card checkout via Stripe · delivered instantly after payment.{0} Need an invoice or crypto? <1>Contact us</1>.",
+  "t": "Paiement sécurisé par carte via Stripe · livraison immédiate après paiement.{0} Besoin d’une facture ou d’un paiement en crypto ? <1>Contactez-nous</1>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5c4d0577aec2befa": {
+  "src": "{0} forward catalysts tracked for {1} across {2} asset in Phase {3}, nearest {4} {5}. Not investment advice.",
+  "t": "{0} catalyseurs à venir suivis pour {1} sur {2} actif en phase {3}, le plus proche : {4} {5}. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5cca05a55d04b041": {
+  "src": "How do you guarantee the asset↔ticker link is right?",
+  "t": "Comment garantissez-vous que le lien actif↔ticker est correct ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5d7129570f6153da": {
+  "src": "All tracked catalysts",
+  "t": "Tous les catalyseurs suivis",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5d7589e4162eeefc": {
+  "src": "({0}) catalysts",
+  "t": "({0}) catalyseurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5d79f048fbb21ef1": {
+  "src": "Related sponsors and catalysts",
+  "t": "Promoteurs et catalyseurs associés",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5e23b5c6fe510349": {
+  "src": "{0} — Phase {1} catalyst ({2}) | CSA",
+  "t": "{0} — catalyseur de phase {1} ({2}) | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5f5cec3ecadefc2a": {
+  "src": "{0} — catalysts | CSA",
+  "t": "{0} — catalyseurs | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5f7537cf06ca663e": {
+  "src": "Trial",
+  "t": "Essai",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "5fbd847ec197eca7": {
+  "src": "CSA tracks {0} forward catalyst for {1} across {2} clinical-stage asset, spanning Phase {3}.",
+  "t": "CSA suit {0} catalyseur à venir pour {1} sur {2} actif en phase clinique, en phase {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "624ffeca84b22e4f": {
+  "src": "<0>Data, not investment advice.</0> CSA is information, not a recommendation to buy, sell, or hold any security. Estimated catalyst dates (e.g. protocol primary-completion dates) routinely slip and are graded by confidence — verify anything material against the source URL on each row before acting.",
+  "t": "<0>Des données, pas un conseil en investissement.</0> CSA est une information, et non une recommandation d’acheter, de vendre ou de conserver un titre. Les dates estimées des catalyseurs (par ex. les dates d’achèvement principal prévues au protocole) glissent régulièrement et sont notées selon leur niveau de confiance — vérifiez tout élément important à l’aide de l’URL source de chaque ligne avant d’agir.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6a0728af21ef7fd1": {
+  "src": "{0} is a clinical-stage drug asset sponsored by {1}, listed as {2}.",
+  "t": "{0} est un actif médicamenteux en phase clinique, dont le promoteur est {1}, coté sous {2}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6ae2dbf40356737c": {
+  "src": "{0} scope: active · industry-sponsored · Phase {1} · cardiometabolic, oncology, immunology — {2} trials → {3} resolved assets.",
+  "t": "Périmètre {0} : actifs · financés par l’industrie · phase {1} · cardiométabolisme, oncologie, immunologie — {2} essais → {3} actifs résolus.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b17414e003ce1f3": {
+  "src": "Data correction",
+  "t": "Correction de données",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b21fb791ac05170": {
+  "src": "About",
+  "t": "À propos",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6b8a8609772ba078": {
+  "src": "<0>CSA</0> › Catalyst directory",
+  "t": "<0>CSA</0> › Répertoire des catalyseurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "6eb02539c5742a18": {
+  "src": "catalysts",
+  "t": "catalyseurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "709d1b44458fef29": {
+  "src": "✓ Message sent",
+  "t": "✓ Message envoyé",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "70f8bb9a8a5393ef": {
+  "src": "Home",
+  "t": "Accueil",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "725ea0ce55f4f911": {
+  "src": "{0} → {1} (acquired) · comparator ≠ sponsor asset",
+  "t": "{0} → {1} (racheté) · comparateur ≠ actif du promoteur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "75c419c982cf5a3d": {
+  "src": "A handful of real upcoming catalysts from the dataset. The full snapshot carries <0>{1} forward events</0> across <2>{3} listed sponsors</2>, each with a confidence grade and a source URL to re-verify.",
+  "t": "Quelques catalyseurs à venir réels tirés du jeu de données. Le snapshot complet contient <0>{1} événements à venir</0> répartis sur <2>{3} promoteurs cotés</2>, chacun avec un niveau de confiance et une URL source pour revérifier.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "772a28018a913592": {
+  "src": "Trial &amp; sponsor",
+  "t": "Essai &amp; promoteur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7964f30f5c24c75d": {
+  "src": "What exactly is in the {0} snapshot?",
+  "t": "Que contient exactement le snapshot {0} ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7bd801c9f7d0814d": {
+  "src": "Clinical trials · FDA · SEC — one graph",
+  "t": "Essais cliniques · FDA · SEC — un seul graphe",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7c546245236b9996": {
+  "src": "CSA tracks {0} forward catalyst for it — the nearest is a {1} expected {2} ({3} precision, {4} confidence), tied to trial {5}.",
+  "t": "CSA suit {0} catalyseur à venir pour cet actif — le plus proche : {1}, prévu {2} (précision {3}, confiance {4}), lié à l’essai {5}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7caa34fe61caab91": {
+  "src": "Sponsor directory — {0} sponsors | CSA",
+  "t": "Répertoire des promoteurs — {0} promoteurs | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7e5204ba7f15f0a9": {
+  "src": "Need an API or enterprise terms? <0>Use the form.</0>",
+  "t": "Besoin d’une API ou de conditions Enterprise ? <0>Utilisez le formulaire.</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "7f28ca373b61e271": {
+  "src": "Codes, INNs, salts, brands, and combinations collapse to a canonical asset keyed by its FDA-registered active-moiety UNII set — authoritative, not fuzzy. A post-clustering guard makes it hold by construction.",
+  "t": "Codes, DCI, sels, marques et combinaisons sont regroupés en un actif canonique dont la clé est l’ensemble des UNII de fractions actives enregistrés auprès de la FDA — une référence faisant autorité, pas une correspondance approximative. Un contrôle post-regroupement le garantit par construction.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8027385809f6d729": {
+  "src": "Lead sponsor",
+  "t": "Promoteur principal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "80ecf9ef79405dc6": {
+  "src": "Sponsor directory ({0})",
+  "t": "Répertoire des promoteurs ({0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "82fa7d52c89df896": {
+  "src": "Confidence",
+  "t": "Confiance",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "83a3ddaba8ca2c7f": {
+  "src": "Forward catalyst calendar illustration",
+  "t": "Illustration du calendrier des catalyseurs à venir",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "84ec3e71d2c9d85a": {
+  "src": "Sitemap",
+  "t": "Plan du site",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "85922c938084193e": {
+  "src": "Verify at source →",
+  "t": "Vérifier à la source →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "88306943fea7e76f": {
+  "src": "Method",
+  "t": "Méthode",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "885a7dd6bc17be84": {
+  "src": "Sponsor pipeline · {0}",
+  "t": "Pipeline du promoteur · {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "88dfbfc29bf4b22e": {
+  "src": "Get the dataset",
+  "t": "Obtenir le jeu de données",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8addb891254ad8a1": {
+  "src": "Message *",
+  "t": "Message *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8b8d14c5371766df": {
+  "src": "Forward clinical-stage catalysts for listed sponsor {0}: {1} tracked catalysts across {2} assets.",
+  "t": "Catalyseurs à venir en phase clinique pour le promoteur coté {0} : {1} catalyseurs suivis sur {2} actifs.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8c315483fc8b7ee3": {
+  "src": "Active-moiety resolution",
+  "t": "Résolution par fraction active",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8c8804f040fc5b9b": {
+  "src": "API access, more coverage, an enterprise license, or an invoice — reach the desk at {0} using the form below.",
+  "t": "Accès API, couverture étendue, licence Enterprise ou facture — contactez-nous à {0} ou via le formulaire ci-dessous.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e072025366d8304": {
+  "src": "Refund policy",
+  "t": "Politique de remboursement",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e1f4d86e90cf2ec": {
+  "src": "Dual-channel catalysts",
+  "t": "Catalyseurs à double canal",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8e4f2b9b0924c8dd": {
+  "src": "{0} — Phase {1} catalyst | CSA",
+  "t": "{0} — catalyseur de phase {1} | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8ec945141fe9cb9b": {
+  "src": "Next catalyst",
+  "t": "Prochain catalyseur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "8f11118b11ad18db": {
+  "src": "forward catalysts",
+  "t": "catalyseurs à venir",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "91966d428cc2d870": {
+  "src": "{0} listed sponsors",
+  "t": "{0} promoteurs cotés",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "92651a54415dc4fb": {
+  "src": "One-time download · edition {0}",
+  "t": "Téléchargement à paiement unique · édition {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "94c8aa10824b2a66": {
+  "src": "Catalyst calendar",
+  "t": "Calendrier des catalyseurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "94f6959b04921db8": {
+  "src": "High-precision dataset linking ClinicalTrials.gov, openFDA, and SEC EDGAR to the drug asset and listed sponsor, with a forward catalyst calendar.",
+  "t": "Jeu de données de haute précision reliant ClinicalTrials.gov, openFDA et SEC EDGAR à l’actif médicamenteux et au promoteur coté, avec un calendrier des catalyseurs.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "98ae4705006ca1d8": {
+  "src": "More {0} catalysts",
+  "t": "Autres catalyseurs de {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "995ad20f23267d05": {
+  "src": "How is precision guaranteed?",
+  "t": "Comment la précision est-elle garantie ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "99d50097134447b1": {
+  "src": "{0} for {1} expected {2}, Phase {3}, sponsored by {4}, {5}… Not investment advice.",
+  "t": "{0} pour {1} prévu {2}, phase {3}, promoteur {4}, {5}… Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9c9882f88b772b14": {
+  "src": "Source: {0}",
+  "t": "Source : {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9f5380b1d5512120": {
+  "src": "Nearest catalyst",
+  "t": "Catalyseur le plus proche",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "9f75bb7d3d6ae771": {
+  "src": "<0>{1}</0> · The Calendar (sample)",
+  "t": "<0>{1}</0> · Le calendrier (échantillon)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a0d9bbad5f932ea5": {
+  "src": "Pricing",
+  "t": "Tarifs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a36ef8aba22905e2": {
+  "src": "Light",
+  "t": "Clair",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a41b99101f956613": {
+  "src": "The catalyst calendar,{0}resolved to the <1>ticker</1>.",
+  "t": "Le calendrier des catalyseurs,{0}résolu jusqu’au <1>ticker</1>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a5199a9db3a0e0cc": {
+  "src": "Trial sponsors resolve to the current tradable owner — through acquisitions, to the primary US listing, not the OTC grey line. Comparator and background drugs are flagged, never misattributed.",
+  "t": "Les promoteurs d’essais sont rattachés à leur propriétaire négociable actuel — à travers les acquisitions, jusqu’à la cotation principale aux États-Unis, et non la ligne grise OTC. Les médicaments comparateurs et de fond sont signalés, jamais attribués à tort.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a55a275aa676930d": {
+  "src": "Terms",
+  "t": "Conditions",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a5f3a5b4e7fd1948": {
+  "src": "{0} — ({1}) catalysts &amp; pipeline | CSA",
+  "t": "{0} — ({1}) catalyseurs &amp; pipeline | CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a67fd1cd345443b5": {
+  "src": "They're graded. Company-disclosed exact dates (from {0}-Ks) rank above protocol primary-completion estimates, which <1>routinely slip</1> — so they carry a lower confidence and are never presented as commitments. Every row links to its {2} so you can re-verify.",
+  "t": "Elles sont notées. Les dates exactes publiées par les entreprises (issues des {0}-K) priment sur les estimations d’achèvement principal prévues au protocole, qui <1>glissent régulièrement</1> — elles portent donc une confiance plus faible et ne sont jamais présentées comme des engagements. Chaque ligne renvoie à sa {2} pour que vous puissiez revérifier.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a6a5e887986166fd": {
+  "src": "Assets are keyed by their FDA-registered <0>active-moiety UNII set</0>, not fuzzy name matching, and a post-clustering guard means <1>no asset spans two different active moieties</1> — audited to <2>{3} cross-molecule merges</2> on the full run. Uncertain pairs are held for review rather than merged. Precision is the guarantee that matters; a wrong link is the costly error.",
+  "t": "Les actifs sont identifiés par leur <0>ensemble d’UNII de fractions actives</0> enregistré auprès de la FDA, et non par une correspondance approximative des noms, et un contrôle post-regroupement garantit qu’<1>aucun actif ne couvre deux fractions actives différentes</1> — audité à <2>{3} fusions inter-molécules</2> sur l’exécution complète. Les paires incertaines sont mises de côté pour examen plutôt que fusionnées. La précision est la garantie qui compte ; un lien erroné est l’erreur coûteuse.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a6d2d71d5a095d39": {
+  "src": "{0} forward catalyst tracked for {1} across {2} asset in Phase {3}, nearest {4} {5}. Not investment advice.",
+  "t": "{0} catalyseur à venir suivi pour {1} sur {2} actif en phase {3}, le plus proche : {4} {5}. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a7450cf7cbb9f8f1": {
+  "src": "Send →",
+  "t": "Envoyer →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a77ac51763228679": {
+  "src": "Clinical-stage assets",
+  "t": "Actifs en phase clinique",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "a8847908ccb253cb": {
+  "src": "<0>CSA</0> › Sponsor directory",
+  "t": "<0>CSA</0> › Répertoire des promoteurs",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aa24236497c17d47": {
+  "src": "The nearest is a {0} expected {1} ({2} precision).",
+  "t": "Le plus proche : {0}, prévu {1} (précision {2}).",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ad8919ace091b140": {
+  "src": "Event",
+  "t": "Événement",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "adab5090ac6a1b7b": {
+  "src": "Calendar",
+  "t": "Calendrier",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "add11b823a730a53": {
+  "src": "Phase {0} catalyst ({1})",
+  "t": "Catalyseur de phase {0} ({1})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ae1ef01432946b89": {
+  "src": "Dark",
+  "t": "Sombre",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "aeee596b682c7df0": {
+  "src": "Topic *",
+  "t": "Sujet *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b08ae37ed0218a85": {
+  "src": "Snapshot",
+  "t": "Snapshot",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b1204803649836e9": {
+  "src": "CSA — Clinical-Stage Asset Intelligence · <0>Full snapshot ({1})</0> · <2>csa.dataengineered.io</2>",
+  "t": "CSA — Clinical-Stage Asset Intelligence · <0>Snapshot complet ({1})</0> · <2>csa.dataengineered.io</2>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b2d83a33d0162c8d": {
+  "src": "{0} forward catalysts tracked for {1} across {2} assets in Phase {3}, Phase {4}, nearest {5} {6}. Not investment advice.",
+  "t": "{0} catalyseurs à venir suivis pour {1} sur {2} actifs en phase {3}, phase {4}, le plus proche : {5} {6}. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b35b15e28c267da0": {
+  "src": "Page not found — CSA",
+  "t": "Page introuvable — CSA",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "b56ade7d5261d504": {
+  "src": "CSA tracks {0} forward catalysts for {1} across {2} clinical-stage asset, spanning Phase {3}.",
+  "t": "CSA suit {0} catalyseurs à venir pour {1} sur {2} actif en phase clinique, en phase {3}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bae7d5be70820ed5": {
+  "src": "Status",
+  "t": "Statut",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "baf546d85e54f5b7": {
+  "src": "{0} forward catalysts tracked for {1} across {2} assets in Phase {3}, nearest {4} {5}. Not investment advice.",
+  "t": "{0} catalyseurs à venir suivis pour {1} sur {2} actifs en phase {3}, le plus proche : {4} {5}. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bbbf6dc41206dae5": {
+  "src": "Two precision-first channels: <0>SEC {1}-K</0> disclosure text (PDUFA, AdComm, announced readouts) and <2>ClinicalTrials.gov</2> protocol readouts. Every row carries its source and trial id.",
+  "t": "Deux canaux axés sur la précision : le texte des publications <0>SEC {1}-K</0> (PDUFA, AdComm, résultats annoncés) et les résultats prévus aux protocoles de <2>ClinicalTrials.gov</2>. Chaque ligne indique sa source et l’identifiant de l’essai.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bc3023b36063a768": {
+  "src": "Page not found",
+  "t": "Page introuvable",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bd1e3c197f265acf": {
+  "src": "{0} — clinical-stage catalysts",
+  "t": "{0} — catalyseurs en phase clinique",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bddd7175327591f8": {
+  "src": "Informational data derived from public trial registries. Not investment advice.",
+  "t": "Données informatives issues de registres publics d’essais cliniques. Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bf0611eb3f8dd007": {
+  "src": "Get the data",
+  "t": "Obtenir les données",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "bf34c556e92e2f25": {
+  "src": "CSA<0>Clinical-Stage Asset Intelligence</0>",
+  "t": "CSA<0>Clinical-Stage Asset Intelligence</0>",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c29dcfd0140345ac": {
+  "src": "Clinical-stage drug-asset and sponsor intelligence with a forward catalyst calendar, built on public-domain sources.",
+  "t": "Informations sur les actifs médicamenteux en phase clinique et leurs promoteurs, avec un calendrier des catalyseurs à venir, construites sur des sources du domaine public.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c2c0a8a26150fed6": {
+  "src": "Yes. Every primary source is U.S. Government / public domain: {0}, {1}, {2}, {3}. No license-encumbered source (DrugBank, ChEMBL, MedDRA) is included. Your commercial license ships inside the archive.",
+  "t": "Oui. Toutes les sources primaires proviennent du gouvernement américain / du domaine public : {0}, {1}, {2}, {3}. Aucune source soumise à licence (DrugBank, ChEMBL, MedDRA) n’est incluse. Votre licence commerciale est fournie dans l’archive.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c2e1ad3ac10fa002": {
+  "src": "Name / firm *",
+  "t": "Nom / société *",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c4156dd0d0260824": {
+  "src": "This is one row of the free CSA sample. The full snapshot carries <0>{1} forward catalysts</0> across <2>{3} listed sponsors</2>.",
+  "t": "Ceci est une ligne de l’échantillon gratuit de CSA. Le snapshot complet contient <0>{1} catalyseurs à venir</0> répartis sur <2>{3} promoteurs cotés</2>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c47ebc992fac7c67": {
+  "src": "Real rows from {0}",
+  "t": "Lignes réelles de {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c605fa14d66f968a": {
+  "src": "The page you're looking for doesn't exist or may have moved.",
+  "t": "La page que vous cherchez n’existe pas ou a peut-être été déplacée.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c6482363313dd5ed": {
+  "src": "catalyst",
+  "t": "catalyseur",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c77b77835df6f76c": {
+  "src": "One page per tracked forward catalyst. Each record carries the trial phase, event type, expected date, date confidence, NCT id and the source it was derived from.",
+  "t": "Une page par catalyseur à venir suivi. Chaque fiche indique la phase de l’essai, le type d’événement, la date prévue, la confiance de la date, l’identifiant NCT et la source dont elle est issue.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c7f2e7f2fdb7b4cb": {
+  "src": "Get the Snapshot",
+  "t": "Obtenir le Snapshot",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c80cdfbbf12e5458": {
+  "src": "It appears across {0} tracked trials in the CSA sample.",
+  "t": "Il apparaît dans {0} essais suivis de l’échantillon CSA.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c94bfe0eda335d60": {
+  "src": "<0>{1}</0> · The Instrument",
+  "t": "<0>{1}</0> · L’instrument",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "c97c4c218a0b66b2": {
+  "src": "{0} for {1} expected {2}, Phase {3}, sponsored by {4}… Not investment advice.",
+  "t": "{0} pour {1} prévu {2}, phase {3}, promoteur {4}… Pas un conseil en investissement.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cabb7597720e4ebd": {
+  "src": "Subscribers get the <0>delta feed</0> too — {1} (a slipped date), {2}, {3}, {4} — the change report is the recurring product.",
+  "t": "Les abonnés reçoivent aussi le <0>flux delta</0> — {1} (une date décalée), {2}, {3}, {4} — le rapport de modifications est le produit récurrent.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cbad8a45ed72ccc1": {
+  "src": "API / Enterprise",
+  "t": "API / Enterprise",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cc5a9c1fcdf23ae5": {
+  "src": "Assets are keyed by their FDA-registered active-moiety UNII set, not fuzzy name matching. A post-clustering guard makes it hold by construction: no resolved asset spans two different active moieties, audited to zero cross-molecule merges on the full run. Uncertain pairs are held for review rather than merged.",
+  "t": "Les actifs sont identifiés par leur ensemble d’UNII de fractions actives enregistré auprès de la FDA, et non par une correspondance approximative des noms. Un contrôle post-regroupement le garantit par construction : aucun actif résolu ne couvre deux fractions actives différentes, audité à zéro fusion inter-molécules sur l’exécution complète. Les paires incertaines sont mises de côté pour examen plutôt que fusionnées.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cca67bfe55e374ce": {
+  "src": "alex@examplecap.com",
+  "t": "alex@examplecap.com",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ce95608238dc1c69": {
+  "src": "— Phase {0}",
+  "t": "— Phase {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cede83a6514cbed7": {
+  "src": "Kick the tires first — explore the <0>free {1}-catalyst sample</0> on <2>Kaggle</2> or <3>Hugging Face</3>.",
+  "t": "Testez d’abord — explorez l’<0>échantillon gratuit de {1} catalyseurs</0> sur <2>Kaggle</2> ou <3>Hugging Face</3>.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "cf01481f626d5127": {
+  "src": "Privacy",
+  "t": "Confidentialité",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d0f12a3eb8178e23": {
+  "src": "Forward clinical/regulatory catalyst for the clinical-stage asset {0}, linked to listed sponsor {1}: {2} on {3} from trial {4}.",
+  "t": "Catalyseur clinique/réglementaire à venir pour l’actif en phase clinique {0}, lié au promoteur coté {1} : {2} le {3}, issu de l’essai {4}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d412c2577c7f5f0f": {
+  "src": "Alex Chen, Example Capital",
+  "t": "Alex Chen, Example Capital",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d4486b56b0428c84": {
+  "src": "<0>●</0> company-disclosed ({1}-K)",
+  "t": "<0>●</0> publié par l’entreprise ({1}-K)",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d44db0c635eed4c5": {
+  "src": "All tracked catalysts for {0}",
+  "t": "Tous les catalyseurs suivis pour {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "d7974715a65f7ed8": {
+  "src": "One page per listed sponsor, with the forward catalysts tracked against it. Every asset-to-ticker linkage is verified against the trial record before it is published.",
+  "t": "Une page par promoteur coté, avec les catalyseurs à venir qui lui sont associés. Chaque lien actif-ticker est vérifié par rapport à la fiche de l’essai avant publication.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "da589664ba80ca61": {
+  "src": "See the calendar",
+  "t": "Voir le calendrier",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "da6ed78c91490fc8": {
+  "src": "Thanks — we'll reply within one business day.",
+  "t": "Merci — nous vous répondrons sous un jour ouvré.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ddcfd188fad6a6f4": {
+  "src": "{0} tracked catalysts",
+  "t": "{0} catalyseurs suivis",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "df74d13b11269a26": {
+  "src": "Snapshot question / sample",
+  "t": "Question sur le snapshot / échantillon",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "df7ab5b296cc4d18": {
+  "src": "The forward catalyst calendar, resolved to the ticker. High-precision, redistribution-clean.",
+  "t": "Le calendrier des catalyseurs à venir, résolu jusqu’au ticker. Haute précision, redistribution sans restriction.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "dfa29445a404d9d5": {
+  "src": "Active-moiety keyed, <0>{1} cross-molecule merges</0>; public-domain sources, redistribution-clean license.",
+  "t": "Clé par fraction active, <0>{1} fusions inter-molécules</0> ; sources du domaine public, licence autorisant la redistribution.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e09e2dd59f72dd48": {
+  "src": "<0>{1}</0> · How It Links",
+  "t": "<0>{1}</0> · Comment les liens sont établis",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e28ea507ea1d2edd": {
+  "src": "Catalyst directory ({0})",
+  "t": "Répertoire des catalyseurs ({0})",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e5150560ca9a2149": {
+  "src": "Every tracked catalyst and every listed sponsor has its own source-linked page.",
+  "t": "Chaque catalyseur suivi et chaque promoteur coté dispose de sa propre page avec liens sources.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e6e3fc719fe17f94": {
+  "src": "Buy Now · Instant Download · <0>{1}</0> →",
+  "t": "Acheter maintenant · Téléchargement immédiat · <0>{1}</0> →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "e7662c38d33d211f": {
+  "src": "Phase {0}",
+  "t": "Phase {0}",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eb19fa3893f3fac2": {
+  "src": "CSA — Clinical-Stage Asset Intelligence | Catalyst Calendar",
+  "t": "CSA — Clinical-Stage Asset Intelligence | Calendrier",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "eb9a4bc1c0c153e4": {
+  "src": "Date",
+  "t": "Date",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ec5f09c10fea8356": {
+  "src": "<0>No.</0> CSA is a dataset — information, not advice or a recommendation. See the notice above and the license inside the archive.",
+  "t": "<0>Non.</0> CSA est un jeu de données — une information, pas un conseil ni une recommandation. Voir l’avertissement ci-dessus et la licence incluse dans l’archive.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ef02a6c7c0039320": {
+  "src": "{0} ({1}) forward catalyst record",
+  "t": "{0} ({1}) — fiche du catalyseur à venir",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ef5ca267e921b709": {
+  "src": "<0>{1}</0> · Access",
+  "t": "<0>{1}</0> · Accès",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "ef8ca9226888e9b8": {
+  "src": "{0} tracked per refresh",
+  "t": "{0} suivis à chaque mise à jour",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f05da85d4f71d751": {
+  "src": "Is this investment advice?",
+  "t": "S’agit-il d’un conseil en investissement ?",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f186a17b9fe2cefa": {
+  "src": "No. CSA is information, not investment advice and not a recommendation. Estimated catalyst dates such as protocol primary-completion dates routinely slip and are graded by confidence. Verify anything material against the source URL on each row.",
+  "t": "Non. CSA est une information, ni un conseil en investissement ni une recommandation. Les dates estimées des catalyseurs, comme les dates d’achèvement principal prévues au protocole, glissent régulièrement et sont notées selon leur niveau de confiance. Vérifiez tout élément important à l’aide de l’URL source de chaque ligne.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f267e35a3797ddb3": {
+  "src": "Get the full dataset — {0} →",
+  "t": "Obtenir le jeu de données complet — {0} →",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f42b8dcf2a15f3be": {
+  "src": "listed sponsors",
+  "t": "promoteurs cotés",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f5cb65dec73dff71": {
+  "src": "{0} covers active, industry-sponsored, Phase {1} interventional trials in cardiometabolic, oncology and immunology: {2} trials resolved to {3} assets, {4} of them the sponsor's own asset linked to a listed ticker, plus {5} forward catalysts across {6} listed sponsors. Delivered as CSV and JSON with a scope manifest.",
+  "t": "{0} couvre les essais interventionnels de phase {1} actifs et financés par l’industrie en cardiométabolisme, oncologie et immunologie : {2} essais résolus en {3} actifs, dont {4} actifs propres au promoteur liés à un ticker coté, plus {5} catalyseurs à venir répartis sur {6} promoteurs cotés. Livré en CSV et JSON avec un manifeste de périmètre.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f5f52c198cecd779": {
+  "src": "The moat",
+  "t": "L’avantage défendable",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f6371a4980dacd0f": {
+  "src": "Phase",
+  "t": "Phase",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f64cf298625ae14b": {
+  "src": "<0>Data, not investment advice.</0> CSA is information, not a recommendation to buy, sell or hold any security. Estimated catalyst dates routinely slip and are graded by confidence — verify against the source link before acting.",
+  "t": "<0>Des données, pas un conseil en investissement.</0> CSA est une information, et non une recommandation d’acheter, de vendre ou de conserver un titre. Les dates estimées des catalyseurs glissent régulièrement et sont notées selon leur niveau de confiance — vérifiez-les à l’aide du lien source avant d’agir.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f7b19e7ba2dbbded": {
+  "src": "Active, industry-sponsored, Phase {0} clinical-stage assets across cardiometabolic, oncology and immunology, linked asset to trial to sponsor to listed ticker to FDA, with a forward catalyst calendar. CSV + JSON.",
+  "t": "Actifs en phase clinique de phase {0}, actifs et financés par l’industrie, en cardiométabolisme, oncologie et immunologie, reliés de l’actif à l’essai, au promoteur, au ticker coté et à la FDA, avec un calendrier des catalyseurs à venir. CSV + JSON.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f840de1259fae210": {
+  "src": "Forward Catalyst Calendar",
+  "t": "Calendrier des catalyseurs à venir",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f8e5db798e637a59": {
+  "src": "Clinical-Stage Asset Intelligence",
+  "t": "Clinical-Stage Asset Intelligence",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f9c8beb3eb4202b4": {
+  "src": "Asset identity",
+  "t": "Identité de l’actif",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ },
+ "f9e83cfe6e427a2d": {
+  "src": "Tracked indications include {0}.",
+  "t": "Les indications suivies incluent {0}.",
+  "by": "claude-opus-5",
+  "at": "2026-09-17"
+ }
+}
