@@ -41,6 +41,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "0be43673f60e54d9": {
+  "src": "CSA stitches <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2>, and FDA substance identity into one <3>asset ↔ sponsor ↔ ticker</3> graph — with a forward catalyst calendar. Anyone can pull one registry; the <4>join</4> is the product.",
+  "t": "CSA relie <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2> et l’identité des substances de la FDA en un seul graphe <3>actif ↔ promoteur ↔ ticker</3> — avec un calendrier des catalyseurs à venir. N’importe qui peut interroger un registre ; la <4>jointure</4> est le produit."
+ },
  "0bfc71a1a50a66b5": {
   "src": "One-time snapshot · CSV + JSON · public-domain sources · edition {0}",
   "t": "Snapshot à paiement unique · CSV + JSON · sources du domaine public · édition {0}",
@@ -202,6 +206,10 @@
   "t": "{0} · Phase {1}",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "2eb56be3c2d93cda": {
+  "src": "Sources",
+  "t": "Sources"
  },
  "30a4f292052dd3b5": {
   "src": "<0>{1}</0> · FAQ",

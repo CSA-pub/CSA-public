@@ -22,8 +22,8 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
   moiety-consistency guard — audited to **0 cross-molecule merges**; uncertain
   pairs held for review, never auto-merged.
 - Free 150-catalyst sample published on
-  [Kaggle](https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample)
-  (with a [starter notebook](https://www.kaggle.com/code/ahtiticheamine/csa-clinical-stage-asset-intelligence-starter))
+  [Kaggle](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample)
+  (with a [starter notebook](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter))
   and [Hugging Face](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample).
 
 Full dataset & updates: [csa.dataengineered.io](https://csa.dataengineered.io)

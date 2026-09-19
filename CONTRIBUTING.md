@@ -23,7 +23,7 @@ welcome via pull request.
 
 ### 💡 Request a field, area, or phase
 Want a column, therapeutic area, or trial phase the v1 snapshot doesn't cover yet?
-Open an issue describing the use case — it helps prioritize the monthly expansion
+Open an issue describing the use case — it helps prioritize the planned expansion
 and informs custom builds.
 
 ## Correction or removal requests
