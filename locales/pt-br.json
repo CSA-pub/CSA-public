@@ -41,6 +41,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "0be43673f60e54d9": {
+  "src": "CSA stitches <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2>, and FDA substance identity into one <3>asset ↔ sponsor ↔ ticker</3> graph — with a forward catalyst calendar. Anyone can pull one registry; the <4>join</4> is the product.",
+  "t": "O CSA une <0>ClinicalTrials.gov</0>, <1>openFDA</1>, <2>SEC EDGAR</2> e a identidade de substâncias da FDA em um único grafo <3>ativo ↔ patrocinador ↔ ticker</3>, com um calendário de catalisadores futuros. Qualquer um pode extrair dados de um registro; o <4>cruzamento</4> é o produto."
+ },
  "0bfc71a1a50a66b5": {
   "src": "One-time snapshot · CSV + JSON · public-domain sources · edition {0}",
   "t": "Snapshot com pagamento único · CSV + JSON · fontes de domínio público · edição {0}",
@@ -203,6 +207,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "2eb56be3c2d93cda": {
+  "src": "Sources",
+  "t": "Fontes"
+ },
  "30a4f292052dd3b5": {
   "src": "<0>{1}</0> · FAQ",
   "t": "<0>{1}</0> · Perguntas frequentes",
@@ -310,6 +318,10 @@
   "t": "CSA — Clinical-Stage Asset Intelligence",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "45f203dc94bbca81": {
+  "src": "<0>{1}</0> one-time · for biotech funds, event-driven screening and landscape intelligence · <2>free {3}-catalyst sample ↗</2>",
+  "t": "<0>{1}</0> pagamento único · para fundos de biotecnologia, triagem orientada a eventos e inteligência competitiva · <2>amostra gratuita de {3} catalisadores ↗</2>"
  },
  "4603b861521d35ac": {
   "src": "Every listed sponsor tracked by CSA, each with its forward clinical-stage catalysts and pipeline. Not investment advice.",

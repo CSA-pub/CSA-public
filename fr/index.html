@@ -117,14 +117,14 @@
   "license": "https://csa.dataengineered.io/#pricing",
   "isAccessibleForFree": false,
   "sameAs": [
-    "https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample",
+    "https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample",
     "https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample"
   ],
   "distribution": [
     {
       "@type": "DataDownload",
       "encodingFormat": "text/csv",
-      "contentUrl": "https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample"
+      "contentUrl": "https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample"
     },
     {
       "@type": "DataDownload",
@@ -392,12 +392,13 @@
 <div class="eyebrow">Essais cliniques · FDA · SEC — un seul graphe</div>
 <h1 style="margin-top:14px;">Le calendrier des catalyseurs,<br/>résolu jusqu’au <span class="accent">ticker</span>.</h1>
 <p class="hero-sub">
-            CSA relie <strong>ClinicalTrials.gov</strong>, <strong>openFDA</strong>, <strong>SEC EDGAR</strong> et l’identité des substances de la FDA en un seul graphe <strong>actif ↔ promoteur ↔ ticker</strong> — avec un calendrier des catalyseurs à venir. N’importe qui peut interroger un registre ; la <strong>jointure</strong> et la <strong>fraîcheur</strong> sont le produit.
+            CSA relie <strong>ClinicalTrials.gov</strong>, <strong>openFDA</strong>, <strong>SEC EDGAR</strong> et l’identité des substances de la FDA en un seul graphe <strong>actif ↔ promoteur ↔ ticker</strong> — avec un calendrier des catalyseurs à venir. N’importe qui peut interroger un registre ; la <strong>jointure</strong> est le produit.
           </p>
 <div class="cta-group">
 <a class="btn btn-primary" href="#pricing"><span>Obtenir le Snapshot</span><span>↗</span></a>
 <a class="btn btn-outline" href="#calendar"><span>Voir le calendrier</span></a>
 </div>
+<p style="margin-top:16px; font-size:.95rem; color:var(--ink-2);"><strong style="color:var(--ink)">$499</strong> en paiement unique · pour les fonds biotech, le screening événementiel et la veille concurrentielle · <a href="https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">échantillon gratuit de 150 catalyseurs ↗</a></p>
 <p class="hero-fine">Snapshot à paiement unique · CSV + JSON · sources du domaine public · édition 2026.07</p>
 </div>
 <div aria-label="Illustration du calendrier des catalyseurs à venir" class="console">
@@ -436,7 +437,6 @@
 <div class="tl-legend">
 <span><b>●</b> publié par l’entreprise (8-K)</span>
 <span><b>○</b> résultats selon le protocole (est.)</span>
-<span><span translate="no">MOVED · ADDED · FIRED</span> suivis à chaque mise à jour</span>
 </div>
 </div>
 </div>
@@ -467,7 +467,7 @@
 <div class="proof"><b translate="no">Karuna</b> → <span translate="no">BMY</span> (racheté) · comparateur ≠ actif du promoteur</div>
 </div>
 <div class="card">
-<div class="tag">Fraîcheur</div>
+<div class="tag">Sources</div>
 <h3>Catalyseurs à double canal</h3>
 <p>Deux canaux axés sur la précision : le texte des publications <b>SEC 8-K</b> (PDUFA, AdComm, résultats annoncés) et les résultats prévus aux protocoles de <b>ClinicalTrials.gov</b>. Chaque ligne indique sa source et l’identifiant de l’essai.</p>
 <div class="proof"><b translate="no">PDUFA</b> + <b translate="no">READOUT</b> · <code>source</code> + <code>nct_id</code> par ligne</div>
@@ -484,9 +484,6 @@
 <table>
 <thead><tr><th>Date</th><th>Ticker</th><th>Actif</th><th>Événement</th><th>Fenêtre</th><th>Confiance</th></tr></thead>
 <tbody>
-<tr><td class="mono" translate="no">2026-07-25</td><td><span class="tk" translate="no">BMY</span></td><td translate="no">deucravacitinib</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Jul 25, 2026</td><td class="conf" translate="no">medium</td></tr>
-<tr><td class="mono" translate="no">2026-07-27</td><td><span class="tk" translate="no">REGN</span></td><td translate="no">fianlimab</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Jul 27, 2026</td><td class="conf" translate="no">medium</td></tr>
-<tr><td class="mono" translate="no">2026-07-31</td><td><span class="tk" translate="no">JAZZ</span></td><td translate="no">zanidatamab</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Jul 31, 2026</td><td class="conf" translate="no">medium</td></tr>
 <tr><td class="mono" translate="no">2026-09-30</td><td><span class="tk" translate="no">AZN</span></td><td translate="no">datopotamab deruxtecan</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Sep 30, 2026</td><td class="conf" translate="no">medium</td></tr>
 <tr><td class="mono" translate="no">2026-11-30</td><td><span class="tk" translate="no">NAMS</span></td><td translate="no">obicetrapib</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Nov 2026</td><td class="conf" translate="no">medium</td></tr>
 <tr><td class="mono" translate="no">2026-12-21</td><td><span class="tk" translate="no">PFE</span></td><td translate="no">ritlecitinib</td><td><span class="pill readout" translate="no">Readout</span></td><td class="mono" translate="no">Dec 21, 2026</td><td class="conf" translate="no">medium</td></tr>
@@ -495,9 +492,8 @@
 </tbody>
 </table>
 </div>
-<p class="hero-fine" style="margin-top:16px;">Les abonnés reçoivent aussi le <b>flux delta</b> — <span translate="no">MOVED</span> (une date décalée), <span translate="no">ADDED</span>, <span translate="no">FIRED</span>, <span translate="no">REMOVED</span> — le rapport de modifications est le produit récurrent.</p>
 <p style="text-align:center; margin-top:24px; font-size:.92rem; color:var(--ink-2);">
-        Testez d’abord — explorez l’<b>échantillon gratuit de 150 catalyseurs</b> sur <a href="https://www.kaggle.com/datasets/ahtiticheamine/csa-clinical-stage-asset-intelligence-sample" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">Kaggle</a> ou <a href="https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">Hugging Face</a>.
+        Testez d’abord — explorez l’<b>échantillon gratuit de 150 catalyseurs</b> sur <a href="https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">Kaggle</a> ou <a href="https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample" rel="noopener" style="color:var(--accent); text-decoration:underline; font-weight:600;" target="_blank">Hugging Face</a>.
       </p>
 <!-- BEGIN:hub-browse -->
 <p style="color:var(--ink-2); max-width:60ch; margin:26px 0 14px; font-size:.95rem;">Chaque catalyseur suivi et chaque promoteur coté dispose de sa propre page avec liens sources.</p>
