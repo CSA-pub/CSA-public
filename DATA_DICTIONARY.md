@@ -1,6 +1,6 @@
 # CSA — Data Dictionary
 
-Field reference for CSA (Clinical-Stage Asset Intelligence), snapshot `2026.07`.
+Field reference for CSA (Clinical-Stage Asset Intelligence), snapshot `2026.09`.
 The free sample (`samples/`) uses the columns below. The full dataset ships the
 same fields in CSV and JSON, plus a `regulatory_events` table and a scope
 manifest.
@@ -60,7 +60,7 @@ FDA regulatory events matched to the resolved assets: `asset`,
 3. **Sponsor → listed ticker.** Lead sponsors are resolved through acquisitions to the primary US listing.
 4. **Dual-channel catalysts.** `sec_8k` — dates parsed from SEC 8-K text; `clinicaltrials` — active late-phase protocol primary-completion dates. Standard-of-care backbone agents in combination arms are excluded so a catalyst is attributed to the sponsor's own asset. Each row carries `confidence` and `date_precision`.
 
-**Update frequency: monthly** (snapshot `2026.07`). A count-claim gate asserts the corpus counts against the shopfront on every build, so advertised numbers and shipped data can't silently diverge.
+**Update frequency: monthly** (snapshot `2026.09`). A count-claim gate asserts the corpus counts against the shopfront on every build, so advertised numbers and shipped data can't silently diverge.
 
 ## Notes
 

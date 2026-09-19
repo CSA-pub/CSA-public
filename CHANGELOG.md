@@ -6,6 +6,23 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## 2026.09 — 2026-09-19
+
+- First refresh since 2026.07 (the August and September runs failed on an SEC EDGAR
+  user-agent block, fixed 2026-09-15).
+- **Precision correction.** 2026.07 contained wrong sponsor→ticker links: a fuzzy
+  name-matching fallback linked non-listed sponsors to unrelated issuers (e.g. Dana-Farber
+  Cancer Institute → DANA Inc), and trial readouts could inherit the ticker of another
+  company running a different trial of the same drug. Fuzzy matching is removed (verified
+  subsidiaries are curated aliases) and every readout now carries its own trial sponsor's
+  ticker, or NULL when that sponsor is not listed. Audited: 0 readouts attributed to a
+  non-sponsor ticker.
+- **2,221** forward catalysts, **955** of them linked to **124** listed sponsors (2026.07
+  reported 2,103 across 139 sponsors, a figure that included rows with no ticker and the
+  wrong links above); **1,890** resolved assets; **597** tradeable core; **2,331** trials.
+- Free sample rebuilt: 150 nearest-term ticker-linked catalysts from 2026-09-27,
+  48 sponsors, 107 assets.
+
 ## 2026.07 — 2026-07-19
 
 - Initial public snapshot.

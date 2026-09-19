@@ -11,6 +11,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "05706360ea467452": {
+  "src": "<0>{1} forward catalysts</0> ({2} linked to the trial sponsor's own ticker) with confidence grade + source URL per row.",
+  "t": "<0>{1} bevorstehende Katalysatoren</0> ({2} mit dem eigenen Ticker des Studiensponsors verknüpft) mit Konfidenzstufe + Quell-URL pro Zeile."
+ },
  "05f2b7acde01d330": {
   "src": "{0} for {1} expected {2}, Phase {3}, sponsored by {4}, {5} confidence. Not investment advice.",
   "t": "{0} für {1}, erwartet {2}, Phase {3}, Sponsor {4}, Konfidenz {5}. Keine Anlageberatung.",
@@ -34,6 +38,10 @@
   "t": "Laut Offenlegung",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "0ae3598327eca192": {
+  "src": "Active, industry-sponsored, Phase {0} interventional trials in cardiometabolic, oncology and immunology: <1>{2} trials</1> resolved to <3>{4} assets</3>, <5>{6}</5> of them the sponsor's own asset linked to a listed ticker, plus <7>{8} forward catalysts</7>, <9>{10}</9> of them linked to <11>{12} listed sponsors</11>. CSV + JSON with a scope manifest. Phase {13} and more areas are the roadmap.",
+  "t": "Aktive, von der Industrie gesponserte interventionelle Phase-{0}-Studien in den Bereichen Kardiometabolik, Onkologie und Immunologie: <1>{2} Studien</1>, aufgelöst zu <3>{4} Assets</3>, davon <5>{6}</5> eigene Assets des Sponsors mit Verknüpfung zu einem börsennotierten Ticker, dazu <7>{8} bevorstehende Katalysatoren</7>, davon <9>{10}</9> mit Verknüpfung zu <11>{12} börsennotierten Sponsoren</11>. CSV + JSON mit Scope-Manifest. Phase {13} und weitere Bereiche stehen auf der Roadmap."
  },
  "0b941ea96a6f2ce8": {
   "src": "Expected date",
@@ -253,6 +261,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "3da4f68b55cf5d03": {
+  "src": "A handful of real upcoming catalysts from the dataset. The full snapshot carries <0>{1} forward events</0>, <2>{3}</2> of them linked to <4>{5} listed sponsors</4>, each with a confidence grade and a source URL to re-verify.",
+  "t": "Eine Handvoll echter bevorstehender Katalysatoren aus dem Datensatz. Der vollständige Snapshot enthält <0>{1} bevorstehende Ereignisse</0>, davon <2>{3}</2> mit Verknüpfung zu <4>{5} börsennotierten Sponsoren</4>, jeweils mit Konfidenzstufe und Quell-URL zur erneuten Prüfung."
+ },
  "3e90e4cbf473c861": {
   "src": "Ownership",
   "t": "Eigentümer",
@@ -436,6 +448,10 @@
   "t": "Ja. Jede Primärquelle stammt von der US-Regierung oder ist gemeinfrei: ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR und GSRS/UNII. Keine lizenzbelastete Quelle (DrugBank, ChEMBL, MedDRA) ist enthalten.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "586d608af18fbea4": {
+  "src": "This is one row of the free CSA sample. The full snapshot carries <0>{1} forward catalysts</0>, <2>{3}</2> of them linked to <4>{5} listed sponsors</4>.",
+  "t": "Dies ist eine Zeile der kostenlosen CSA-Beispieldaten. Der vollständige Snapshot enthält <0>{1} bevorstehende Katalysatoren</0>, davon <2>{3}</2> mit Verknüpfung zu <4>{5} börsennotierten Sponsoren</4>."
  },
  "592221d6351ed897": {
   "src": "— neighbouring record",
@@ -688,6 +704,10 @@
   "t": "An der Quelle prüfen →",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "86147c563aacc56b": {
+  "src": "ticker-linked catalysts",
+  "t": "Katalysatoren mit Ticker-Verknüpfung"
  },
  "88306943fea7e76f": {
   "src": "Method",
@@ -959,6 +979,10 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "b6701c3b211d51f8": {
+  "src": "{0} covers active, industry-sponsored, Phase {1} interventional trials in cardiometabolic, oncology and immunology: {2} trials resolved to {3} assets, {4} of them the sponsor's own asset linked to a listed ticker, plus {5} forward catalysts, {6} of them linked to {7} listed sponsors. Delivered as CSV and JSON with a scope manifest.",
+  "t": "{0} umfasst aktive, von der Industrie gesponserte interventionelle Phase-{1}-Studien in Kardiometabolik, Onkologie und Immunologie: {2} Studien, aufgelöst zu {3} Assets, davon {4} eigene Assets des Sponsors mit Verknüpfung zu einem börsennotierten Ticker, dazu {5} bevorstehende Katalysatoren, davon {6} mit Verknüpfung zu {7} börsennotierten Sponsoren. Geliefert als CSV und JSON mit Scope-Manifest."
+ },
  "bae7d5be70820ed5": {
   "src": "Status",
   "t": "Status",
@@ -1192,6 +1216,10 @@
   "t": "<0>{1}</0> · So wird verknüpft",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "e0cbcb6d9d11501f": {
+  "src": "This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <0>{1} listed sponsors</0> and <2>{3} forward catalysts</2> (<4>{5}</4> ticker-linked).",
+  "t": "Die Katalysatoren dieses Sponsors sind ein Ausschnitt der kostenlosen CSA-Beispieldaten. Der vollständige Snapshot umfasst <0>{1} börsennotierte Sponsoren</0> und <2>{3} bevorstehende Katalysatoren</2> (<4>{5}</4> mit Ticker-Verknüpfung)."
  },
  "e28ea507ea1d2edd": {
   "src": "Catalyst directory ({0})",
