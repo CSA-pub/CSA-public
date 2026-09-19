@@ -588,7 +588,7 @@ def main():
 {rows_html}
 {ADVICE}
     <div class="cta">
-      <p>This is one row of the free CSA sample. The full snapshot carries <b>2,103 forward catalysts</b> across <b>139 listed sponsors</b>.</p>
+      <p>This is one row of the free CSA sample. The full snapshot carries <b>2,221 forward catalysts</b>, <b>955</b> of them linked to <b>124 listed sponsors</b>.</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
       &nbsp;
       <a class="btn" href="../sponsors/{slugify(ticker)}">More {data(ticker)} catalysts</a>
@@ -730,7 +730,7 @@ def main():
     </div>
 {ADVICE}
     <div class="cta">
-      <p>This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <b>139 listed sponsors</b> and <b>2,103 forward catalysts</b>.</p>
+      <p>This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <b>124 listed sponsors</b> and <b>2,221 forward catalysts</b> (<b>955</b> ticker-linked).</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
     </div>
     {related_html}

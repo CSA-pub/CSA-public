@@ -4,13 +4,13 @@
 
 # 🧬 CSA — Clinical-Stage Asset Intelligence
 
-**Clinical trials, FDA and SEC — linked to the drug _asset_ and the _listed sponsor_, with a forward catalyst calendar · 2,103 catalysts · 139 sponsors · 1,841 resolved assets · 0 cross-molecule merges**
+**Clinical trials, FDA and SEC — linked to the drug _asset_ and the _listed sponsor_, with a forward catalyst calendar · 2,221 catalysts (955 ticker-linked) · 124 listed sponsors · 1,890 resolved assets · 0 cross-molecule merges**
 
 [![Free sample: 150 catalysts](https://img.shields.io/badge/Free%20Sample-150%20catalysts-brightgreen.svg)](samples/catalyst_calendar_sample.csv)
 [![Kaggle dataset](https://img.shields.io/badge/Kaggle-sample%20dataset-20beff.svg)](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample)
 [![🤗 Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-sample%20dataset-ffd21e.svg)](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample)
 [![Kaggle notebook](https://img.shields.io/badge/Kaggle-starter%20notebook-20beff.svg)](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter)
-[![Snapshot: 2026.07](https://img.shields.io/badge/Snapshot-2026.07-blue.svg)](CHANGELOG.md)
+[![Snapshot: 2026.09](https://img.shields.io/badge/Snapshot-2026.09-blue.svg)](CHANGELOG.md)
 [![Precision: 0 bad merges](https://img.shields.io/badge/Precision-0%20cross--molecule%20merges-0f6e6a.svg)](#how-the-linkage-is-built)
 [![Get the data](https://img.shields.io/badge/Get%20the%20data-CSA-2bb3a8.svg)](https://csa.dataengineered.io)
 
@@ -32,11 +32,11 @@ The guiding principle is **precision over recall**: a *wrong* asset↔ticker lin
 
 | | Full snapshot | Free sample |
 | :--- | ---: | ---: |
-| Forward catalysts | **2,103** | 150 |
-| Listed sponsors | **139** | 50 |
-| Resolved assets | **1,841** | 108 |
-| Asset↔ticker "tradeable core" | **627** | (subset) |
-| Trials resolved | **2,268** | (linked) |
+| Forward catalysts | **2,221** (955 ticker-linked) | 150 |
+| Listed sponsors | **124** | 48 |
+| Resolved assets | **1,890** | 107 |
+| Asset↔ticker "tradeable core" | **597** | (subset) |
+| Trials resolved | **2,331** | (linked) |
 | Formats | CSV · JSON | CSV |
 
 The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_sample.csv) is the **150 nearest-term catalysts** across 50 listed sponsors — a real taste of the schema and quality — with the [`samples/asset_master_sample.csv`](samples/asset_master_sample.csv) linkage rows behind them. Explore it on the [Kaggle dataset](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample) (with a [starter notebook](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter)) or the [🤗 Hugging Face dataset](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample). The full snapshot is at **[csa.dataengineered.io](https://csa.dataengineered.io)**.
@@ -63,7 +63,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | Tier | What | Price |
 | :--- | :--- | :--- |
 | **Sample** | 150 nearest-term catalysts (this repo) | Free |
-| **Snapshot** | Full 2,103 catalysts · 1,841 assets · 627 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
+| **Snapshot** | Full 2,221 catalysts (955 ticker-linked) · 1,890 assets · 597 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
 | **API & enterprise terms** | New editions · Phase 2 & more areas · API delivery · custom gold sets — use the [contact form](https://csa.dataengineered.io/#contact) | quoted per engagement |
 
 **[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or use the [contact form](https://csa.dataengineered.io/#contact) (csa@dataengineered.io) for API / enterprise / invoice.
@@ -81,7 +81,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 import csv
 rows = list(csv.DictReader(open("samples/catalyst_calendar_sample.csv", encoding="utf-8")))
 print(len(rows), "catalysts across", len({r["ticker"] for r in rows}), "sponsors")
-# → 150 catalysts across 50 sponsors
+# → 150 catalysts across 48 sponsors
 soonest = min(rows, key=lambda r: r["event_date"])
 print(soonest["event_date"], soonest["ticker"], soonest["asset"], soonest["event_type"])
 ```
