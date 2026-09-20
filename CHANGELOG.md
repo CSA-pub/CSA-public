@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-09-20
+
+- **Sale attribution**: every Stripe buy link carries `?client_reference_id=<brand>_<lang>_<surface>` (`home` / `landing`); the i18n build swaps the language token per locale and the delivery worker prints the id in the order email. Stripe does not store UTM parameters, so this is the only per-page attribution that reaches the order record (2026-09-20).
+
 ## 2026.09 — 2026-09-19
 
 - First refresh since 2026.07 (the August and September runs failed on an SEC EDGAR
