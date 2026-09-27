@@ -9,6 +9,7 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 ## Site update — 2026-09-27
 
 - **Translated Dataset markup**: on the Spanish, German, French and Portuguese pages the Dataset structured data now names its English original in `sameAs` (next to any existing `sameAs` links), so dataset search can tie the language copies to one canonical entry. English pages and all visible text are unchanged (2026-09-27).
+- **Section links**: a link to a homepage section (`#pricing`, `#calendar`, `#contact`, ...) now lands with the section heading clear of the sticky header at every width, including phones where the nav wraps to two rows, and an arrival from another page lands on its section again once the web fonts and the language menu have settled. A small shared script right after the header does this (`scripts/section_links.py`, on the English and the four translated homepages); it never moves the page after the visitor has scrolled, and no visible text changes (2026-09-27).
 
 ## Site update — 2026-09-20
 
