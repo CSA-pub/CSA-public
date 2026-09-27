@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-09-28
+
+- **Repository files off the website**: the translation catalogs (`/locales/`), the build scripts (`/scripts/`), `i18n.config.json`, `README.md`, `vercel.json` and the dotfiles belong to this repository, not to the website, but the site served them as plain files. They now answer the site's normal 404 page (also when requested as `/locales%2Fes.json` or `//locales/es.json`) and stay available here on GitHub. Pages, data files, samples, `llms.txt` and the sitemap are unchanged (2026-09-28).
+
 ## Site update — 2026-09-27
 
 - **Translated Dataset markup**: on the Spanish, German, French and Portuguese pages the Dataset structured data now names its English original in `sameAs` (next to any existing `sameAs` links), so dataset search can tie the language copies to one canonical entry. English pages and all visible text are unchanged (2026-09-27).
