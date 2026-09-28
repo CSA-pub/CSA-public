@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Repository update — 2026-09-28
+
+- **README**: the free-sample paragraph said the 150 nearest-term catalysts span 50 listed sponsors; they span 48 (distinct tickers in `samples/catalyst_calendar_sample.csv`), as the "What's inside" table and the quick-start output already said. Sample files unchanged (2026-09-28).
+
 ## Site update — 2026-09-27
 
 - **Translated Dataset markup**: on the Spanish, German, French and Portuguese pages the Dataset structured data now names its English original in `sameAs` (next to any existing `sameAs` links), so dataset search can tie the language copies to one canonical entry. English pages and all visible text are unchanged (2026-09-27).
