@@ -10,6 +10,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 
 - **README**: the free-sample paragraph said the 150 nearest-term catalysts span 50 listed sponsors; they span 48 (distinct tickers in `samples/catalyst_calendar_sample.csv`), as the "What's inside" table and the quick-start output already said. Sample files unchanged (2026-09-28).
 
+## Site update — 2026-09-28
+
+- **Repository files off the website**: the translation catalogs (`/locales/`), the build scripts (`/scripts/`), `i18n.config.json`, `README.md`, `vercel.json` and the dotfiles belong to this repository, not to the website, but the site served them as plain files. They now answer the site's normal 404 page (also when requested as `/locales%2Fes.json` or `//locales/es.json`) and stay available here on GitHub. Pages, data files, samples, `llms.txt` and the sitemap are unchanged (2026-09-28).
+
 ## Site update — 2026-09-27
 
 - **Translated Dataset markup**: on the Spanish, German, French and Portuguese pages the Dataset structured data now names its English original in `sameAs` (next to any existing `sameAs` links), so dataset search can tie the language copies to one canonical entry. English pages and all visible text are unchanged (2026-09-27).
