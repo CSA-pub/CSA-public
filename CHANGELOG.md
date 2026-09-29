@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-09-29
+
+- **Visit counts**: Cloudflare Web Analytics adds its cookie-free page-view beacon to every page, but the Content-Security-Policy in `_headers` let browsers run scripts from this site only, so they refused the beacon and no visits were counted since Web Analytics was switched on (2026-09-05). The policy now also allows the beacon script (`https://static.cloudflareinsights.com`, `script-src`) and the address it reports to (`https://cloudflareinsights.com`, `connect-src`). No other source is added.
+
 ## Repository update — 2026-09-28
 
 - **README**: the free-sample paragraph said the 150 nearest-term catalysts span 50 listed sponsors; they span 48 (distinct tickers in `samples/catalyst_calendar_sample.csv`), as the "What's inside" table and the quick-start output already said. Sample files unchanged (2026-09-28).
