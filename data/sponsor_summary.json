@@ -1,0 +1,1149 @@
+{
+ "as_of": "2026-10-06",
+ "note": "Per-ticker counts from the full CSA snapshot, for the shopfront's sponsor pages. Counts only: no asset names, dates or trial ids.",
+ "sponsors": {
+  "AAPG": {
+   "forward_catalysts": 6,
+   "assets": 4,
+   "trials": 35,
+   "catalysts_by_year": {
+    "2027": 4,
+    "2028": 2
+   }
+  },
+  "ABBV": {
+   "forward_catalysts": 56,
+   "assets": 28,
+   "trials": 210,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 16,
+    "2028": 10,
+    "2029": 7,
+    "2030": 7,
+    "2031": 2,
+    "2032": 4,
+    "2033": 2,
+    "2034": 2,
+    "2036": 2,
+    "2040": 3
+   }
+  },
+  "ADRX": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2030": 1
+   }
+  },
+  "AGIO": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2030": 1
+   }
+  },
+  "ALMS": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "ALNY": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2028": 1,
+    "2030": 2
+   }
+  },
+  "ALT": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "AMGN": {
+   "forward_catalysts": 30,
+   "assets": 13,
+   "trials": 61,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 9,
+    "2028": 8,
+    "2029": 4,
+    "2030": 4,
+    "2031": 3,
+    "2036": 1
+   }
+  },
+  "ANRO": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "ARGX": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 5,
+   "catalysts_by_year": {
+    "2027": 2,
+    "2029": 1
+   }
+  },
+  "ARWR": {
+   "forward_catalysts": 4,
+   "assets": 2,
+   "trials": 6,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2028": 2,
+    "2029": 1
+   }
+  },
+  "ATNM": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 18,
+   "catalysts_by_year": {
+    "2029": 3
+   }
+  },
+  "AURA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "AVBP": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "AZN": {
+   "forward_catalysts": 126,
+   "assets": 52,
+   "trials": 394,
+   "catalysts_by_year": {
+    "2026": 4,
+    "2027": 28,
+    "2028": 35,
+    "2029": 36,
+    "2030": 13,
+    "2031": 6,
+    "2032": 1,
+    "2033": 3
+   }
+  },
+  "BBIO": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2031": 1,
+    "2037": 1
+   }
+  },
+  "BCAX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "BCRX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2031": 1
+   }
+  },
+  "BCTX": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 3
+   }
+  },
+  "BIIB": {
+   "forward_catalysts": 3,
+   "assets": 1,
+   "trials": 5,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2029": 1,
+    "2032": 1
+   }
+  },
+  "BMY": {
+   "forward_catalysts": 40,
+   "assets": 24,
+   "trials": 174,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 15,
+    "2028": 6,
+    "2029": 5,
+    "2030": 8,
+    "2031": 4,
+    "2032": 1
+   }
+  },
+  "BNTX": {
+   "forward_catalysts": 8,
+   "assets": 6,
+   "trials": 26,
+   "catalysts_by_year": {
+    "2028": 3,
+    "2029": 4,
+    "2031": 1
+   }
+  },
+  "BRVE": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "BYSI": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 93,
+   "catalysts_by_year": {
+    "2029": 2
+   }
+  },
+  "CADL": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2031": 2
+   }
+  },
+  "CANF": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "CELC": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 2
+   }
+  },
+  "CGON": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2030": 1
+   }
+  },
+  "CLRB": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2032": 1
+   }
+  },
+  "COMP": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "CRBP": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "CRVS": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "CSLLY": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2029": 2
+   }
+  },
+  "CYTK": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2028": 1
+   }
+  },
+  "DMAC": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "DNTH": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "EIKN": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2035": 2
+   }
+  },
+  "ERAS": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "EXEL": {
+   "forward_catalysts": 9,
+   "assets": 5,
+   "trials": 54,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2028": 1,
+    "2029": 1,
+    "2030": 6
+   }
+  },
+  "GEHC": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "GENB": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 1,
+    "2029": 1
+   }
+  },
+  "GERN": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "GILD": {
+   "forward_catalysts": 20,
+   "assets": 10,
+   "trials": 43,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 2,
+    "2028": 6,
+    "2029": 4,
+    "2030": 2,
+    "2031": 5
+   }
+  },
+  "GLSI": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2031": 1
+   }
+  },
+  "GMAB": {
+   "forward_catalysts": 17,
+   "assets": 7,
+   "trials": 95,
+   "catalysts_by_year": {
+    "2027": 3,
+    "2028": 3,
+    "2029": 7,
+    "2030": 1,
+    "2037": 3
+   }
+  },
+  "GNLX": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2026": 3
+   }
+  },
+  "GPCR": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "GRFS": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2028": 2,
+    "2029": 1
+   }
+  },
+  "HCM": {
+   "forward_catalysts": 8,
+   "assets": 8,
+   "trials": 39,
+   "catalysts_by_year": {
+    "2028": 7,
+    "2029": 1
+   }
+  },
+  "HRMY": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2030": 1
+   }
+  },
+  "HURA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "IBRX": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 94,
+   "catalysts_by_year": {
+    "2028": 3
+   }
+  },
+  "IDYA": {
+   "forward_catalysts": 5,
+   "assets": 2,
+   "trials": 10,
+   "catalysts_by_year": {
+    "2027": 2,
+    "2030": 1,
+    "2034": 2
+   }
+  },
+  "IMCR": {
+   "forward_catalysts": 4,
+   "assets": 4,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2028": 3
+   }
+  },
+  "IMMP": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 3
+   }
+  },
+  "IMNN": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 29,
+   "catalysts_by_year": {
+    "2032": 3
+   }
+  },
+  "IMRX": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "IMTX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "IMVT": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "INBX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "INCY": {
+   "forward_catalysts": 12,
+   "assets": 8,
+   "trials": 38,
+   "catalysts_by_year": {
+    "2026": 2,
+    "2027": 1,
+    "2028": 8,
+    "2032": 1
+   }
+  },
+  "INSM": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 1,
+    "2031": 1
+   }
+  },
+  "IONS": {
+   "forward_catalysts": 3,
+   "assets": 2,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 1,
+    "2029": 1
+   }
+  },
+  "IOVA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "IVA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "JAZZ": {
+   "forward_catalysts": 4,
+   "assets": 3,
+   "trials": 20,
+   "catalysts_by_year": {
+    "2028": 4
+   }
+  },
+  "JNJ": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "KARD": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "KLRA": {
+   "forward_catalysts": 3,
+   "assets": 1,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2028": 3
+   }
+  },
+  "KNSA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "KPTI": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 10,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "KURA": {
+   "forward_catalysts": 5,
+   "assets": 5,
+   "trials": 41,
+   "catalysts_by_year": {
+    "2031": 5
+   }
+  },
+  "KYTX": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 2
+   }
+  },
+  "LLY": {
+   "forward_catalysts": 53,
+   "assets": 23,
+   "trials": 126,
+   "catalysts_by_year": {
+    "2026": 3,
+    "2027": 13,
+    "2028": 14,
+    "2029": 16,
+    "2030": 4,
+    "2031": 3
+   }
+  },
+  "LONA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "LQDA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "LXRX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "LYEL": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "MAIA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "MANE": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 1
+   }
+  },
+  "MDGL": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "MLTX": {
+   "forward_catalysts": 4,
+   "assets": 1,
+   "trials": 5,
+   "catalysts_by_year": {
+    "2027": 2,
+    "2028": 2
+   }
+  },
+  "MRK": {
+   "forward_catalysts": 128,
+   "assets": 58,
+   "trials": 284,
+   "catalysts_by_year": {
+    "2026": 2,
+    "2027": 18,
+    "2028": 24,
+    "2029": 21,
+    "2030": 7,
+    "2031": 9,
+    "2032": 13,
+    "2033": 17,
+    "2034": 8,
+    "2037": 1,
+    "2039": 2,
+    "2043": 6
+   }
+  },
+  "NAMS": {
+   "forward_catalysts": 4,
+   "assets": 2,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 1,
+    "2028": 2
+   }
+  },
+  "NKTR": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "NRIX": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 9,
+   "catalysts_by_year": {
+    "2029": 2
+   }
+  },
+  "NTLA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "NUVB": {
+   "forward_catalysts": 3,
+   "assets": 2,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2028": 1,
+    "2029": 2
+   }
+  },
+  "NVCR": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "NVO": {
+   "forward_catalysts": 31,
+   "assets": 6,
+   "trials": 52,
+   "catalysts_by_year": {
+    "2027": 8,
+    "2028": 14,
+    "2029": 7,
+    "2030": 2
+   }
+  },
+  "NVS": {
+   "forward_catalysts": 50,
+   "assets": 32,
+   "trials": 107,
+   "catalysts_by_year": {
+    "2026": 2,
+    "2027": 16,
+    "2028": 17,
+    "2029": 7,
+    "2030": 4,
+    "2031": 1,
+    "2032": 1,
+    "2034": 1,
+    "2035": 1
+   }
+  },
+  "OGN": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "OLMA": {
+   "forward_catalysts": 3,
+   "assets": 2,
+   "trials": 13,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2028": 2
+   }
+  },
+  "ONC": {
+   "forward_catalysts": 16,
+   "assets": 7,
+   "trials": 40,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2028": 5,
+    "2029": 6,
+    "2031": 2,
+    "2032": 2
+   }
+  },
+  "PFE": {
+   "forward_catalysts": 63,
+   "assets": 38,
+   "trials": 202,
+   "catalysts_by_year": {
+    "2026": 15,
+    "2027": 11,
+    "2028": 13,
+    "2029": 12,
+    "2030": 9,
+    "2032": 3
+   }
+  },
+  "PHVS": {
+   "forward_catalysts": 2,
+   "assets": 1,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2028": 1
+   }
+  },
+  "PII": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "PROK": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "RCUS": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 13,
+   "catalysts_by_year": {
+    "2028": 2,
+    "2030": 1
+   }
+  },
+  "REGN": {
+   "forward_catalysts": 32,
+   "assets": 15,
+   "trials": 114,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 5,
+    "2028": 3,
+    "2029": 16,
+    "2030": 2,
+    "2031": 3,
+    "2033": 2
+   }
+  },
+  "REPL": {
+   "forward_catalysts": 3,
+   "assets": 3,
+   "trials": 12,
+   "catalysts_by_year": {
+    "2030": 3
+   }
+  },
+  "RLAY": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 31,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "RLMD": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "RNAC": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "RVMD": {
+   "forward_catalysts": 8,
+   "assets": 3,
+   "trials": 26,
+   "catalysts_by_year": {
+    "2027": 1,
+    "2028": 3,
+    "2029": 4
+   }
+  },
+  "RYTM": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "SKBBY": {
+   "forward_catalysts": 7,
+   "assets": 4,
+   "trials": 53,
+   "catalysts_by_year": {
+    "2026": 3,
+    "2027": 4
+   }
+  },
+  "SMMT": {
+   "forward_catalysts": 7,
+   "assets": 5,
+   "trials": 17,
+   "catalysts_by_year": {
+    "2028": 3,
+    "2030": 4
+   }
+  },
+  "SNDX": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2029": 2
+   }
+  },
+  "SNY": {
+   "forward_catalysts": 20,
+   "assets": 13,
+   "trials": 91,
+   "catalysts_by_year": {
+    "2027": 6,
+    "2028": 3,
+    "2029": 5,
+    "2030": 6
+   }
+  },
+  "TAK": {
+   "forward_catalysts": 18,
+   "assets": 8,
+   "trials": 36,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 6,
+    "2028": 5,
+    "2029": 2,
+    "2030": 2,
+    "2033": 2
+   }
+  },
+  "TARA": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "TENX": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2029": 1
+   }
+  },
+  "THRY": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "TLX": {
+   "forward_catalysts": 4,
+   "assets": 4,
+   "trials": 122,
+   "catalysts_by_year": {
+    "2027": 4
+   }
+  },
+  "TPST": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "URGN": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "UTHR": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2026": 1
+   }
+  },
+  "VIK": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "VNDA": {
+   "forward_catalysts": 3,
+   "assets": 2,
+   "trials": 3,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2028": 1,
+    "2029": 1
+   }
+  },
+  "VOR": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 2,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "VSTM": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
+  "VTRS": {
+   "forward_catalysts": 4,
+   "assets": 1,
+   "trials": 4,
+   "catalysts_by_year": {
+    "2026": 1,
+    "2027": 1,
+    "2029": 1,
+    "2032": 1
+   }
+  },
+  "XFOR": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2027": 1
+   }
+  },
+  "ZLAB": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
+  "ZNTL": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  }
+ }
+}

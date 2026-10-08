@@ -8,9 +8,7 @@
   ],
   "include": [
     "index.html",
-    "404.html",
-    "catalysts/*.html",
-    "sponsors/*.html"
+    "404.html"
   ],
   "exclude": [],
   "not_found": "404.html",

@@ -6,6 +6,31 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-10-08
+
+Fixes for the Google Search Console page-indexing report (697 URLs "Discovered – currently not indexed", 40 "Crawled – currently not indexed", 17 "Not found (404)"), shipped with edition 2026.10 below.
+
+- **Translated pages trimmed to the homepage and the 404 page.** The catalyst, sponsor and directory pages were also published in Spanish, German, French and Brazilian Portuguese: 628 of the sitemap's 790 URLs, on a domain live since 2026-09-05. They are English-only now, so the sitemap lists 160 URLs (156 English pages plus the four translated homepages). A former translated catalyst, sponsor or directory URL gets a 301 to its English page while that page exists (568 of the 628); the 60 whose English page was retired return 404 like it. The redirect lifts itself if a translation is published again.
+- **Retired pages are removed by the generator.** `scripts/generate_seo_pages.py` deletes a catalyst or sponsor page whose asset left the sample (it refuses to delete more than a third of either directory, and checks everything before writing), and also writes the directory hubs, the homepage sample table and the sitemap (last, so its dates see the hubs) in the same run. Only forward catalysts are shown: a date that has passed is dropped. Retired URLs with a true successor redirect (301) from `functions/_middleware.js`, from a table kept in `scripts/redirects.json`: `eftilagimod-alpha` → `eftilagimod-alfa`, `ritlecitinib-higher`/`-lower` → `ritlecitinib`, `rina` → `rinatabart-sesutecan`, `lorlatanib` → `lorlatinib`. Pages with no successor return 404, as Google recommends: this update retires 15 (the 7 below, and 8 whose catalysts left the 2026.10 sample: elecoglipron, monalizumab, oleclumab, rilvegostomig, telisotuzumab adizutecan, tirzepatide, zanidatamab, sponsor JAZZ).
+- **Non-drug rows off the site.** Study arms and standard-of-care backbones (rescue medications, supportive care measures, platinum investigator choice, standard lymphodepletion, G-CSF, calcium levofolinate) no longer get a catalyst page; sponsor KYTX, whose only row was one of them, no longer gets a sponsor page. The generator applies the same rules as the free sample's curation upstream.
+- **Richer catalyst and sponsor pages.** Catalyst pages list every trial the sample links to the asset (phase, status, primary completion, arm role, lead sponsor, conditions, linked to ClinicalTrials.gov) and the other tracked assets in the same trials. Sponsor pages add the sponsor's counts in the current full snapshot (forward catalysts, assets, trials, catalysts by year; counts only, from `data/sponsor_summary.json`), the trials behind its assets, every condition studied, and links to sponsors with trials in the same conditions.
+- **Wording.** Pages no longer call every asset "clinical-stage", and the trial, not the asset, is "in Phase 3" (many tracked assets are approved drugs in a Phase 3 trial for a new indication). The per-page call to action states the snapshot's scope instead of its headline counts, which stay on the homepage: a catalyst page changes only when its own data does, and a sponsor page when its own data or full-snapshot counts do.
+- **Homepage sample table** is generated from the sample: catalysts at least a month out, each linked to its catalyst and sponsor page (it showed hand-copied rows, three already past and one "rescue medications").
+
+## 2026.10 — 2026-10-06
+
+- Monthly refresh (CI run 2026-10-06); the precision gate passed with 0 cross-molecule
+  merges. Published on the shopfront 2026-10-08.
+- **2,202** forward catalysts (2,221 in 2026.09), **955** of them linked to **126** listed
+  sponsors (124); **1,881** resolved assets (1,890); **603** tradeable core (597);
+  **2,332** trials (2,331).
+- Free sample rebuilt: 150 nearest-term ticker-linked catalysts from 2026-10-19,
+  47 sponsors, 106 assets. Its curation now drops non-drug study arms (rescue medications,
+  supportive care measures, platinum investigator choice, standard lymphodepletion) and
+  standard-of-care backbones (G-CSF, calcium levofolinate), folds dose arms
+  (ritlecitinib higher / lower → ritlecitinib) and fixes two misnamed assets
+  (rina → rinatabart sesutecan, the full name of Rina-S; lorlatanib → lorlatinib).
+
 ## Site update — 2026-10-01
 
 - **Sitemap dates follow page content**: `scripts/seo_common.py` (shared by the DataEngineered sites) dates each sitemap entry by the last commit that changed the page itself. It compares pages without line-ending differences and without the markup the translation build owns (language alternates and the header and footer language menus), and skips commits that only moved that markup, so regenerating an unchanged page keeps its date instead of taking the day of the run. No page or sitemap change in this update (2026-10-01).

@@ -10,23 +10,37 @@ anifrolumab,NCT04877691,PHASE3,ACTIVE_NOT_RECRUITING,2025-08-22,Systemic Lupus E
 anifrolumab,NCT05138133,PHASE3,ACTIVE_NOT_RECRUITING,2027-02-23,Lupus Nephritis,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 anifrolumab,NCT05835310,PHASE3,RECRUITING,2028-10-05,Systemic Lupus Erythematosus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 anifrolumab,NCT07430306,PHASE3,RECRUITING,2029-01-26,Systemic Lupus Erythematosus,other,AstraZeneca,ASTRAZENECA PLC,AZN
-anifrolumab,NCT07691970,PHASE3,NOT_YET_RECRUITING,2032-12-31,Systemic Sclerosis Cutaneous Lupus E Myopathies Systemic Lupus Erythematosus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-anifrolumab,NCT07751848,PHASE3,NOT_YET_RECRUITING,2028-08-25,"Lupus Erythematosus, Systemic",experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+anifrolumab,NCT07691970,PHASE3,RECRUITING,2032-12-30,Systemic Sclerosis Cutaneous Lupus E Myopathies Systemic Lupus Erythematosus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+anifrolumab,NCT07751848,PHASE3,RECRUITING,2028-08-25,"Lupus Erythematosus, Systemic",experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 avacopan,NCT06321601,PHASE3,ACTIVE_NOT_RECRUITING,2027-07-18,Vasculitis,experimental,Amgen,AMGEN INC,AMGN
 avacopan,NCT07176546,PHASE2;PHASE3,RECRUITING,2030-07,Granulomatosis With Polyangiitis; Wegener&#39;s; GPA,active_comparator,"Robert Spiera, MD",,
 axitinib,NCT05059522,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-31,Advanced Malignancies; NSCLC; Ovarian Cancer; Urothelial Cancer; Solid Tumors,experimental,Pfizer,PFIZER INC,PFE
 axitinib,NCT06364631,PHASE3,RECRUITING,2032-05-05,Metastatic Kidney Cancer; Metastatic Kidney Carcinoma,other,"Gustave Roussy, Cancer Campus, Grand Paris",,
+baxdrostat dapagliflozin,NCT06268873,PHASE3,ACTIVE_NOT_RECRUITING,2028-02-24,Chronic Kidney Disease and Hypertension,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+baxdrostat dapagliflozin,NCT06677060,PHASE3,RECRUITING,2029-12-17,Heart Failure,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+baxdrostat dapagliflozin,NCT06742723,PHASE3,RECRUITING,2029-12-18,Chronic Kidney Disease and Hypertension,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 belzutifan,NCT04195750,PHASE3,ACTIVE_NOT_RECRUITING,2024-04-15,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT04586231,PHASE3,ACTIVE_NOT_RECRUITING,2026-02-02,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT04736706,PHASE3,ACTIVE_NOT_RECRUITING,2026-02-04,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT05239728,PHASE3,ACTIVE_NOT_RECRUITING,2026-10-28,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT05899049,PHASE3,ACTIVE_NOT_RECRUITING,2026-02-04,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT07227402,PHASE3,RECRUITING,2032-02-27,Renal Cell Carcinoma,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-belzutifan,NCT07405164,PHASE3,RECRUITING,2034-01-14,Von Hippel-Lindau Disease; Malignant Neoplasms,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+belzutifan,NCT07405164,PHASE3,RECRUITING,2034-04-22,Von Hippel-Lindau Disease; Malignant Neoplasms,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 belzutifan,NCT07489495,PHASE3,RECRUITING,2030-11-27,"Carcinoma, Renal Cell",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+benralizumab,NCT04157348,PHASE3,ACTIVE_NOT_RECRUITING,2023-08-10,Eosinophilic Granulomatous Vasculitis,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+benralizumab,NCT05692180,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-23,Asthma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+benralizumab,NCT06512883,PHASE3,RECRUITING,2028-02-20,Eosinophilic Granulomatosis With Polyangiitis (EGPA); Hypereosinophilia Syndrome (HES),experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+benralizumab,NCT07444567,PHASE3,RECRUITING,2029-12-27,Asthma; Eosinophilic Granulomatosis With Polyangiitis (EGPA); Hypereosinophilic Syndrome (HES),experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+berobenatide,NCT07792954,PHASE3,NOT_YET_RECRUITING,2028-03-14,Obesity; Overweight,experimental,Pfizer,PFIZER INC,PFE
+berobenatide,NCT07794761,PHASE3,NOT_YET_RECRUITING,2029-03-14,Obesity,experimental,Pfizer,PFIZER INC,PFE
+berobenatide,NCT07794774,PHASE3,NOT_YET_RECRUITING,2029-02-21,Obesity,experimental,Pfizer,PFIZER INC,PFE
+berobenatide,NCT07823608,PHASE3,RECRUITING,2028-04-30,Apnea; Sleep Disorders; Overweight and/or Obesity,experimental,Pfizer,PFIZER INC,PFE
+berobenatide,NCT07845500,PHASE3,NOT_YET_RECRUITING,2028-02-16,Obesity; Overweight and/or Obesity; Overweight; Treatment Of Obesity,experimental,Pfizer,PFIZER INC,PFE
 binimetinib,NCT04657991,PHASE3,ACTIVE_NOT_RECRUITING,2026-10-30,Melanoma,experimental,Pfizer,PFIZER INC,PFE
 binimetinib,NCT05615818,PHASE3,RECRUITING,2027-06,Biliary Tract Neoplasms,experimental,UNICANCER,,
 brenetafusp,NCT06112314,PHASE3,RECRUITING,2027-10-16,Advanced Melanoma,experimental,Immunocore Ltd,Immunocore Holdings plc,IMCR
+budigalimab,NCT06109272,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2027-01,Hepatocellular Carcinoma,experimental,AbbVie,AbbVie Inc.,ABBV
+budigalimab,NCT06236438,PHASE2;PHASE3,RECRUITING,2031-10,Non-Small Cell Lung Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
 cagrilintide,NCT05567796,PHASE3,ACTIVE_NOT_RECRUITING,2024-10-30,Obesity,experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
 cagrilintide,NCT05669755,PHASE3,ACTIVE_NOT_RECRUITING,2027-09-01,Cardiovascular Disease,experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
 cagrilintide,NCT06780449,PHASE3,ACTIVE_NOT_RECRUITING,2028-08-28,Obesity,experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
@@ -37,12 +51,13 @@ cagrilintide,NCT07253285,PHASE3,RECRUITING,2030-03-20,Overweight; Obesity,experi
 cagrilintide,NCT07282613,PHASE3,RECRUITING,2029-09-07,"Diabetes Mellitus, Type 2",experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
 cagrilintide,NCT07564414,PHASE3,RECRUITING,2028-02-23,Obesity; Type 2 Diabetes,experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
 cagrilintide,NCT07745504,PHASE3,RECRUITING,2027-05-18,Overweight; Obesity,experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
-cagrilintide,NCT07817251,PHASE3,NOT_YET_RECRUITING,2027-06-09,"Diabetes Mellitus, Type 2",experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
-calcium levofolinate,NCT05253651,PHASE3,RECRUITING,2027-12-31,Colorectal Neoplasms,experimental,"Seagen, a wholly owned subsidiary of Pfizer",PFIZER INC,PFE
-calcium levofolinate,NCT07582315,PHASE3,RECRUITING,2028-12,Biliary Tract Cancer,active_comparator,"Sichuan Baili Pharmaceutical Co., Ltd.",,
-calcium levofolinate,NCT07606599,PHASE3,RECRUITING,2028-12,Biliary Tract Cancer,active_comparator,"Sichuan Baili Pharmaceutical Co., Ltd.",,
-calcium levofolinate,NCT07818070,PHASE3,NOT_YET_RECRUITING,2031-01,Gastric Cancer; Esophagogastric Junction Cancer; Esophageal Adenocarcinoma,experimental,"Ono Pharmaceutical Co., Ltd.",,
-camizestrant,NCT04711252,PHASE3,ACTIVE_NOT_RECRUITING,2026-08-24,ER-Positive HER2-Negative Breast Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+cagrilintide,NCT07817251,PHASE3,RECRUITING,2027-06-09,"Diabetes Mellitus, Type 2",experimental,Novo Nordisk A/S,NOVO NORDISK A S,NVO
+calderasib,NCT06345729,PHASE3,RECRUITING,2028-01-24,Non-small Cell Lung Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+calderasib,NCT06997497,PHASE3,RECRUITING,2029-03-28,Colon Adenocarcinoma; Rectal Adenocarcinoma,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+calderasib,NCT07190248,PHASE3,RECRUITING,2029-12-07,Non-small Cell Lung Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+calderasib,NCT07431827,PHASE3,RECRUITING,2039-10-26,Non-small Cell Lung Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+calderasib,NCT07554339,PHASE3,RECRUITING,2032-12-15,Non-small Cell Lung Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+camizestrant,NCT04711252,PHASE3,ACTIVE_NOT_RECRUITING,2026-06-26,ER-Positive HER2-Negative Breast Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 camizestrant,NCT04964934,PHASE3,ACTIVE_NOT_RECRUITING,2025-06-30,ER-Positive HER2-Negative Breast Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 camizestrant,NCT05774951,PHASE3,RECRUITING,2027-04-20,"Breast Cancer, Early Breast Cancer",experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 camizestrant,NCT05952557,PHASE3,ACTIVE_NOT_RECRUITING,2030-03-04,"Breast Cancer, Early Breast Cancer",experimental,AstraZeneca,ASTRAZENECA PLC,AZN
@@ -74,7 +89,7 @@ datopotamab deruxtecan,NCT06112379,PHASE3,ACTIVE_NOT_RECRUITING,2028-11-20,Breas
 datopotamab deruxtecan,NCT06350097,PHASE3,RECRUITING,2028-03-21,Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 datopotamab deruxtecan,NCT06357533,PHASE3,RECRUITING,2029-12-28,Non-Small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 datopotamab deruxtecan,NCT06417814,PHASE3,RECRUITING,2026-09-30,Metastatic Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-datopotamab deruxtecan,NCT06564844,PHASE3,ACTIVE_NOT_RECRUITING,2027-06-30,Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+datopotamab deruxtecan,NCT06564844,PHASE3,ACTIVE_NOT_RECRUITING,2026-07-10,Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 datopotamab deruxtecan,NCT07129993,PHASE2;PHASE3,RECRUITING,2029-06-01,Urothelial Cancer; Bladder Cancer,experimental,Daiichi Sankyo,,
 datopotamab deruxtecan,NCT07205822,PHASE3,RECRUITING,2028-02-02,Breast Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 datopotamab deruxtecan,NCT07291037,PHASE3,RECRUITING,2029-01-29,Non-small Cell Lung Cancer (NSCLC),experimental,AstraZeneca,ASTRAZENECA PLC,AZN
@@ -97,7 +112,7 @@ deucrictibant,NCT05396105,PHASE2;PHASE3,ENROLLING_BY_INVITATION,2027-06,"Heredit
 deucrictibant,NCT05396105,PHASE2;PHASE3,ENROLLING_BY_INVITATION,2027-06,"Hereditary Angioedema; Hereditary Angioedema Type I; Hereditary Angioedema Type II; Hereditary Angioedema Types I and II; Hereditary Angioedema Attack; Hereditary Angioedema With C1 Esterase Inhibitor Deficiency; Hereditary Angioedema - Type 1; Hereditary Angioedema - Type 2; Hereditary Angioedema - Type 3; C1 Esterase Inhibitor [C1-INH] Deficiency; C1 Esterase Inhibitor Deficiency; C1 Esterase Inhibitor, Deficiency of; C1 Inhibitor Deficiency; Hereditary Angioedema Type III; Hereditary Angioedema (HAE); Hereditary Angioedema Type I and II; HAE With Normal C1 Esterase Inhibitor",experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT05396105,PHASE2;PHASE3,ENROLLING_BY_INVITATION,2027-06,"Hereditary Angioedema; Hereditary Angioedema Type I; Hereditary Angioedema Type II; Hereditary Angioedema Types I and II; Hereditary Angioedema Attack; Hereditary Angioedema With C1 Esterase Inhibitor Deficiency; Hereditary Angioedema - Type 1; Hereditary Angioedema - Type 2; Hereditary Angioedema - Type 3; C1 Esterase Inhibitor [C1-INH] Deficiency; C1 Esterase Inhibitor Deficiency; C1 Esterase Inhibitor, Deficiency of; C1 Inhibitor Deficiency; Hereditary Angioedema Type III; Hereditary Angioedema (HAE); Hereditary Angioedema Type I and II; HAE With Normal C1 Esterase Inhibitor",experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT06669754,PHASE3,ACTIVE_NOT_RECRUITING,2026-08,Hereditary Angioedema (HAE),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
-deucrictibant,NCT06679881,PHASE3,RECRUITING,2028-12,Hereditary Angioedema (HAE),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
+deucrictibant,NCT06679881,PHASE3,ENROLLING_BY_INVITATION,2028-12,Hereditary Angioedema (HAE),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
@@ -107,12 +122,14 @@ deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
 deucrictibant,NCT07266805,PHASE3,RECRUITING,2027-06,Acquired Angioedema Due to C1-Inhibitor Deficiency (AAE-C1-INH),experimental,Pharvaris Netherlands B.V.,Pharvaris N.V.,PHVS
+disitamab vedotin,NCT04400695,PHASE3,RECRUITING,2027-12-31,Breast Cancer,experimental,"RemeGen Co., Ltd.",,
 disitamab vedotin,NCT05302284,PHASE3,RECRUITING,2026-12-31,Urothelial Carcinoma; HER2-expressing,experimental,"RemeGen Co., Ltd.",,
 disitamab vedotin,NCT05911295,PHASE3,ACTIVE_NOT_RECRUITING,2027-01-29,Urothelial Carcinoma,experimental,"Seagen, a wholly owned subsidiary of Pfizer",PFIZER INC,PFE
 disitamab vedotin,NCT05980481,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2025-07-10,Gastric Cancer,experimental,"RemeGen Co., Ltd.",,
 disitamab vedotin,NCT05980481,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2025-07-10,Gastric Cancer,experimental,"RemeGen Co., Ltd.",,
 disitamab vedotin,NCT06221748,PHASE2;PHASE3,RECRUITING,2026-12,Gastric Cancer; Gastroesophageal Junction Adenocarcinoma,experimental,"RemeGen Co., Ltd.",,
 disitamab vedotin,NCT07315750,PHASE3,RECRUITING,2029-06-30,Gastric Carcinoma,experimental,"RemeGen Co., Ltd.",,
+disitamab vedotin,NCT07498907,PHASE3,RECRUITING,2029-05-01,Upper Tract Urothelial Carcinoma,experimental,Peking University First Hospital,,
 donidalorsen,NCT05392114,PHASE3,ACTIVE_NOT_RECRUITING,2026-12,Hereditary Angioedema,experimental,"Ionis Pharmaceuticals, Inc.",IONIS PHARMACEUTICALS INC,IONS
 donidalorsen,NCT07298447,PHASE3,RECRUITING,2029-06,Hereditary Angioedema (HAE),experimental,"Ionis Pharmaceuticals, Inc.",IONIS PHARMACEUTICALS INC,IONS
 dulaglutide,NCT06257966,PHASE3,ACTIVE_NOT_RECRUITING,2026-10-01,Type2 Diabetes Mellitus,active_comparator,"Beijing Dongfang Biotech Co., Ltd.",,
@@ -123,14 +140,11 @@ efgartigimod,NCT04833894,PHASE2;PHASE3,RECRUITING,2027-03,Generalized Myasthenia
 efgartigimod,NCT06298552,PHASE3,ACTIVE_NOT_RECRUITING,2025-06-30,"Generalized Myasthenia Gravis; gMG; Myasthenia Gravis, Generalized; Myasthenia Gravis",experimental,argenx,ARGENX SE,ARGX
 efgartigimod,NCT07217587,PHASE3,RECRUITING,2027-09-28,Myasthenia Gravis,active_comparator,"Janssen Research & Development, LLC",,
 eftilagimod alfa,NCT06726265,PHASE3,ACTIVE_NOT_RECRUITING,2027-06,Advanced/Metastatic Non-Small Cell Lung Cancer (NSCLC),experimental,Immutep S.A.S.,IMMUTEP Ltd,IMMP
-elecoglipron,NCT07662044,PHASE3,RECRUITING,2028-07-14,Type 2 Diabetes Mellitus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07662109,PHASE3,RECRUITING,2028-07-05,Type 2 Diabetes Mellitus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07662135,PHASE3,RECRUITING,2028-07-13,Type 2 Diabetes Mellitus; Type 2 Diabetes With Chronic Kidney Disease,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07662213,PHASE3,RECRUITING,2028-05-23,Type 2 Diabetes Mellitus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07664553,PHASE3,RECRUITING,2028-05-23,Type 2 Diabetes Mellitus,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07667803,PHASE3,RECRUITING,2028-07-31,Weight Management,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07761117,PHASE3,RECRUITING,2029-09-03,Heart Failure With Preserved Ejection Fraction (HFpEF); Heart Failure With Mildly Reduced Ejection Fraction (HFmrEF),experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-elecoglipron,NCT07775404,PHASE3,RECRUITING,2027-06-04,Obesity; Overweight,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+eloralintide,NCT07282600,PHASE3,RECRUITING,2028-01,Overweight; Obesity,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+eloralintide,NCT07321886,PHASE3,RECRUITING,2028-03,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+eloralintide,NCT07353931,PHASE3,RECRUITING,2028-03,Osteoarthritis; Overweight or Obesity,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+eloralintide,NCT07369011,PHASE3,RECRUITING,2028-03,"Sleep Apnea, Obstructive; Obesity; Overweight",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+eloralintide,NCT07392190,PHASE3,RECRUITING,2028-06,Overweight; Obesity,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 elranatamab,NCT05020236,PHASE3,RECRUITING,2026-02-26,Multiple Myeloma,experimental,Pfizer,PFIZER INC,PFE
 elranatamab,NCT05317416,PHASE3,ACTIVE_NOT_RECRUITING,2027-08-04,Multiple Myeloma,experimental,Pfizer,PFIZER INC,PFE
 elranatamab,NCT05317416,PHASE3,ACTIVE_NOT_RECRUITING,2027-08-04,Multiple Myeloma,experimental,Pfizer,PFIZER INC,PFE
@@ -155,7 +169,10 @@ epcoritamab,NCT06191744,PHASE3,ACTIVE_NOT_RECRUITING,2037-11,Follicular Lymphoma
 epcoritamab,NCT06508658,PHASE3,ACTIVE_NOT_RECRUITING,2028-03,Diffuse Large B-Cell Lymphoma,experimental,Genmab,GENMAB A/S,GMAB
 epcoritamab,NCT07226752,PHASE3,ACTIVE_NOT_RECRUITING,2025-10-13,Diffuse Large B-Cell Lymphoma,experimental,Genmab,GENMAB A/S,GMAB
 etentamig,NCT06158841,PHASE3,ACTIVE_NOT_RECRUITING,2027-12,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
-etentamig,NCT07095452,PHASE2;PHASE3,RECRUITING,2042-01,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
+etentamig,NCT07095452,PHASE2;PHASE3,RECRUITING,2040-09,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
+etentamig,NCT07095452,PHASE2;PHASE3,RECRUITING,2040-09,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
+etentamig,NCT07095452,PHASE2;PHASE3,RECRUITING,2040-09,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
+etentamig,NCT07095452,PHASE2;PHASE3,RECRUITING,2040-09,Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
 etentamig,NCT07728188,PHASE3,NOT_YET_RECRUITING,2033-02,Relapsed or Refractory Multiple Myeloma,experimental,AbbVie,AbbVie Inc.,ABBV
 etentamig,NCT07793422,PHASE3,NOT_YET_RECRUITING,2034-12,Amyloid Light Chain (AL) Amyloidosis,experimental,AbbVie,AbbVie Inc.,ABBV
 fianlimab,NCT05352672,PHASE3,ACTIVE_NOT_RECRUITING,2026-03-12,Melanoma,experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
@@ -165,12 +182,9 @@ fianlimab,NCT05800015,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2030-01-16,Non-small C
 fianlimab,NCT06246916,PHASE3,RECRUITING,2027-03-22,Melanoma,experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
 golcadomide,NCT06356129,PHASE3,ACTIVE_NOT_RECRUITING,2027-08-09,Large B-cell Lymphoma,experimental,Celgene,BRISTOL MYERS SQUIBB CO,BMY
 golcadomide,NCT06911502,PHASE3,RECRUITING,2028-04-24,Follicular Lymphoma,experimental,Celgene,BRISTOL MYERS SQUIBB CO,BMY
-granulocyte colony stimulating factor,NCT05139017,PHASE2;PHASE3,RECRUITING,2027-09-24,DLBCL; Diffuse Large B-Cell Lymphoma,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-granulocyte colony stimulating factor,NCT05726110,PHASE3,RECRUITING,2024-12-10,Relapsed or Refractory Acute Myeloid Leukemia,experimental,Shanxi Bethune Hospital,,
-granulocyte colony stimulating factor,NCT07735117,PHASE3,NOT_YET_RECRUITING,2028-07-20,Acute Myeloid Leukemia (AML); Myelodysplastic Syndromes (MDS),experimental,Ruijin Hospital,,
 ianalumab,NCT05624749,PHASE3,ACTIVE_NOT_RECRUITING,2027-04-12,Systemic Lupus Erythematosus,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 ianalumab,NCT05639114,PHASE3,ACTIVE_NOT_RECRUITING,2027-03-26,Systemic Lupus Erythematosus,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
-ianalumab,NCT06133972,PHASE3,RECRUITING,2030-04-08,Systemic Lupus Erythematosus,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
+ianalumab,NCT06133972,PHASE3,RECRUITING,2034-04-03,Systemic Lupus Erythematosus,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 ianalumab,NCT06711887,PHASE3,RECRUITING,2035-08-01,Lupus Nephritis,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 iberdomide,NCT04975997,PHASE3,ACTIVE_NOT_RECRUITING,2027-11-16,Multiple Myeloma,experimental,Celgene,BRISTOL MYERS SQUIBB CO,BMY
 iberdomide,NCT04975997,PHASE3,ACTIVE_NOT_RECRUITING,2027-11-16,Multiple Myeloma,experimental,Celgene,BRISTOL MYERS SQUIBB CO,BMY
@@ -211,10 +225,12 @@ lisaftoclax,NCT06319456,PHASE3,RECRUITING,2027-08,CLL/SLL,experimental,Ascentage
 lisaftoclax,NCT06389292,PHASE3,RECRUITING,2028-05-25,Acute Myeloid Leukemia,experimental,Ascentage Pharma Group Inc.,ASCENTAGE PHARMA GROUP INTERNATIONAL,AAPG
 litifilimab,NCT04895241,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-30,"Lupus Erythematosus, Systemic",experimental,Biogen,BIOGEN INC.,BIIB
 litifilimab,NCT04961567,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-27,"Lupus Erythematosus, Systemic",experimental,Biogen,BIOGEN INC.,BIIB
-litifilimab,NCT05352919,PHASE3,ENROLLING_BY_INVITATION,2030-03-29,Systemic Lupus Erythematosus (SLE),experimental,Biogen,BIOGEN INC.,BIIB
+litifilimab,NCT05352919,PHASE3,ENROLLING_BY_INVITATION,2032-05-03,Systemic Lupus Erythematosus (SLE),experimental,Biogen,BIOGEN INC.,BIIB
 litifilimab,NCT05531565,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2026-10-20,Subacute Cutaneous Lupus Erythematosus; Chronic Cutaneous Lupus Erythematosus,experimental,Biogen,BIOGEN INC.,BIIB
 litifilimab,NCT06044337,PHASE3,ENROLLING_BY_INVITATION,2029-06-26,Subacute Cutaneous Lupus Erythematosus; Chronic Cutaneous Lupus Erythematosus,experimental,Biogen,BIOGEN INC.,BIIB
-lorlatanib,NCT05059522,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-31,Advanced Malignancies; NSCLC; Ovarian Cancer; Urothelial Cancer; Solid Tumors,experimental,Pfizer,PFIZER INC,PFE
+livmoniplimab,NCT06109272,PHASE2;PHASE3,ACTIVE_NOT_RECRUITING,2027-01,Hepatocellular Carcinoma,experimental,AbbVie,AbbVie Inc.,ABBV
+livmoniplimab,NCT06236438,PHASE2;PHASE3,RECRUITING,2031-10,Non-Small Cell Lung Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
+lorlatinib,NCT05059522,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-31,Advanced Malignancies; NSCLC; Ovarian Cancer; Urothelial Cancer; Solid Tumors,experimental,Pfizer,PFIZER INC,PFE
 lutikizumab,NCT06468228,PHASE3,ACTIVE_NOT_RECRUITING,2026-12,Hidradenitis Suppurativa,experimental,AbbVie,AbbVie Inc.,ABBV
 maridebart cafraglutide,NCT06858839,PHASE3,ACTIVE_NOT_RECRUITING,2027-01-21,Obesity,experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT06858878,PHASE3,ACTIVE_NOT_RECRUITING,2027-01-21,"Type 2 Diabetes Mellitus (T2DM), Obesity, Overweight",experimental,Amgen,AMGEN INC,AMGN
@@ -222,7 +238,7 @@ maridebart cafraglutide,NCT06987695,PHASE3,ACTIVE_NOT_RECRUITING,2027-04-27,Obes
 maridebart cafraglutide,NCT07037433,PHASE3,RECRUITING,2028-06-30,Atherosclerotic Cardiovascular Disease; Overweight; Obesity,experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT07037459,PHASE3,RECRUITING,2028-06-30,Heart Failure With Preserved Ejection Fraction; Heart Failure With Mildly Reduced Ejection Fraction; Obesity,experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT07225686,PHASE3,ACTIVE_NOT_RECRUITING,2027-09-03,Obesity; Obstructive Sleep Apnea,experimental,Amgen,AMGEN INC,AMGN
-maridebart cafraglutide,NCT07226765,PHASE3,RECRUITING,2027-09-29,Obstructive Sleep Apnea,experimental,Amgen,AMGEN INC,AMGN
+maridebart cafraglutide,NCT07226765,PHASE3,ACTIVE_NOT_RECRUITING,2027-08-30,Obstructive Sleep Apnea,experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT07575399,PHASE3,RECRUITING,2028-01-03,Obesity or Overweight,experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT07684144,PHASE3,RECRUITING,2027-12-26,"Obesity; Overweight; Diabetes Mellitus, Type 2",experimental,Amgen,AMGEN INC,AMGN
 maridebart cafraglutide,NCT07684235,PHASE3,RECRUITING,2027-12-26,Obesity; Overweight,experimental,Amgen,AMGEN INC,AMGN
@@ -231,7 +247,7 @@ mevrometostat,NCT06551324,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-28,Metastatic Cas
 mevrometostat,NCT06629779,PHASE3,RECRUITING,2026-12-02,Metastatic Castration-Resistant Prostate Cancer,experimental,Pfizer,PFIZER INC,PFE
 mevrometostat,NCT07028853,PHASE3,RECRUITING,2028-09-12,Metastatic Castration Sensitive Prostate Cancer (mCSPC); Hormone Sensitive Prostate Cancer; Prostate Cancer; Cancer of the Prostate,experimental,Pfizer,PFIZER INC,PFE
 mezigdomide,NCT05519085,PHASE3,RECRUITING,2027-01-10,Relapsed or Refractory Multiple Myeloma,experimental,Celgene,BRISTOL MYERS SQUIBB CO,BMY
-mezigdomide,NCT05552976,PHASE3,ACTIVE_NOT_RECRUITING,2026-07-18,Relapsed or Refractory Multiple Myeloma,experimental,Bristol-Myers Squibb,BRISTOL MYERS SQUIBB CO,BMY
+mezigdomide,NCT05552976,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-28,Relapsed or Refractory Multiple Myeloma,experimental,Bristol-Myers Squibb,BRISTOL MYERS SQUIBB CO,BMY
 mibavademab,NCT07220772,PHASE3,RECRUITING,2027-06-18,Monogenic Obesity,experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
 mirikizumab,NCT03519945,PHASE3,ACTIVE_NOT_RECRUITING,2026-03-04,Ulcerative Colitis,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 mirikizumab,NCT04232553,PHASE3,ACTIVE_NOT_RECRUITING,2024-11-28,Crohn's Disease,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
@@ -248,8 +264,6 @@ mirikizumab,NCT06937099,PHASE3,RECRUITING,2028-05,Crohn's Disease; Obesity or Ov
 mirikizumab,NCT06937099,PHASE3,RECRUITING,2028-05,Crohn's Disease; Obesity or Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 mirikizumab,NCT06937099,PHASE3,RECRUITING,2028-05,Crohn's Disease; Obesity or Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 mirikizumab,NCT06937099,PHASE3,RECRUITING,2028-05,Crohn's Disease; Obesity or Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-monalizumab,NCT04590963,PHASE3,ACTIVE_NOT_RECRUITING,2022-05-11,Squamous Cell Carcinoma of the Head and Neck,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-monalizumab,NCT05221840,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-30,Non-Small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 nemtabrutinib,NCT05624554,PHASE3,ACTIVE_NOT_RECRUITING,2027-05-19,Chronic Lymphocytic Leukemia; Small Lymphocytic Lymphoma,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 nemtabrutinib,NCT05947851,PHASE3,RECRUITING,2032-06-01,"Leukemia, Lymphocytic, Chronic, B-Cell; Leukemia, Chronic Lymphocytic; Small-Cell Lymphoma; Lymphoma, Small Lymphocytic; CLL; SLL",experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 nemtabrutinib,NCT06136559,PHASE3,RECRUITING,2032-09-07,Chronic Lymphocytic Leukemia; Small Lymphocytic Lymphoma,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
@@ -257,7 +271,12 @@ obicetrapib,NCT05202509,PHASE3,ACTIVE_NOT_RECRUITING,2026-11,Atherosclerotic Car
 obicetrapib,NCT07219602,PHASE3,ACTIVE_NOT_RECRUITING,2028-03,Lipidemia; Type 2 Diabetes (T2DM); Metabolic Syndrome (MetS),experimental,NewAmsterdam Pharma,NewAmsterdam Pharma Co N.V.,NAMS
 obicetrapib ezetimibe,NCT06305559,PHASE3,ACTIVE_NOT_RECRUITING,2027-11,"Lipidemia; Coronary Artery Disease; Plaque, Atherosclerotic",experimental,NewAmsterdam Pharma,NewAmsterdam Pharma Co N.V.,NAMS
 obicetrapib ezetimibe,NCT07219602,PHASE3,ACTIVE_NOT_RECRUITING,2028-03,Lipidemia; Type 2 Diabetes (T2DM); Metabolic Syndrome (MetS),experimental,NewAmsterdam Pharma,NewAmsterdam Pharma Co N.V.,NAMS
-oleclumab,NCT05221840,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-30,Non-Small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+odronextamab,NCT05991388,PHASE2;PHASE3,RECRUITING,2031-05-01,B-cell Non Hodgkin Lymphoma,experimental,University of Birmingham,,
+odronextamab,NCT06091254,PHASE3,RECRUITING,2028-02-07,Follicular Lymphoma (FL),experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
+odronextamab,NCT06091865,PHASE3,RECRUITING,2028-03-30,Diffuse Large B-cell Lymphoma (DLBCL),experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
+odronextamab,NCT06097364,PHASE3,ACTIVE_NOT_RECRUITING,2029-07-29,Follicular Lymphoma (FL),experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
+odronextamab,NCT06149286,PHASE3,RECRUITING,2031-04-30,Relapsed/Refractory Follicular Lymphoma; Relapsed/Refractory Marginal Zone Lymphoma (R/R MZL),experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
+odronextamab,NCT06230224,PHASE3,ACTIVE_NOT_RECRUITING,2028-05-29,B-Cell Non-Hodgkin Lymphoma (B-NHL),experimental,Regeneron Pharmaceuticals,"REGENERON PHARMACEUTICALS, INC.",REGN
 olezarsen,NCT05681351,PHASE3,ACTIVE_NOT_RECRUITING,2027-03,Severe Hypertriglyceridemia,experimental,"Ionis Pharmaceuticals, Inc.",IONIS PHARMACEUTICALS INC,IONS
 olomorasib,NCT06119581,PHASE3,RECRUITING,2027-11,"Carcinoma, Non-Small-Cell Lung; Neoplasm Metastasis",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 olomorasib,NCT06890598,PHASE3,RECRUITING,2029-05,"Carcinoma, Non-Small-Cell Lung",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
@@ -275,21 +294,21 @@ orforglipron,NCT06952530,PHASE3,ACTIVE_NOT_RECRUITING,2027-09,Hypertension,exper
 orforglipron,NCT06972459,PHASE3,ACTIVE_NOT_RECRUITING,2027-08,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT06972472,PHASE3,ACTIVE_NOT_RECRUITING,2027-08,Obesity; Overweight; Type 2 Diabetes,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT06993792,PHASE3,ACTIVE_NOT_RECRUITING,2027-08,Obesity; Overweight; Type 2 Diabetes,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-orforglipron,NCT07153471,PHASE3,RECRUITING,2028-04,Osteoarthritis,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+orforglipron,NCT07153471,PHASE3,ACTIVE_NOT_RECRUITING,2028-04,Osteoarthritis,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07202884,PHASE3,RECRUITING,2028-03,"Urinary Incontinence,Stress",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07223593,PHASE3,RECRUITING,2028-06,Peripheral Arterial Disease,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07241390,PHASE3,RECRUITING,2031-08,Atherosclerosis Cardiovascular Disease; Chronic Kidney Disease,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07613307,PHASE3,RECRUITING,2027-05,"Diabetes Mellitus, Type 2; Diabetes Melletus; Glucose Metabolism Disorders; Metabolic Disorders; Nutritional and Metabolic Diseases; Endocrine System Diseases; Feeding Behavior; Behavior; Fasting; Glucagon-Like Peptide-1 Receptor; Glucagon-Like Peptide Receptors; Receptors, G-Protein-Coupled; Receptors, Cell Surface; Membrane Proteins; Proteins; Receptors, Peptide",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07668336,PHASE3,NOT_YET_RECRUITING,2030-03,"Diabetes Mellitus, Type 2",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 orforglipron,NCT07790861,PHASE3,NOT_YET_RECRUITING,2028-03,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-orforglipron,NCT07794579,PHASE3,NOT_YET_RECRUITING,2029-08,"Overweight; Prediabetic State; Prehypertension; Obesity, Abdominal",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+orforglipron,NCT07794579,PHASE3,RECRUITING,2029-08,"Overweight; Prediabetic State; Prehypertension; Obesity, Abdominal",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 palazestrant,NCT06016738,PHASE3,ACTIVE_NOT_RECRUITING,2026-10-31,Breast Cancer; Advanced Breast Cancer; Metastatic Breast Cancer; ER Positive Breast Cancer; HER2 Negative Breast Carcinoma,experimental,"Olema Pharmaceuticals, Inc.","Olema Pharmaceuticals, Inc.",OLMA
 palazestrant,NCT07085767,PHASE3,RECRUITING,2028-12,Breast Cancer; Locally Advanced Breast Cancer; Metastatic Breast Cancer; ER Positive Breast Cancer; HER2 Negative Breast Carcinoma,experimental,"Olema Pharmaceuticals, Inc.","Olema Pharmaceuticals, Inc.",OLMA
 pelabresib,NCT06401356,PHASE3,RECRUITING,2027-06-02,Hematologic Malignancy; Solid Tumor; Advanced Malignancies,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 piclidenoson,NCT06643260,PHASE3,NOT_YET_RECRUITING,2027-12,Plaque Psoriasis,experimental,Can-Fite BioPharma,Can-Fite BioPharma Ltd.,CANF
 pitolisant,NCT06366464,PHASE3,RECRUITING,2027-04,Prader-Willi Syndrome,experimental,"Harmony Biosciences Management, Inc.","Harmony Biosciences Holdings, Inc.",HRMY
 pitolisant,NCT07219485,PHASE3,ENROLLING_BY_INVITATION,2030-08,Prader-Willi Syndrome,experimental,"Harmony Biosciences Management, Inc.","Harmony Biosciences Holdings, Inc.",HRMY
-platinum investigator choice,NCT04624204,PHASE3,ACTIVE_NOT_RECRUITING,2027-10-28,Small Cell Lung Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+ponsegromab,NCT06989437,PHASE2;PHASE3,RECRUITING,2028-01-23,Cachexia; Metastatic Pancreatic Ductal Adenocarcinoma,experimental,Pfizer,PFIZER INC,PFE
 povorcitinib,NCT06113445,PHASE3,ACTIVE_NOT_RECRUITING,2026-02-24,NonSegmental Vitiligo,experimental,Incyte Corporation,INCYTE CORP,INCY
 povorcitinib,NCT06113471,PHASE3,ACTIVE_NOT_RECRUITING,2026-03-17,NonSegmental Vitiligo,experimental,Incyte Corporation,INCYTE CORP,INCY
 povorcitinib,NCT06212999,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-26,Hidradenitis Suppurativa (HS),experimental,Incyte Corporation,INCYTE CORP,INCY
@@ -300,14 +319,14 @@ ravulizumab,NCT05644561,PHASE3,ACTIVE_NOT_RECRUITING,2026-07-15,Generalized Myas
 ravulizumab,NCT07024563,PHASE3,RECRUITING,2028-11-29,IgAN; IgAVN; Immunoglobulin A Nephropathy; Immunoglobulin A Vasculitis Associated Nephritis; Henoch-schonlein Purpura Nephritis; IgA Vasculitis,experimental,"Alexion Pharmaceuticals, Inc.",ASTRAZENECA PLC,AZN
 ravulizumab,NCT07596784,PHASE3,RECRUITING,2027-08-17,Generalized Myasthenia Gravis; gMG,experimental,"Alexion Pharmaceuticals, Inc.",ASTRAZENECA PLC,AZN
 recombinant human tissue kallikrein,NCT05065216,PHASE2;PHASE3,RECRUITING,2026-12,Acute Stroke; Ischemic Stroke; Stroke,experimental,DiaMedica Therapeutics Inc,DiaMedica Therapeutics Inc.,DMAC
-rescue medications,NCT06132958,PHASE3,ACTIVE_NOT_RECRUITING,2028-01-10,Endometrial Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-rescue medications,NCT06356311,PHASE3,ACTIVE_NOT_RECRUITING,2027-01-04,Gastroesophageal Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-rescue medications,NCT07216703,PHASE3,RECRUITING,2031-10-29,Cervical Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-rescue medications,NCT07318558,PHASE3,RECRUITING,2033-02-25,Ovarian Neoplasms; Ovarian Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
+remibrutinib,NCT06744920,PHASE3,ACTIVE_NOT_RECRUITING,2028-02-25,Generalized Myasthenia Gravis,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
+remibrutinib,NCT06744920,PHASE3,ACTIVE_NOT_RECRUITING,2028-02-25,Generalized Myasthenia Gravis,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
+remibrutinib,NCT07665437,PHASE3,RECRUITING,2031-10-24,Hidradenitis Suppurativa,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
+repotrectinib,NCT06140836,PHASE3,ACTIVE_NOT_RECRUITING,2027-02-16,"Carcinoma, Non-Small-Cell Lung",experimental,Bristol-Myers Squibb,BRISTOL MYERS SQUIBB CO,BMY
 resmetirom,NCT03900429,PHASE3,ACTIVE_NOT_RECRUITING,2028-01,NASH - Nonalcoholic Steatohepatitis,active_comparator,"Madrigal Pharmaceuticals, Inc.","MADRIGAL PHARMACEUTICALS, INC.",MDGL
 resmetirom,NCT04951219,PHASE3,ACTIVE_NOT_RECRUITING,2027-03,Non-Alcoholic Fatty Liver Disease,experimental,"Madrigal Pharmaceuticals, Inc.","MADRIGAL PHARMACEUTICALS, INC.",MDGL
 resmetirom,NCT05500222,PHASE3,ACTIVE_NOT_RECRUITING,2026-12,"NASH; Cirrhosis, Liver",active_comparator,"Madrigal Pharmaceuticals, Inc.","MADRIGAL PHARMACEUTICALS, INC.",MDGL
-retatrutide,NCT06260722,PHASE3,ACTIVE_NOT_RECRUITING,2026-08,"Diabetes Mellitus, Type 2",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
+retatrutide,NCT06260722,PHASE3,ACTIVE_NOT_RECRUITING,2026-08-27,"Diabetes Mellitus, Type 2",experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 retatrutide,NCT06297603,PHASE3,ACTIVE_NOT_RECRUITING,2026-10,Type 2 Diabetes,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 retatrutide,NCT06383390,PHASE3,ACTIVE_NOT_RECRUITING,2029-02,Atherosclerotic Cardiovascular Disease (ASCVD); Chronic Kidney Disease (CKD),experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 retatrutide,NCT06662383,PHASE3,ACTIVE_NOT_RECRUITING,2026-11,Obesity,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
@@ -317,24 +336,16 @@ retatrutide,NCT07165028,PHASE3,RECRUITING,2030-08,Metabolic Dysfunction-Associat
 retatrutide,NCT07232719,PHASE3,ACTIVE_NOT_RECRUITING,2027-07,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 retatrutide,NCT07357415,PHASE3,ACTIVE_NOT_RECRUITING,2028-10,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
 retifanlimab,NCT06072612,PHASE3,RECRUITING,2027-12,Breast Cancer; Metastatic Breast Cancer; Breast Neoplasm; Breast Cancer Metastatic; End Stage Cancer,experimental,BriaCell Therapeutics Corporation,BriaCell Therapeutics Corp.,BCTX
-rilvegostomig,NCT06109779,PHASE3,ACTIVE_NOT_RECRUITING,2029-01-02,Biliary Tract Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06357533,PHASE3,RECRUITING,2029-12-28,Non-Small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06467357,PHASE3,RECRUITING,2028-06-12,Biliary Tract Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06564844,PHASE3,ACTIVE_NOT_RECRUITING,2027-06-30,Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06627647,PHASE3,RECRUITING,2030-11-18,Non-squamous Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06692738,PHASE3,RECRUITING,2030-07-01,Non-small Cell Lung Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06764875,PHASE3,RECRUITING,2029-04-27,HER2-positive Gastric Cancer; Gastroesophageal Junction Adenocarcinoma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06868277,PHASE3,RECRUITING,2030-01-17,"Carcinoma, Non-Small Cell Lung",experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06921785,PHASE3,RECRUITING,2030-03-15,Hepatocellular Carcinoma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT06989112,PHASE3,RECRUITING,2029-01-19,Endometrial Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT07221253,PHASE3,RECRUITING,2029-07-31,Biliary Tract Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT07431281,PHASE3,RECRUITING,2029-08-16,Gastric Cancer; Gastroesophageal Junction Adenocarcinoma; Esophageal Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rilvegostomig,NCT07720284,PHASE3,RECRUITING,2030-09-11,High-risk Muscle Invasive Urothelial Carcinoma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-rina,NCT06619236,PHASE3,ACTIVE_NOT_RECRUITING,2027-02,Platinum-resistant Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
-rina,NCT07166094,PHASE3,RECRUITING,2029-08,Endometrial Cancer; Recurrent or Progressive Endometrial Cancer,experimental,Genmab,GENMAB A/S,GMAB
-rina,NCT07225270,PHASE3,RECRUITING,2028-10,Ovarian Cancer; Platinum-sensitive Ovarian Cancer; PSOC,experimental,Genmab,GENMAB A/S,GMAB
-rina,NCT07564141,PHASE3,RECRUITING,2029-12,Platinum-Sensitive Ovarian Cancer; Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
-rina,NCT07604766,PHASE3,RECRUITING,2027-09,Platinum-resistant Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
+ribupatide,NCT07284875,PHASE3,RECRUITING,2028-02,Obesity; Overweight,experimental,Kailera,"Kailera Therapeutics, Inc.",KLRA
+ribupatide,NCT07284901,PHASE3,RECRUITING,2028-03-27,Obesity With Diabetes; Overweight With Diabetes,experimental,Kailera,"Kailera Therapeutics, Inc.",KLRA
+ribupatide,NCT07284979,PHASE3,RECRUITING,2028-03,Obesity,experimental,Kailera,"Kailera Therapeutics, Inc.",KLRA
+ribupatide,NCT07709910,PHASE3,NOT_YET_RECRUITING,2028-11,Participants With Obesity and Knee Osteoarthritis,experimental,"Fujian Shengdi Pharmaceutical Co., Ltd.",,
+rinatabart sesutecan,NCT06619236,PHASE3,ACTIVE_NOT_RECRUITING,2026-08-18,Platinum-resistant Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
+rinatabart sesutecan,NCT07166094,PHASE3,RECRUITING,2029-08,Endometrial Cancer; Recurrent or Progressive Endometrial Cancer,experimental,Genmab,GENMAB A/S,GMAB
+rinatabart sesutecan,NCT07225270,PHASE3,RECRUITING,2028-10,Ovarian Cancer; Platinum-sensitive Ovarian Cancer; PSOC,experimental,Genmab,GENMAB A/S,GMAB
+rinatabart sesutecan,NCT07564141,PHASE3,RECRUITING,2029-12,Platinum-Sensitive Ovarian Cancer; Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
+rinatabart sesutecan,NCT07604766,PHASE3,RECRUITING,2027-09,Platinum-resistant Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
+rinatabart sesutecan,NCT07859215,PHASE3,NOT_YET_RECRUITING,2030-03,Ovarian Cancer,experimental,Genmab,GENMAB A/S,GMAB
 ritlecitinib,NCT06072183,PHASE3,ACTIVE_NOT_RECRUITING,2027-07-30,Stable Nonsegmental Vitiligo; Active Nonsegmental Vitiligo,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT06072183,PHASE3,ACTIVE_NOT_RECRUITING,2027-07-30,Stable Nonsegmental Vitiligo; Active Nonsegmental Vitiligo,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT06072183,PHASE3,ACTIVE_NOT_RECRUITING,2027-07-30,Stable Nonsegmental Vitiligo; Active Nonsegmental Vitiligo,experimental,Pfizer,PFIZER INC,PFE
@@ -343,12 +354,10 @@ ritlecitinib,NCT06163326,PHASE3,ACTIVE_NOT_RECRUITING,2027-03-31,Vitiligo,experi
 ritlecitinib,NCT06163326,PHASE3,ACTIVE_NOT_RECRUITING,2027-03-31,Vitiligo,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT06873945,PHASE3,RECRUITING,2028-03-19,Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT06873945,PHASE3,RECRUITING,2028-03-19,Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
+ritlecitinib,NCT07029711,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-02,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
+ritlecitinib,NCT07029828,PHASE3,RECRUITING,2030-06-26,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT07733765,PHASE3,RECRUITING,2028-04-26,Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
 ritlecitinib,NCT07733765,PHASE3,RECRUITING,2028-04-26,Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
-ritlecitinib higher,NCT07029711,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-02,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
-ritlecitinib higher,NCT07029828,PHASE3,RECRUITING,2030-06-26,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
-ritlecitinib lower,NCT07029711,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-02,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
-ritlecitinib lower,NCT07029828,PHASE3,RECRUITING,2030-06-26,Severe Alopecia Areata,experimental,Pfizer,PFIZER INC,PFE
 sacituzumab govitecan hziy,NCT04639986,PHASE3,ACTIVE_NOT_RECRUITING,2026-12,Metastatic Breast Cancer,experimental,Gilead Sciences,"GILEAD SCIENCES, INC.",GILD
 sacituzumab govitecan hziy,NCT05089734,PHASE3,ACTIVE_NOT_RECRUITING,2023-11-29,Non-Small Cell Lung Cancer,experimental,Gilead Sciences,"GILEAD SCIENCES, INC.",GILD
 sacituzumab govitecan hziy,NCT05382286,PHASE3,ACTIVE_NOT_RECRUITING,2027-02,Triple Negative Breast Cancer; PD-L1 Positive,experimental,Gilead Sciences,"GILEAD SCIENCES, INC.",GILD
@@ -373,43 +382,28 @@ sotagliflozin,NCT06481891,PHASE3,ACTIVE_NOT_RECRUITING,2027-01,"Obstructive Card
 sotorasib,NCT05920356,PHASE3,RECRUITING,2027-06-30,Non-Small Cell Lung Cancer (NSCLC),experimental,Amgen,AMGEN INC,AMGN
 sotorasib,NCT06252649,PHASE3,RECRUITING,2028-09-25,Metastatic Colorectal Cancer,experimental,Amgen,AMGEN INC,AMGN
 sotorasib,NCT06497556,PHASE3,ACTIVE_NOT_RECRUITING,2026-05-19,Non-Small Cell Lung Cancer; KRAS G12C Lung Cancer,active_comparator,Hoffmann-La Roche,,
-standard lymphodepletion,NCT06193889,PHASE2;PHASE3,RECRUITING,2027-09,Myasthenia Gravis; Generalized Myasthenia Gravis,experimental,Kyverna Therapeutics,"Kyverna Therapeutics, Inc.",KYTX
-supportive care measures,NCT06170788,PHASE3,RECRUITING,2028-01-25,Non-small Cell Lung Cancer (NSCLC),experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
-supportive care measures,NCT06356311,PHASE3,ACTIVE_NOT_RECRUITING,2027-01-04,Gastroesophageal Cancer,experimental,Merck Sharp & Dohme LLC,"Merck & Co., Inc.",MRK
 talazoparib,NCT05059522,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-31,Advanced Malignancies; NSCLC; Ovarian Cancer; Urothelial Cancer; Solid Tumors,experimental,Pfizer,PFIZER INC,PFE
 tapinarof,NCT05172726,PHASE3,ACTIVE_NOT_RECRUITING,2026-10,Plaque Psoriasis,experimental,Organon and Co,Organon & Co.,OGN
 tapinarof,NCT05981118,PHASE2;PHASE3,ENROLLING_BY_INVITATION,2027-01,ICD10 Code L40.9 for Psoriasis,active_comparator,Wake Forest University Health Sciences,,
-tapinarof,NCT07265479,PHASE3,ACTIVE_NOT_RECRUITING,2027-08,Atopic Dermatitis,experimental,Organon and Co,Organon & Co.,OGN
 tarlatamab,NCT05740566,PHASE3,ACTIVE_NOT_RECRUITING,2025-01-29,Small Cell Lung Cancer (SCLC),experimental,Amgen,AMGEN INC,AMGN
 tarlatamab,NCT06117774,PHASE3,ACTIVE_NOT_RECRUITING,2030-04-20,Limited Stage Small Cell Lung Cancer; Small Cell Lung Cancer,experimental,Amgen,AMGEN INC,AMGN
 tarlatamab,NCT06211036,PHASE3,ACTIVE_NOT_RECRUITING,2027-07-05,Extensive-Stage Small-Cell Lung Cancer; Small-Cell Lung Cancer,experimental,Amgen,AMGEN INC,AMGN
 tarlatamab,NCT07005128,PHASE3,ACTIVE_NOT_RECRUITING,2029-01-04,Small-cell Lung Cancer; Extensive Stage Small-cell Lung Cancer,experimental,Amgen,AMGEN INC,AMGN
 tarlatamab,NCT07637513,PHASE3,NOT_YET_RECRUITING,2037-11,Limited Stage Small-Cell Lung Cancer,experimental,"PrECOG, LLC.",,
 tarlatamab,NCT07778316,PHASE3,RECRUITING,2027-09-24,Small Cell Lung Cancer,experimental,Amgen,AMGEN INC,AMGN
-telisotuzumab adizutecan,NCT06614192,PHASE3,ACTIVE_NOT_RECRUITING,2027-08,Metastatic Colorectal Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
-telisotuzumab adizutecan,NCT07005102,PHASE2;PHASE3,RECRUITING,2031-12,Non-Squamous Non-Small Cell Lung Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
-telisotuzumab adizutecan,NCT07155187,PHASE2;PHASE3,RECRUITING,2030-09,Non-Small Cell Lung Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
-telisotuzumab adizutecan,NCT07525206,PHASE3,RECRUITING,2029-05,Colorectal Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
-telisotuzumab adizutecan,NCT07821684,PHASE3,NOT_YET_RECRUITING,2031-04,Non-Squamous Non-Small Cell Lung Cancer,experimental,AbbVie,AbbVie Inc.,ABBV
 telitacicept,NCT06456580,PHASE3,RECRUITING,2027-05,Generalized Myasthenia Gravis,experimental,Vor Biopharma,Vor Biopharma Inc.,VOR
 telitacicept,NCT07249632,PHASE3,RECRUITING,2026-12-31,"Myasthenia Gravis, Ocular",experimental,"RemeGen Co., Ltd.",,
-tirzepatide,NCT05556512,PHASE3,ACTIVE_NOT_RECRUITING,2027-10,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06075667,PHASE3,ACTIVE_NOT_RECRUITING,2026-06-02,Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06439277,PHASE3,RECRUITING,2027-10,Obesity; Weight Gain,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06662383,PHASE3,ACTIVE_NOT_RECRUITING,2026-11,Obesity,active_comparator,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06914895,PHASE3,ACTIVE_NOT_RECRUITING,2026-11,Type 1 Diabetes; Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06937086,PHASE3,RECRUITING,2028-04,Ulcerative Colitis; Obesity or Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06937099,PHASE3,RECRUITING,2028-05,Crohn's Disease; Obesity or Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT06962280,PHASE3,ACTIVE_NOT_RECRUITING,2026-11,Type 1 Diabetes; Obesity; Overweight,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT07165028,PHASE3,RECRUITING,2030-08,Metabolic Dysfunction-Associated Steatotic Liver Disease,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT07481747,PHASE3,RECRUITING,2027-02-14,Obesity; Overweight (Without Type 2 Diabetes) With Weight-related Comorbidities,experimental,Hudson Biotech,,
-tirzepatide,NCT07738276,PHASE3,NOT_YET_RECRUITING,2027-06-11,Heart Failure and Reduced Ejection Fraction; Obesity & Overweight; Tirzepatide,experimental,Shahid Beheshti University of Medical Sciences,,
-tirzepatide,NCT07817875,PHASE3,NOT_YET_RECRUITING,2029-12,Obesity,experimental,Eli Lilly and Company,ELI LILLY & Co,LLY
-tirzepatide,NCT07829198,PHASE3,NOT_YET_RECRUITING,2028-12,Obesity,experimental,Universidade do Porto,,
+tezepelumab,NCT06023589,PHASE3,RECRUITING,2028-05-31,Asthma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+tezepelumab,NCT06740045,PHASE3,NOT_YET_RECRUITING,2025-03,Asthma; Chronic Rhinosinusitis With Nasal Polyps,experimental,"Dr. Andrew Thamboo, MD",,
+tezepelumab,NCT07013123,PHASE3,NOT_YET_RECRUITING,2029-08-18,Severe Asthma; Allergy to House Dust Mites,experimental,"University Hospital, Montpellier",,
+tezepelumab,NCT07302516,PHASE3,NOT_YET_RECRUITING,2028-12,Asthma,experimental,"Qilu Pharmaceutical Co., Ltd.",,
+tezepelumab,NCT07363642,PHASE3,RECRUITING,2028-02-07,Severe Asthma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
+tilrekimig,NCT07765888,PHASE3,RECRUITING,2028-03-10,Atopic Dermatitis,experimental,Pfizer,PFIZER INC,PFE
+tilrekimig,NCT07772921,PHASE3,NOT_YET_RECRUITING,2029-06-12,Asthma,experimental,Pfizer,PFIZER INC,PFE
+tilrekimig,NCT07783425,PHASE3,NOT_YET_RECRUITING,2028-08-29,Atopic Dermatitis,experimental,Pfizer,PFIZER INC,PFE
 tisagenlecleucel,NCT04094311,PHASE3,RECRUITING,2027-03-31,B-cell Acute Lymphoblastic Leukemia; Diffuse Large B-cell Lymphoma,experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 tisagenlecleucel,NCT05888493,PHASE3,ACTIVE_NOT_RECRUITING,2028-07-25,Follicular Lymphoma (FL),experimental,Novartis Pharmaceuticals,NOVARTIS AG,NVS
 tofacitinib,NCT04624230,PHASE3,ACTIVE_NOT_RECRUITING,2027-03-17,Ulcerative Colitis,experimental,Pfizer,PFIZER INC,PFE
-tofacitinib,NCT06020144,PHASE3,ACTIVE_NOT_RECRUITING,2026-01-15,Rheumatoid Arthritis,active_comparator,"Hangzhou Highlightll Pharmaceutical Co., Ltd",,
 tradipitant,NCT07446439,PHASE3,RECRUITING,2026-12-01,Nausea and Vomiting; Obesity,experimental,Vanda Pharmaceuticals,Vanda Pharmaceuticals Inc.,VNDA
 tucatinib,NCT03975647,PHASE3,ACTIVE_NOT_RECRUITING,2023-06-29,HER2-positive Breast Cancer,experimental,"Seagen, a wholly owned subsidiary of Pfizer",PFIZER INC,PFE
 tucatinib,NCT04457596,PHASE3,ACTIVE_NOT_RECRUITING,2028-01-31,Anatomic Stage II Breast Cancer AJCC v8; Anatomic Stage III Breast Cancer AJCC v8; HER2 Positive Breast Carcinoma; Invasive Breast Carcinoma; Multifocal Breast Carcinoma; Synchronous Bilateral Breast Carcinoma; Anatomic Stage I Breast Cancer AJCC v8,experimental,Alliance for Clinical Trials in Oncology,,
@@ -423,14 +417,10 @@ volrustomig,NCT05984277,PHASE3,ACTIVE_NOT_RECRUITING,2029-02-28,Metastatic Non-s
 volrustomig,NCT06079671,PHASE3,RECRUITING,2027-11-26,Locally Advanced Cervical Cancer,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 volrustomig,NCT06097728,PHASE3,ACTIVE_NOT_RECRUITING,2028-11-16,Unresectable Pleural Mesothelioma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
 volrustomig,NCT06129864,PHASE3,RECRUITING,2030-04-17,Locally Advanced Head and Neck Squamous Cell Carcinoma,experimental,AstraZeneca,ASTRAZENECA PLC,AZN
-zanidatamab,NCT05152147,PHASE3,ACTIVE_NOT_RECRUITING,2026-09-30,Gastric Neoplasms; Gastroesophageal Adenocarcinoma; Esophageal Adenocarcinoma,experimental,Jazz Pharmaceuticals,Jazz Pharmaceuticals plc,JAZZ
-zanidatamab,NCT05615818,PHASE3,RECRUITING,2027-06,Biliary Tract Neoplasms,experimental,UNICANCER,,
-zanidatamab,NCT06282575,PHASE3,RECRUITING,2028-12-01,Biliary Tract Cancer,experimental,Jazz Pharmaceuticals,Jazz Pharmaceuticals plc,JAZZ
-zanidatamab,NCT06435429,PHASE3,RECRUITING,2028-04-28,Metastatic HER2-positive Breast Cancer,experimental,Jazz Pharmaceuticals,Jazz Pharmaceuticals plc,JAZZ
 zanubrutinib,NCT03336333,PHASE3,ACTIVE_NOT_RECRUITING,2021-05-07,Chronic Lymphocytic Leukemia; Small Lymphocytic Lymphoma,experimental,BeiGene,,
-zanubrutinib,NCT04002297,PHASE3,ACTIVE_NOT_RECRUITING,2027-03,Mantle Cell Lymphoma; Non-Hodgkin Lymphoma,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC
+zanubrutinib,NCT04002297,PHASE3,ACTIVE_NOT_RECRUITING,2026-04-27,Mantle Cell Lymphoma; Non-Hodgkin Lymphoma,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC
 zanubrutinib,NCT04170283,PHASE3,ACTIVE_NOT_RECRUITING,2026-12-31,B-cell Malignancies,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC
-zanubrutinib,NCT04662255,PHASE3,ACTIVE_NOT_RECRUITING,2027-01,"Lymphoma, Mantle-Cell",active_comparator,"Loxo Oncology, Inc.",,
+zanubrutinib,NCT04662255,PHASE3,ACTIVE_NOT_RECRUITING,2027-11,"Lymphoma, Mantle-Cell",active_comparator,"Loxo Oncology, Inc.",,
 zanubrutinib,NCT05100862,PHASE3,ACTIVE_NOT_RECRUITING,2028-07,Relapsed/Refractory Follicular Lymphoma; Marginal Zone Lymphoma,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC
 zanubrutinib,NCT06073821,PHASE3,ACTIVE_NOT_RECRUITING,2032-02,CLL,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC
 zanubrutinib,NCT06742996,PHASE3,RECRUITING,2028-08-31,Mantle Cell Lymphoma; B Cell Lymphoma,experimental,BeOne Medicines,BeOne Medicines Ltd.,ONC

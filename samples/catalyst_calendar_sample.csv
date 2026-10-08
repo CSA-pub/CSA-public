@@ -1,11 +1,4 @@
 event_date,ticker,asset,event_type,event_window,date_precision,confidence,source,nct_id,source_url
-2026-09-27,BIIB,litifilimab,READOUT,"Sep 27, 2026",day,medium,clinicaltrials,NCT04961567,https://clinicaltrials.gov/study/NCT04961567
-2026-09-28,MLTX,sonelokimab,READOUT,"Sep 28, 2026",day,medium,clinicaltrials,NCT06768671,https://clinicaltrials.gov/study/NCT06768671
-2026-09-30,AZN,datopotamab deruxtecan,READOUT,"Sep 30, 2026",day,medium,clinicaltrials,NCT06417814,https://clinicaltrials.gov/study/NCT06417814
-2026-09-30,BIIB,litifilimab,READOUT,"Sep 30, 2026",day,medium,clinicaltrials,NCT04895241,https://clinicaltrials.gov/study/NCT04895241
-2026-09-30,AZN,monalizumab,READOUT,"Sep 30, 2026",day,medium,clinicaltrials,NCT05221840,https://clinicaltrials.gov/study/NCT05221840
-2026-09-30,AZN,oleclumab,READOUT,"Sep 30, 2026",day,medium,clinicaltrials,NCT05221840,https://clinicaltrials.gov/study/NCT05221840
-2026-09-30,JAZZ,zanidatamab,READOUT,"Sep 30, 2026",day,medium,clinicaltrials,NCT05152147,https://clinicaltrials.gov/study/NCT05152147
 2026-10-19,BMY,deucravacitinib,READOUT,"Oct 19, 2026",day,medium,clinicaltrials,NCT05617677,https://clinicaltrials.gov/study/NCT05617677
 2026-10-20,BIIB,litifilimab,READOUT,"Oct 20, 2026",day,medium,clinicaltrials,NCT05531565,https://clinicaltrials.gov/study/NCT05531565
 2026-10-26,NVS,inclisiran,READOUT,"Oct 26, 2026",day,medium,clinicaltrials,NCT05360446,https://clinicaltrials.gov/study/NCT05360446
@@ -18,18 +11,17 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2026-11-30,CGON,cretostimogene grenadenorepvec,READOUT,Nov 2026,month,medium,clinicaltrials,NCT06111235,https://clinicaltrials.gov/study/NCT06111235
 2026-11-30,NAMS,obicetrapib,READOUT,Nov 2026,month,medium,clinicaltrials,NCT05202509,https://clinicaltrials.gov/study/NCT05202509
 2026-11-30,LLY,retatrutide,READOUT,Nov 2026,month,medium,clinicaltrials,NCT06662383,https://clinicaltrials.gov/study/NCT06662383
-2026-11-30,LLY,tirzepatide,READOUT,Nov 2026,month,medium,clinicaltrials,NCT06914895,https://clinicaltrials.gov/study/NCT06914895
 2026-12-01,VNDA,tradipitant,READOUT,"Dec 1, 2026",day,medium,clinicaltrials,NCT07446439,https://clinicaltrials.gov/study/NCT07446439
 2026-12-02,PFE,mevrometostat,READOUT,"Dec 2, 2026",day,medium,clinicaltrials,NCT06629779,https://clinicaltrials.gov/study/NCT06629779
-2026-12-02,PFE,ritlecitinib higher,READOUT,"Dec 2, 2026",day,medium,clinicaltrials,NCT07029711,https://clinicaltrials.gov/study/NCT07029711
-2026-12-02,PFE,ritlecitinib lower,READOUT,"Dec 2, 2026",day,medium,clinicaltrials,NCT07029711,https://clinicaltrials.gov/study/NCT07029711
+2026-12-02,PFE,ritlecitinib,READOUT,"Dec 2, 2026",day,medium,clinicaltrials,NCT07029711,https://clinicaltrials.gov/study/NCT07029711
+2026-12-23,AZN,benralizumab,READOUT,"Dec 23, 2026",day,medium,clinicaltrials,NCT05692180,https://clinicaltrials.gov/study/NCT05692180
 2026-12-26,INCY,povorcitinib,READOUT,"Dec 26, 2026",day,medium,clinicaltrials,NCT06212999,https://clinicaltrials.gov/study/NCT06212999
 2026-12-28,PFE,mevrometostat,READOUT,"Dec 28, 2026",day,medium,clinicaltrials,NCT06551324,https://clinicaltrials.gov/study/NCT06551324
 2026-12-30,PFE,vepdegestrant,READOUT,"Dec 30, 2026",day,medium,clinicaltrials,NCT05909397,https://clinicaltrials.gov/study/NCT05909397
 2026-12-31,PFE,axitinib,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT05059522,https://clinicaltrials.gov/study/NCT05059522
 2026-12-31,VTRS,cenerimod,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT05672576,https://clinicaltrials.gov/study/NCT05672576
 2026-12-31,IONS,donidalorsen,READOUT,Dec 2026,month,medium,clinicaltrials,NCT05392114,https://clinicaltrials.gov/study/NCT05392114
-2026-12-31,PFE,lorlatanib,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT05059522,https://clinicaltrials.gov/study/NCT05059522
+2026-12-31,PFE,lorlatinib,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT05059522,https://clinicaltrials.gov/study/NCT05059522
 2026-12-31,ABBV,lutikizumab,READOUT,Dec 2026,month,medium,clinicaltrials,NCT06468228,https://clinicaltrials.gov/study/NCT06468228
 2026-12-31,GNLX,olvimulogene nanivacirepvec,READOUT,Dec 2026,month,medium,clinicaltrials,NCT05281471,https://clinicaltrials.gov/study/NCT05281471
 2026-12-31,UTHR,ralinepag,READOUT,Dec 2026,month,medium,clinicaltrials,NCT03683186,https://clinicaltrials.gov/study/NCT03683186
@@ -39,20 +31,20 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2026-12-31,PFE,utomilumab,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT05059522,https://clinicaltrials.gov/study/NCT05059522
 2026-12-31,ONC,zanubrutinib,READOUT,"Dec 31, 2026",day,medium,clinicaltrials,NCT04170283,https://clinicaltrials.gov/study/NCT04170283
 2027-01-04,AZN,laroprovstat,READOUT,"Jan 4, 2027",day,medium,clinicaltrials,NCT07000136,https://clinicaltrials.gov/study/NCT07000136
-2027-01-04,MRK,rescue medications,READOUT,"Jan 4, 2027",day,medium,clinicaltrials,NCT06356311,https://clinicaltrials.gov/study/NCT06356311
-2027-01-04,MRK,supportive care measures,READOUT,"Jan 4, 2027",day,medium,clinicaltrials,NCT06356311,https://clinicaltrials.gov/study/NCT06356311
 2027-01-10,BMY,mezigdomide,READOUT,"Jan 10, 2027",day,medium,clinicaltrials,NCT05519085,https://clinicaltrials.gov/study/NCT05519085
 2027-01-11,AZN,laroprovstat,READOUT,"Jan 11, 2027",day,medium,clinicaltrials,NCT07000123,https://clinicaltrials.gov/study/NCT07000123
 2027-01-15,IDYA,darovasertib,READOUT,"Jan 15, 2027",day,medium,clinicaltrials,NCT05987332,https://clinicaltrials.gov/study/NCT05987332
 2027-01-15,MLTX,sonelokimab,READOUT,"Jan 15, 2027",day,medium,clinicaltrials,NCT06641089,https://clinicaltrials.gov/study/NCT06641089
 2027-01-21,AMGN,maridebart cafraglutide,READOUT,"Jan 21, 2027",day,medium,clinicaltrials,NCT06858839,https://clinicaltrials.gov/study/NCT06858839
 2027-01-29,PFE,disitamab vedotin,READOUT,"Jan 29, 2027",day,medium,clinicaltrials,NCT05911295,https://clinicaltrials.gov/study/NCT05911295
+2027-01-31,ABBV,budigalimab,READOUT,Jan 2027,month,medium,clinicaltrials,NCT06109272,https://clinicaltrials.gov/study/NCT06109272
+2027-01-31,ABBV,livmoniplimab,READOUT,Jan 2027,month,medium,clinicaltrials,NCT06109272,https://clinicaltrials.gov/study/NCT06109272
 2027-01-31,LXRX,sotagliflozin,READOUT,Jan 2027,month,medium,clinicaltrials,NCT06481891,https://clinicaltrials.gov/study/NCT06481891
 2027-02-04,MLTX,sonelokimab,READOUT,"Feb 4, 2027",day,medium,clinicaltrials,NCT06641076,https://clinicaltrials.gov/study/NCT06641076
 2027-02-11,NVS,inclisiran,READOUT,"Feb 11, 2027",day,medium,clinicaltrials,NCT07102628,https://clinicaltrials.gov/study/NCT07102628
+2027-02-16,BMY,repotrectinib,READOUT,"Feb 16, 2027",day,medium,clinicaltrials,NCT06140836,https://clinicaltrials.gov/study/NCT06140836
 2027-02-23,AZN,anifrolumab,READOUT,"Feb 23, 2027",day,medium,clinicaltrials,NCT05138133,https://clinicaltrials.gov/study/NCT05138133
 2027-02-28,LLY,orforglipron,READOUT,Feb 2027,month,medium,clinicaltrials,NCT06672549,https://clinicaltrials.gov/study/NCT06672549
-2027-02-28,GMAB,rina,READOUT,Feb 2027,month,medium,clinicaltrials,NCT06619236,https://clinicaltrials.gov/study/NCT06619236
 2027-02-28,GILD,sacituzumab govitecan hziy,READOUT,Feb 2027,month,medium,clinicaltrials,NCT05382286,https://clinicaltrials.gov/study/NCT05382286
 2027-03-01,NVO,cagrilintide,READOUT,"Mar 1, 2027",day,medium,clinicaltrials,NCT07011667,https://clinicaltrials.gov/study/NCT07011667
 2027-03-13,RYTM,setmelanotide,READOUT,"Mar 13, 2027",day,medium,clinicaltrials,NCT06760546,https://clinicaltrials.gov/study/NCT06760546
@@ -66,7 +58,6 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2027-03-31,MDGL,resmetirom,READOUT,Mar 2027,month,medium,clinicaltrials,NCT04951219,https://clinicaltrials.gov/study/NCT04951219
 2027-03-31,PFE,ritlecitinib,READOUT,"Mar 31, 2027",day,medium,clinicaltrials,NCT06163326,https://clinicaltrials.gov/study/NCT06163326
 2027-03-31,NVS,tisagenlecleucel,READOUT,"Mar 31, 2027",day,medium,clinicaltrials,NCT04094311,https://clinicaltrials.gov/study/NCT04094311
-2027-03-31,ONC,zanubrutinib,READOUT,Mar 2027,month,medium,clinicaltrials,NCT04002297,https://clinicaltrials.gov/study/NCT04002297
 2027-04-12,NVS,ianalumab,READOUT,"Apr 12, 2027",day,medium,clinicaltrials,NCT05624749,https://clinicaltrials.gov/study/NCT05624749
 2027-04-20,AZN,camizestrant,READOUT,"Apr 20, 2027",day,medium,clinicaltrials,NCT05774951,https://clinicaltrials.gov/study/NCT05774951
 2027-04-27,AMGN,maridebart cafraglutide,READOUT,"Apr 27, 2027",day,medium,clinicaltrials,NCT06987695,https://clinicaltrials.gov/study/NCT06987695
@@ -83,14 +74,11 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2027-05-31,LLY,orforglipron,READOUT,May 2027,month,medium,clinicaltrials,NCT07613307,https://clinicaltrials.gov/study/NCT07613307
 2027-05-31,VOR,telitacicept,READOUT,May 2027,month,medium,clinicaltrials,NCT06456580,https://clinicaltrials.gov/study/NCT06456580
 2027-06-02,NVS,pelabresib,READOUT,"Jun 2, 2027",day,medium,clinicaltrials,NCT06401356,https://clinicaltrials.gov/study/NCT06401356
-2027-06-04,AZN,elecoglipron,READOUT,"Jun 4, 2027",day,medium,clinicaltrials,NCT07775404,https://clinicaltrials.gov/study/NCT07775404
 2027-06-09,NVO,cagrilintide,READOUT,"Jun 9, 2027",day,medium,clinicaltrials,NCT07817251,https://clinicaltrials.gov/study/NCT07817251
 2027-06-18,REGN,mibavademab,READOUT,"Jun 18, 2027",day,medium,clinicaltrials,NCT07220772,https://clinicaltrials.gov/study/NCT07220772
-2027-06-30,AZN,datopotamab deruxtecan,READOUT,"Jun 30, 2027",day,medium,clinicaltrials,NCT06564844,https://clinicaltrials.gov/study/NCT06564844
 2027-06-30,PHVS,deucrictibant,READOUT,Jun 2027,month,medium,clinicaltrials,NCT05396105,https://clinicaltrials.gov/study/NCT05396105
 2027-06-30,IMMP,eftilagimod alfa,READOUT,Jun 2027,month,medium,clinicaltrials,NCT06726265,https://clinicaltrials.gov/study/NCT06726265
 2027-06-30,GMAB,epcoritamab,READOUT,Jun 2027,month,medium,clinicaltrials,NCT05578976,https://clinicaltrials.gov/study/NCT05578976
-2027-06-30,AZN,rilvegostomig,READOUT,"Jun 30, 2027",day,medium,clinicaltrials,NCT06564844,https://clinicaltrials.gov/study/NCT06564844
 2027-06-30,GILD,sacituzumab govitecan hziy,READOUT,Jun 2027,month,medium,clinicaltrials,NCT05633654,https://clinicaltrials.gov/study/NCT05633654
 2027-06-30,AMGN,sotorasib,READOUT,"Jun 30, 2027",day,medium,clinicaltrials,NCT05920356,https://clinicaltrials.gov/study/NCT05920356
 2027-07-05,AMGN,tarlatamab,READOUT,"Jul 5, 2027",day,medium,clinicaltrials,NCT06211036,https://clinicaltrials.gov/study/NCT06211036
@@ -103,31 +91,25 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2027-08-09,BMY,golcadomide,READOUT,"Aug 9, 2027",day,medium,clinicaltrials,NCT06356129,https://clinicaltrials.gov/study/NCT06356129
 2027-08-17,AZN,ravulizumab,READOUT,"Aug 17, 2027",day,medium,clinicaltrials,NCT07596784,https://clinicaltrials.gov/study/NCT07596784
 2027-08-20,ARWR,zodasiran,READOUT,"Aug 20, 2027",day,medium,clinicaltrials,NCT07037771,https://clinicaltrials.gov/study/NCT07037771
+2027-08-30,AMGN,maridebart cafraglutide,READOUT,"Aug 30, 2027",day,medium,clinicaltrials,NCT07226765,https://clinicaltrials.gov/study/NCT07226765
 2027-08-31,AAPG,lisaftoclax,READOUT,Aug 2027,month,medium,clinicaltrials,NCT06319456,https://clinicaltrials.gov/study/NCT06319456
 2027-08-31,LLY,orforglipron,READOUT,Aug 2027,month,medium,clinicaltrials,NCT06972459,https://clinicaltrials.gov/study/NCT06972459
-2027-08-31,OGN,tapinarof,READOUT,Aug 2027,month,medium,clinicaltrials,NCT07265479,https://clinicaltrials.gov/study/NCT07265479
-2027-08-31,ABBV,telisotuzumab adizutecan,READOUT,Aug 2027,month,medium,clinicaltrials,NCT06614192,https://clinicaltrials.gov/study/NCT06614192
 2027-09-01,NVO,cagrilintide,READOUT,"Sep 1, 2027",day,medium,clinicaltrials,NCT05669755,https://clinicaltrials.gov/study/NCT05669755
 2027-09-03,AMGN,maridebart cafraglutide,READOUT,"Sep 3, 2027",day,medium,clinicaltrials,NCT07225686,https://clinicaltrials.gov/study/NCT07225686
 2027-09-20,AZN,datopotamab deruxtecan,READOUT,"Sep 20, 2027",day,medium,clinicaltrials,NCT05629585,https://clinicaltrials.gov/study/NCT05629585
-2027-09-24,MRK,granulocyte colony stimulating factor,READOUT,"Sep 24, 2027",day,medium,clinicaltrials,NCT05139017,https://clinicaltrials.gov/study/NCT05139017
 2027-09-24,AMGN,tarlatamab,READOUT,"Sep 24, 2027",day,medium,clinicaltrials,NCT07778316,https://clinicaltrials.gov/study/NCT07778316
 2027-09-24,MRK,zilovertamab vedotin,READOUT,"Sep 24, 2027",day,medium,clinicaltrials,NCT05139017,https://clinicaltrials.gov/study/NCT05139017
 2027-09-28,REGN,fianlimab,READOUT,"Sep 28, 2027",day,medium,clinicaltrials,NCT05785767,https://clinicaltrials.gov/study/NCT05785767
-2027-09-29,AMGN,maridebart cafraglutide,READOUT,"Sep 29, 2027",day,medium,clinicaltrials,NCT07226765,https://clinicaltrials.gov/study/NCT07226765
 2027-09-30,SNY,amlitelimab,READOUT,"Sep 30, 2027",day,medium,clinicaltrials,NCT06241118,https://clinicaltrials.gov/study/NCT06241118
 2027-09-30,XFOR,mavorixafor,READOUT,Sep 2027,month,medium,clinicaltrials,NCT06056297,https://clinicaltrials.gov/study/NCT06056297
 2027-09-30,CYTK,omecamtiv mecarbil,READOUT,Sep 2027,month,medium,clinicaltrials,NCT06736574,https://clinicaltrials.gov/study/NCT06736574
 2027-09-30,LLY,orforglipron,READOUT,Sep 2027,month,medium,clinicaltrials,NCT06948422,https://clinicaltrials.gov/study/NCT06948422
 2027-09-30,LLY,retatrutide,READOUT,Sep 2027,month,medium,clinicaltrials,NCT07035093,https://clinicaltrials.gov/study/NCT07035093
-2027-09-30,GMAB,rina,READOUT,Sep 2027,month,medium,clinicaltrials,NCT07604766,https://clinicaltrials.gov/study/NCT07604766
+2027-09-30,GMAB,rinatabart sesutecan,READOUT,Sep 2027,month,medium,clinicaltrials,NCT07604766,https://clinicaltrials.gov/study/NCT07604766
 2027-09-30,AZN,saruparib,READOUT,"Sep 30, 2027",day,medium,clinicaltrials,NCT06120491,https://clinicaltrials.gov/study/NCT06120491
-2027-09-30,KYTX,standard lymphodepletion,READOUT,Sep 2027,month,medium,clinicaltrials,NCT06193889,https://clinicaltrials.gov/study/NCT06193889
 2027-10-15,AZN,puxitatug samrotecan,READOUT,"Oct 15, 2027",day,medium,clinicaltrials,NCT07044336,https://clinicaltrials.gov/study/NCT07044336
 2027-10-16,IMCR,brenetafusp,READOUT,"Oct 16, 2027",day,medium,clinicaltrials,NCT06112314,https://clinicaltrials.gov/study/NCT06112314
-2027-10-28,MRK,platinum investigator choice,READOUT,"Oct 28, 2027",day,medium,clinicaltrials,NCT04624204,https://clinicaltrials.gov/study/NCT04624204
 2027-10-31,LLY,imlunestrant,READOUT,Oct 2027,month,medium,clinicaltrials,NCT05514054,https://clinicaltrials.gov/study/NCT05514054
-2027-10-31,LLY,tirzepatide,READOUT,Oct 2027,month,medium,clinicaltrials,NCT05556512,https://clinicaltrials.gov/study/NCT05556512
 2027-11-01,AZN,datopotamab deruxtecan,READOUT,"Nov 1, 2027",day,medium,clinicaltrials,NCT05687266,https://clinicaltrials.gov/study/NCT05687266
 2027-11-16,BMY,iberdomide,READOUT,"Nov 16, 2027",day,medium,clinicaltrials,NCT04975997,https://clinicaltrials.gov/study/NCT04975997
 2027-11-26,MRK,enlicitide decanoate,READOUT,"Nov 26, 2027",day,medium,clinicaltrials,NCT07821944,https://clinicaltrials.gov/study/NCT07821944
@@ -137,7 +119,6 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2027-11-30,CRVS,soquelitinib,READOUT,Nov 2027,month,medium,clinicaltrials,NCT06561048,https://clinicaltrials.gov/study/NCT06561048
 2027-12-01,RVMD,daraxonrasib,READOUT,"Dec 1, 2027",day,medium,clinicaltrials,NCT06881784,https://clinicaltrials.gov/study/NCT06881784
 2027-12-26,AMGN,maridebart cafraglutide,READOUT,"Dec 26, 2027",day,medium,clinicaltrials,NCT07684144,https://clinicaltrials.gov/study/NCT07684144
-2027-12-31,PFE,calcium levofolinate,READOUT,"Dec 31, 2027",day,medium,clinicaltrials,NCT05253651,https://clinicaltrials.gov/study/NCT05253651
 2027-12-31,LLY,dulaglutide,READOUT,Dec 2027,month,medium,clinicaltrials,NCT06739122,https://clinicaltrials.gov/study/NCT06739122
 2027-12-31,ABBV,etentamig,READOUT,Dec 2027,month,medium,clinicaltrials,NCT06158841,https://clinicaltrials.gov/study/NCT06158841
 2027-12-31,LLY,lebrikizumab,READOUT,Dec 2027,month,medium,clinicaltrials,NCT05735483,https://clinicaltrials.gov/study/NCT05735483
@@ -148,4 +129,23 @@ event_date,ticker,asset,event_type,event_window,date_precision,confidence,source
 2027-12-31,BCTX,retifanlimab,READOUT,Dec 2027,month,medium,clinicaltrials,NCT06072612,https://clinicaltrials.gov/study/NCT06072612
 2027-12-31,PFE,tucatinib,READOUT,"Dec 31, 2027",day,medium,clinicaltrials,NCT05253651,https://clinicaltrials.gov/study/NCT05253651
 2028-01-03,AMGN,maridebart cafraglutide,READOUT,"Jan 3, 2028",day,medium,clinicaltrials,NCT07575399,https://clinicaltrials.gov/study/NCT07575399
-2028-01-10,MRK,rescue medications,READOUT,"Jan 10, 2028",day,medium,clinicaltrials,NCT06132958,https://clinicaltrials.gov/study/NCT06132958
+2028-01-23,PFE,ponsegromab,READOUT,"Jan 23, 2028",day,medium,clinicaltrials,NCT06989437,https://clinicaltrials.gov/study/NCT06989437
+2028-01-24,MRK,calderasib,READOUT,"Jan 24, 2028",day,medium,clinicaltrials,NCT06345729,https://clinicaltrials.gov/study/NCT06345729
+2028-01-31,LLY,eloralintide,READOUT,Jan 2028,month,medium,clinicaltrials,NCT07282600,https://clinicaltrials.gov/study/NCT07282600
+2028-02-02,AZN,datopotamab deruxtecan,READOUT,"Feb 2, 2028",day,medium,clinicaltrials,NCT07205822,https://clinicaltrials.gov/study/NCT07205822
+2028-02-04,MLTX,sonelokimab,READOUT,"Feb 4, 2028",day,medium,clinicaltrials,NCT07223138,https://clinicaltrials.gov/study/NCT07223138
+2028-02-07,REGN,odronextamab,READOUT,"Feb 7, 2028",day,medium,clinicaltrials,NCT06091254,https://clinicaltrials.gov/study/NCT06091254
+2028-02-07,AZN,tezepelumab,READOUT,"Feb 7, 2028",day,medium,clinicaltrials,NCT07363642,https://clinicaltrials.gov/study/NCT07363642
+2028-02-16,PFE,berobenatide,READOUT,"Feb 16, 2028",day,medium,clinicaltrials,NCT07845500,https://clinicaltrials.gov/study/NCT07845500
+2028-02-20,AZN,benralizumab,READOUT,"Feb 20, 2028",day,medium,clinicaltrials,NCT06512883,https://clinicaltrials.gov/study/NCT06512883
+2028-02-23,NVO,cagrilintide,READOUT,"Feb 23, 2028",day,medium,clinicaltrials,NCT07564414,https://clinicaltrials.gov/study/NCT07564414
+2028-02-24,AZN,baxdrostat dapagliflozin,READOUT,"Feb 24, 2028",day,medium,clinicaltrials,NCT06268873,https://clinicaltrials.gov/study/NCT06268873
+2028-02-25,NVS,remibrutinib,READOUT,"Feb 25, 2028",day,medium,clinicaltrials,NCT06744920,https://clinicaltrials.gov/study/NCT06744920
+2028-02-28,INCY,povorcitinib,READOUT,"Feb 28, 2028",day,medium,clinicaltrials,NCT06855498,https://clinicaltrials.gov/study/NCT06855498
+2028-02-29,KLRA,ribupatide,READOUT,Feb 2028,month,medium,clinicaltrials,NCT07284875,https://clinicaltrials.gov/study/NCT07284875
+2028-03-10,PFE,tilrekimig,READOUT,"Mar 10, 2028",day,medium,clinicaltrials,NCT07765888,https://clinicaltrials.gov/study/NCT07765888
+2028-03-14,PFE,berobenatide,READOUT,"Mar 14, 2028",day,medium,clinicaltrials,NCT07792954,https://clinicaltrials.gov/study/NCT07792954
+2028-03-19,PFE,ritlecitinib,READOUT,"Mar 19, 2028",day,medium,clinicaltrials,NCT06873945,https://clinicaltrials.gov/study/NCT06873945
+2028-03-21,AZN,datopotamab deruxtecan,READOUT,"Mar 21, 2028",day,medium,clinicaltrials,NCT06350097,https://clinicaltrials.gov/study/NCT06350097
+2028-03-21,NVS,inclisiran,READOUT,"Mar 21, 2028",day,medium,clinicaltrials,NCT06597006,https://clinicaltrials.gov/study/NCT06597006
+2028-03-27,KLRA,ribupatide,READOUT,"Mar 27, 2028",day,medium,clinicaltrials,NCT07284901,https://clinicaltrials.gov/study/NCT07284901
