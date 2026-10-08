@@ -3,23 +3,35 @@ generate_seo_pages.py — CSA programmatic-SEO page generator.
 
 Builds static, index-ready landing pages from the free sample so search engines
 can surface specific queries (e.g. "mezigdomide phase 3 readout date",
-"PFE clinical-stage catalysts 2026"):
+"PFE phase 3 catalysts 2026"):
 
   - catalysts/<asset>.html   one forward-catalyst detail page per drug asset
   - sponsors/<ticker>.html   one hub page per listed sponsor, grouping its assets
-  - sitemap.xml              regenerated with every URL (clean, extensionless)
+  - catalysts/, sponsors/    the directory hubs (scripts/generate_hubs.py, run from here)
+  - index.html               the homepage sample-calendar rows, linked to their pages
+  - functions/_middleware.js the active retired-URL redirects (from scripts/redirects.json)
+  - sitemap.xml              regenerated with every URL (clean, extensionless), last, so
+                             every lastmod sees the pages this run wrote
+
+A catalyst or sponsor page whose asset left the sample is deleted in the same run, so
+the page set always equals the sample: never delete these pages by hand. A retired URL
+with a true successor (a renamed or merged asset) is listed in scripts/redirects.json;
+the generator records the renames its own curation rules make there, and activates a
+rule only while its target page exists and its source page does not.
 
 Each page carries full SEO meta (canonical + self-referencing hreflang, OpenGraph),
 JSON-LD (Dataset / CollectionPage + BreadcrumbList + ItemList), the CSA
 clinical-instrument design, and the "data, not investment advice" notice.
 
-    python scripts/generate_seo_pages.py
+    python scripts/generate_seo_pages.py [--force-prune]
 
-Reads samples/catalyst_calendar_sample.csv + samples/asset_master_sample.csv;
-no dependencies beyond the standard library.
+Reads samples/catalyst_calendar_sample.csv + samples/asset_master_sample.csv, and
+data/sponsor_summary.json (per-ticker counts from the full snapshot, written by csa-poc
+scripts/build_sample.py; optional). No dependencies beyond the standard library.
 """
 
 import csv
+import datetime
 import html
 import json
 import os
@@ -29,13 +41,45 @@ from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from seo_common import fit_title, fit_desc, write_sitemap, related_block, DESC_MAX
+import generate_hubs
 
 SITE = "https://csa.dataengineered.io"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAL_CSV = os.path.join(ROOT, "samples", "catalyst_calendar_sample.csv")
 MAS_CSV = os.path.join(ROOT, "samples", "asset_master_sample.csv")
+SUMMARY_JSON = os.path.join(ROOT, "data", "sponsor_summary.json")
+REDIRECTS_JSON = os.path.join(ROOT, "scripts", "redirects.json")
+MIDDLEWARE_JS = os.path.join(ROOT, "functions", "_middleware.js")
+INDEX_HTML = os.path.join(ROOT, "index.html")
 CAT_DIR = os.path.join(ROOT, "catalysts")
 SPON_DIR = os.path.join(ROOT, "sponsors")
+
+# phase label when the trial record has no phase
+NO_PHASE = "clinical"
+
+# Sample curation, mirrored from csa-poc scripts/build_sample.py (_ALIASES, _DOSE_QUALIFIERS,
+# _NOT_AN_ASSET_TOKENS, _SAMPLE_BACKBONE): keep both copies in step. samples/ are
+# byte-identical copies of the upstream sample, so an edition built before a rule existed
+# upstream still carries the rows; applying the same rules here keeps them off the site
+# either way. "rina" is the name older editions wrote for "rina s" (its "s" was dropped
+# as noise), so it is aliased here too.
+_ALIASES = {"rina s": "rinatabart sesutecan", "rina": "rinatabart sesutecan",
+            "lorlatanib": "lorlatinib"}
+_DOSE_QUALIFIERS = {"higher", "lower", "high", "low"}
+_NOT_AN_ASSET_TOKENS = {"rescue", "supportive", "measures", "investigator", "choice",
+                        "standard", "lymphodepletion", "placebo", "medication", "medications", "care",
+                        "intensity", "chemotherapy"}
+_SAMPLE_BACKBONE = {"calcium levofolinate", "levofolinate", "granulocyte colony stimulating factor",
+                    "filgrastim", "pegfilgrastim"}
+
+# the homepage sample-calendar rows live between these markers in index.html
+TABLE_BEGIN = "<!-- BEGIN:sample-calendar -->"
+TABLE_END = "<!-- END:sample-calendar -->"
+TABLE_ROWS = 8
+
+# the active redirect map lives between these markers in functions/_middleware.js
+REDIRECTS_BEGIN = "// BEGIN:redirects"
+REDIRECTS_END = "// END:redirects"
 
 FONTS = ("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600"
          "&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap")
@@ -103,6 +147,77 @@ def primary_condition(conditions):
     return (conditions.split(";")[0] if ";" in conditions else conditions).strip()
 
 
+def all_conditions(conditions):
+    """Every listed condition, trimmed, in record order."""
+    return [c.strip() for c in (conditions or "").split(";") if c.strip()]
+
+
+def site_asset_name(name):
+    """The sample's asset name after the curation rules mirrored from csa-poc, or None
+    when the row is a study arm or a standard-of-care backbone rather than a drug asset."""
+    n = re.sub(r"\s+", " ", str(name or "")).strip().lower()
+    n = _ALIASES.get(n, n)
+    toks = [t for t in n.split() if t not in _DOSE_QUALIFIERS]
+    if not toks or any(t in _NOT_AN_ASSET_TOKENS for t in toks):
+        return None
+    n = " ".join(toks)
+    return None if n in _SAMPLE_BACKBONE else n
+
+
+def format_enum(value):
+    """'ACTIVE_NOT_RECRUITING' -> 'Active, not recruiting'; 'active_comparator' ->
+    'Active comparator'. Display only; the record's own value, reworded."""
+    v = (value or "").strip().lower().replace("_", " ")
+    v = v.replace("active not recruiting", "active, not recruiting")
+    return v[:1].upper() + v[1:]
+
+
+def ct_link(nct):
+    """An NCT id linked to its ClinicalTrials.gov record."""
+    nct = (nct or "").strip()
+    if not nct:
+        return "&mdash;"
+    return (f'<a href="https://clinicaltrials.gov/study/{esc(nct)}" target="_blank" rel="noopener" '
+            f'style="color:var(--accent)" translate="no">{esc(nct)}</a>')
+
+
+def trials_table(rows, catalyst_ncts=(), asset_col=None):
+    """The trial rows behind an asset (or a sponsor's assets), one row per trial, oldest
+    primary completion first. `catalyst_ncts` marks the trials a tracked catalyst comes
+    from: NCT ids, or (asset, NCT id) pairs when one table mixes assets. `asset_col` maps an asset name to its page href to add a linked Asset column."""
+    trs = []
+    for m in rows:
+        nct = (m.get("nct_id") or "").strip()
+        mark = (' <span class="tag">catalyst</span>'
+                if nct in catalyst_ncts or (m.get("asset"), nct) in catalyst_ncts else "")
+        conds = "; ".join(all_conditions(m.get("conditions")))
+        conds_disp = esc(conds[:90] + ("…" if len(conds) > 90 else "")) if conds else "&mdash;"
+        cells = []
+        if asset_col is not None:
+            a = m["asset"]
+            cells.append(f'<td><a href="{esc(asset_col[a])}" style="color:var(--ink)" translate="no">{esc(a)}</a></td>')
+        cells += [
+            f"<td>{ct_link(nct)}{mark}</td>",
+            f'<td translate="no">{esc(format_phase(m.get("phase"))) or "&mdash;"}</td>',
+            f'<td translate="no">{esc(format_enum(m.get("status"))) or "&mdash;"}</td>',
+            f'<td translate="no">{esc(m.get("primary_completion")) or "&mdash;"}</td>',
+            f'<td translate="no">{esc(format_enum(m.get("arm_role"))) or "&mdash;"}</td>',
+            f'<td translate="no">{esc(m.get("sponsor_raw")) or "&mdash;"}</td>',
+            f'<td class="wrap" title="{esc(conds)}" translate="no">{conds_disp}</td>',
+        ]
+        trs.append("<tr>" + "".join(cells) + "</tr>")
+    head_cells = (["Asset"] if asset_col is not None else []) + [
+        "Trial", "Phase", "Status", "Primary completion", "Role", "Lead sponsor", "Condition(s)"]
+    ths = "".join(f"<th>{h}</th>" for h in head_cells)
+    return (f'<div class="tblwrap"><table class="tbl"><thead><tr>{ths}</tr></thead>'
+            f'<tbody>{"".join(trs)}</tbody></table></div>')
+
+
+def by_completion(rows):
+    """Trial rows sorted by primary completion (blank last), then NCT id."""
+    return sorted(rows, key=lambda m: ((m.get("primary_completion") or "9999"), m.get("nct_id") or ""))
+
+
 def pad_related(items, pool, index_of, self_key, href_of, label_of, minimum=3):
     """Top up `items` (list of (href, label, reason_or_None)) to at least `minimum`
     entries by walking outward from the record's own position in `pool` (sorted by
@@ -154,7 +269,7 @@ def sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset):
 
     cat_word = "catalyst" if n_cats == 1 else "catalysts"
     asset_word = "asset" if n_assets == 1 else "assets"
-    s1 = f"CSA tracks {n_cats} forward {esc(cat_word)} for {data(company_disp)} across {n_assets} clinical-stage {esc(asset_word)}"
+    s1 = f"CSA tracks {n_cats} forward {esc(cat_word)} for {data(company_disp)} across {n_assets} {esc(asset_word)}"
     if phases:
         s1 += f", spanning {', '.join(esc(p) for p in phases)}"
     s1 += "."
@@ -198,7 +313,9 @@ def catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, co
     window = (nxt.get("event_window") or nxt.get("event_date") or "").strip()
     precision = (nxt.get("date_precision") or "").strip()
     conf = (nxt.get("confidence") or "").strip()
-    sentences = [f"{data(asset)} is a clinical-stage drug asset sponsored by {data(company_disp)}, "
+    # no "clinical-stage": many tracked assets are already approved and in Phase 3 for a
+    # new indication, and the sample carries no approval status to tell them apart
+    sentences = [f"{data(asset)} is a drug asset sponsored by {data(company_disp)}, "
                  f"listed as {data(ticker)}."]
     cat_word = "catalyst" if n == 1 else "catalysts"
     p = f"CSA tracks {n} forward {cat_word} for it — the nearest is a {data(etype.lower())} expected {data(window)}"
@@ -214,15 +331,17 @@ def catalyst_prose(asset, cats, nxt, ticker, company_disp, phase_lbl, status, co
     p += "."
     sentences.append(p)
     detail = []
-    if phase_lbl and phase_lbl != "clinical-stage":
+    if phase_lbl and phase_lbl != NO_PHASE:
         detail.append(f"in {esc(phase_lbl)}")
     if status:
         detail.append(f"currently {data(status.lower().replace('_', ' '))}")
     if detail:
-        s = f"The asset is {' and '.join(detail)}"
+        # phase and status belong to the catalyst's trial, not to the asset (an approved
+        # drug can be in a Phase 3 trial for a new indication)
+        s = f"{'That trial' if nct else 'Its catalyst trial'} is {' and '.join(detail)}"
         if conditions:
             cond = conditions.split(";")[0].strip() if ";" in conditions else conditions
-            s += f", studied in {data(cond[:120])}"
+            s += f", studying {data(cond[:120])}"
         s += "."
         sentences.append(s)
     if trials > 1:
@@ -307,6 +426,18 @@ footer a{color:var(--accent);text-decoration:none}
 .related a{color:var(--accent);text-decoration:none}
 .related a:hover{text-decoration:underline}
 .related-why{color:var(--ink-3);font-size:.9em}
+.tblwrap{overflow-x:auto;margin-top:8px}
+.tblwrap .tbl{margin-top:0}
+.tblwrap .tbl td{white-space:nowrap}
+.tbl td.wrap{white-space:normal;min-width:180px}
+.tag{font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);border:1px solid rgba(43,179,168,.4);border-radius:3px;padding:1px 5px;margin-left:6px;vertical-align:middle}
+.note{color:var(--ink-3);font-size:.84rem;margin-top:12px}
+.note a{color:var(--accent);text-decoration:none}
+.note a:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px}
+.chip{font-size:.8rem;color:var(--ink-2);border:1px solid var(--line);border-radius:4px;padding:3px 8px}
+.full .statbar{margin-top:6px}
+@media(max-width:600px){.full .statbar{grid-template-columns:repeat(3,1fr);gap:8px}.full .stat{padding:12px 4px}.full .stat .n{font-size:1.2rem}}
 """
 
 
@@ -367,25 +498,272 @@ FOOTER = """  <footer>
 </body>
 </html>"""
 
+# The per-page call to action states the snapshot's scope, never its counts: a count in
+# every page changed all of them (and their sitemap lastmod) at each monthly edition. The
+# headline counts live once, on the homepage, which the edition update already edits.
+SCOPE_LINE = ("The full snapshot covers active, industry-sponsored Phase 3 trials in "
+              "cardiometabolic, oncology and immunology. Every forward catalyst carries its date, "
+              "confidence grade and source link, and is linked to its sponsor's ticker when the "
+              "sponsor is a listed company.")
 
-def main():
+
+def load_sponsor_summary():
+    """data/sponsor_summary.json -> (as_of, {ticker: counts}); ("", {}) when absent."""
+    if not os.path.isfile(SUMMARY_JSON):
+        return "", {}
+    with open(SUMMARY_JSON, encoding="utf-8") as f:
+        doc = json.load(f)
+    return str(doc.get("as_of") or ""), doc.get("sponsors") or {}
+
+
+def full_snapshot_panel(company_disp, ticker, counts):
+    """The sponsor's footprint in the full (paid) snapshot: counts only, from
+    data/sponsor_summary.json. Empty when the ticker has no entry. The edition date is
+    left out on purpose: it would change every sponsor page each month, where these
+    counts change only when the sponsor's own footprint does."""
+    if not counts:
+        return ""
+    stats = []
+    for key, one, many in (("forward_catalysts", "Forward catalyst", "Forward catalysts"),
+                           ("assets", "Asset", "Assets"), ("trials", "Trial", "Trials")):
+        v = counts.get(key)
+        if isinstance(v, int) and v > 0:
+            stats.append(f'<div class="stat"><div class="n">{v}</div><div class="l">{one if v == 1 else many}</div></div>')
+    years = counts.get("catalysts_by_year") or {}
+    year_chips = "".join(f'<span class="chip"><span translate="no">{esc(y)}</span> &middot; {int(n)}</span>'
+                         for y, n in sorted(years.items()))
+    year_html = (f'<p class="note" style="margin-top:16px">Forward catalysts by year</p>'
+                 f'<div class="chips">{year_chips}</div>') if year_chips else ""
+    return f"""
+      <div class="card full" style="margin-top:22px">
+        <h3>{data(ticker)} in the full snapshot</h3>
+        <p class="k">The free sample on this page is a slice. In the current full CSA snapshot, {data(company_disp)} has:</p>
+        <div class="statbar">{"".join(stats)}</div>
+        {year_html}
+        <p class="note">Every catalyst in the snapshot comes with its date, date confidence and source link.</p>
+      </div>"""
+
+
+def panel_counts(full, n_cats, n_assets, n_trials, years):
+    """`full` when it can sit next to this sample without contradicting it, else {}. The
+    summary and the sample are copied together each edition, but a full-snapshot count
+    below the sample's own (in total, per year or in trials) would read as the slice being
+    bigger than the whole, so the panel is left out until they agree."""
+    if not full:
+        return {}
+    fy = full.get("catalysts_by_year") or {}
+    short = [k for k, v in (("forward_catalysts", n_cats), ("assets", n_assets), ("trials", n_trials))
+             if full.get(k, 0) < v]
+    short += [f"{y} catalysts" for y, n in sorted(years.items()) if fy.get(y, 0) < n]
+    return {} if short else full
+
+
+def load_redirects():
+    """scripts/redirects.json as {old path: new path}. A missing file while the middleware
+    still serves redirects means the record was lost: stop rather than silently drop them."""
+    if os.path.isfile(REDIRECTS_JSON):
+        with open(REDIRECTS_JSON, encoding="utf-8") as f:
+            return json.load(f)
+    with open(MIDDLEWARE_JS, encoding="utf-8") as f:
+        js = f.read()
+    m = re.search(r"const REDIRECTS = (\{.*?\});", js, re.S)
+    if m and json.loads(m.group(1)):
+        sys.exit(f"{REDIRECTS_JSON} is missing but {MIDDLEWARE_JS} serves redirects; restore it from git")
+    return {}
+
+
+def write_redirects(rules, renames, generated_paths):
+    """Record this run's curation `renames` ({old path: new path}) in `rules` (from
+    scripts/redirects.json; the current run wins over an older rule, and a reversed pair
+    replaces its opposite), save them, and write the active ones into
+    functions/_middleware.js. Rules are stored as recorded; chains are followed only when
+    activating: a rule is active while its source is not a page this run wrote and its
+    chain reaches one that is. Returns (active, inactive)."""
+    rules = dict(rules)
+    for old, new in renames.items():
+        rules[old] = new
+        if rules.get(new) == old:
+            del rules[new]
+    rules = {s: t for s, t in rules.items() if s != t}
+    with open(REDIRECTS_JSON, "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(dict(sorted(rules.items())), indent=1) + "\n")
+
+    active = {}
+    for src in sorted(rules):
+        if src in generated_paths:
+            continue
+        seen, tgt = {src}, rules[src]
+        while tgt not in generated_paths and tgt in rules and tgt not in seen:
+            seen.add(tgt)
+            tgt = rules[tgt]
+        if tgt in generated_paths and tgt != src:
+            active[src] = tgt
+    inactive = {s: t for s, t in sorted(rules.items()) if s not in active}
+    with open(MIDDLEWARE_JS, encoding="utf-8") as f:
+        js = f.read()
+    start, end = js.find(REDIRECTS_BEGIN), js.find(REDIRECTS_END)
+    line_end = js.index("\n", start) + 1  # keep the BEGIN line (and its comment) as written
+    block = "const REDIRECTS = " + json.dumps(active, indent=2) + ";\n"
+    with open(MIDDLEWARE_JS, "w", encoding="utf-8", newline="\n") as f:
+        f.write(js[:line_end] + block + js[end:])
+    return active, inactive
+
+
+def stale_pages(directory, planned, force):
+    """The *.html pages in `directory` (index.html, the hub, aside) that this run will not
+    write. Refuses, unless forced, when that is more than a third of the pages there before
+    the run: a broken or truncated sample must not wipe the site. Called before any page
+    is written, so a refusal leaves the site untouched."""
+    existing = sorted(f for f in os.listdir(directory) if f.endswith(".html") and f != "index.html")
+    stale = [f for f in existing if f not in planned]
+    if existing and len(stale) > len(existing) / 3 and not force:
+        sys.exit(f"refusing to delete {len(stale)} of {len(existing)} pages in {directory} "
+                 f"(more than a third); check the sample, or rerun with --force-prune")
+    return stale
+
+
+def check_markers():
+    """Exit before anything is written when a generated block has lost its markers."""
+    for path, begin, end in ((MIDDLEWARE_JS, REDIRECTS_BEGIN, REDIRECTS_END),
+                             (INDEX_HTML, TABLE_BEGIN, TABLE_END)):
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        start, stop = text.find(begin), text.find(end)
+        if start < 0 or stop < start:
+            sys.exit(f"{path}: missing the {begin} / {end} markers")
+
+
+def update_homepage_table(asset_meta, today, horizon):
+    """Rewrite the homepage sample-calendar rows from the sample: each tracked asset's
+    nearest catalyst on or after `horizon` (a month past the run, so the rows stay ahead
+    of the calendar until the next edition regenerates them; on or after `today` if that
+    leaves too few), TABLE_ROWS of them spread across the whole date range (one per
+    ticker where possible), each linked to its catalyst and sponsor page. Every cell is a
+    data value (translate="no"), so the localized homepages need no new translations."""
+    def nearest_from(day):
+        rows = []
+        for asset, meta in asset_meta.items():
+            nxt = next((c for c in meta["cats"] if c["event_date"] >= day), None)
+            if nxt:
+                rows.append((nxt["event_date"], asset, nxt, meta))
+        return sorted(rows, key=lambda x: (x[0], x[1]))
+
+    upcoming = nearest_from(horizon)
+    if len(upcoming) < TABLE_ROWS:
+        upcoming = nearest_from(today)
+    if not upcoming:
+        sys.exit("no upcoming catalyst in the sample for the homepage table")
+    k = min(TABLE_ROWS, len(upcoming))
+    picks, tickers = [], set()
+    for i in range(k):
+        want = round(i * (len(upcoming) - 1) / (k - 1)) if k > 1 else 0
+        # nearest not-yet-picked row to the evenly spaced position, preferring a new ticker
+        order = sorted(range(len(upcoming)), key=lambda j: (abs(j - want), j))
+        cand = [j for j in order if j not in picks]
+        j = next((j for j in cand if upcoming[j][3]["ticker"] not in tickers), cand[0])
+        picks.append(j)
+        tickers.add(upcoming[j][3]["ticker"])
+    rows = []
+    for j in sorted(picks):
+        date, asset, nxt, meta = upcoming[j]
+        etype = (nxt.get("event_type") or "").strip()
+        pill = "pdufa" if etype.upper() == "PDUFA" else "readout"
+        label = etype.upper() if etype.upper() == "PDUFA" else etype.title()
+        rows.append(
+            f'            <tr><td class="mono" translate="no">{esc(date)}</td>'
+            f'<td><a class="tk" href="/sponsors/{slugify(meta["ticker"])}" translate="no">{esc(meta["ticker"])}</a></td>'
+            f'<td translate="no"><a class="asset" href="/catalysts/{meta["slug"]}">{esc(asset)}</a></td>'
+            f'<td><span class="pill {pill}" translate="no">{esc(label)}</span></td>'
+            f'<td class="mono" translate="no">{esc(nxt.get("event_window") or date)}</td>'
+            f'<td class="conf" translate="no">{esc(nxt.get("confidence"))}</td></tr>')
+    with open(INDEX_HTML, encoding="utf-8") as f:
+        src = f.read()
+    start, end = src.find(TABLE_BEGIN), src.find(TABLE_END)
+    if start < 0 or end < start:
+        sys.exit(f"index.html: missing the {TABLE_BEGIN} / {TABLE_END} markers")
+    src = src[:start + len(TABLE_BEGIN)] + "\n" + "\n".join(rows) + "\n            " + src[end:]
+    with open(INDEX_HTML, "w", encoding="utf-8", newline="") as f:
+        f.write(src)
+    return len(rows)
+
+
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    force_prune = "--force-prune" in argv
+    # "today" decides which catalysts are still forward; CSA_AS_OF=YYYY-MM-DD pins it
+    try:
+        today_d = datetime.date.fromisoformat(os.environ.get("CSA_AS_OF") or datetime.date.today().isoformat())
+    except ValueError:
+        sys.exit(f"CSA_AS_OF must be YYYY-MM-DD, got {os.environ.get('CSA_AS_OF')!r}")
+    today = today_d.isoformat()
     os.makedirs(CAT_DIR, exist_ok=True)
     os.makedirs(SPON_DIR, exist_ok=True)
 
     with open(CAL_CSV, encoding="utf-8") as f:
-        cal = [r for r in csv.DictReader(f) if r.get("asset") and r.get("ticker")]
+        cal_raw = [r for r in csv.DictReader(f) if r.get("asset") and r.get("ticker")]
     with open(MAS_CSV, encoding="utf-8") as f:
-        master = [r for r in csv.DictReader(f) if r.get("asset")]
+        master_raw = [r for r in csv.DictReader(f) if r.get("asset")]
+    if not cal_raw:
+        sys.exit(f"{CAL_CSV} has no catalyst rows")
 
-    # master rows grouped by asset (for trial/sponsor enrichment)
+    # curation (site_asset_name): drop study arms and backbones, merge dose arms, fix
+    # names. `renamed` keeps raw -> curated so the old page URL can redirect.
+    renamed, dropped = {}, set()
+
+    def curate(rows):
+        out = []
+        for r in rows:
+            name = site_asset_name(r["asset"])
+            if name is None:
+                dropped.add(r["asset"])
+                continue
+            if name != r["asset"]:
+                renamed[r["asset"]] = name
+            out.append(dict(r, asset=name))
+        return out
+
+    cal, master = curate(cal_raw), curate(master_raw)
+    # forward catalysts only: a date that has passed is no longer "next" or "expected"
+    # (an asset left with none is retired below like any other that left the sample)
+    past = [c for c in cal if c["event_date"] < today]
+    cal = [c for c in cal if c["event_date"] >= today]
+
+    # master rows grouped by asset (for trial/sponsor enrichment), one per trial: the
+    # sample repeats an asset-trial pair once per arm, and a merged dose arm repeats it
+    # again; the first row is the one the pages always used
     m_by_asset = defaultdict(list)
+    seen_trials = set()
     for m in master:
+        key = (m["asset"], (m.get("nct_id") or "").strip())
+        if key in seen_trials:
+            continue
+        seen_trials.add(key)
         m_by_asset[m["asset"]].append(m)
 
-    # catalysts grouped by asset
+    # catalysts grouped by asset; a merged dose arm can repeat the same catalyst
     c_by_asset = defaultdict(list)
+    seen_cats = set()
     for c in cal:
+        key = (c["asset"], c["event_date"], c.get("event_type"), c.get("nct_id"))
+        if key in seen_cats:
+            continue
+        seen_cats.add(key)
         c_by_asset[c["asset"]].append(c)
+
+    # trial -> the tracked assets in it (pages link the others as co-studied assets)
+    assets_by_nct = defaultdict(set)
+    for a, rows in m_by_asset.items():
+        if a in c_by_asset:
+            for m in rows:
+                if (m.get("nct_id") or "").strip():
+                    assets_by_nct[m["nct_id"].strip()].add(a)
+    # every tracked asset needs its trial rows; a truncated asset_master would silently
+    # strip the trial, sponsor and condition content from every page
+    missing = sorted(set(c_by_asset) - set(m_by_asset))
+    if not c_by_asset or len(missing) > 0.1 * len(c_by_asset):
+        sys.exit(f"{MAS_CSV}: {len(missing)} of {len(c_by_asset)} tracked assets have no trial rows; "
+                 f"check the sample")
+    summary_as_of, summary = load_sponsor_summary()
 
     sitemap_entries = [
         (SITE + "/", os.path.join(ROOT, "index.html"), "weekly", "1.0"),
@@ -416,7 +794,7 @@ def main():
         status = (mrow.get("status") or "").strip()
         conditions = (mrow.get("conditions") or "").strip()
         nct = nxt.get("nct_id", "").strip()
-        phase_lbl = format_phase(phase) if phase else "clinical-stage"
+        phase_lbl = format_phase(phase) if phase else NO_PHASE
         etype = nxt.get("event_type", "").strip() or "catalyst"
 
         asset_meta[asset] = {
@@ -432,7 +810,16 @@ def main():
     asset_pos = {a: i for i, a in enumerate(assets_by_name)}
     used_titles = set()
 
+    # ---- every check before the first write ----------------------------------
+    planned_cat = {f"{m['slug']}.html" for m in asset_meta.values()}
+    planned_spon = {f"{slugify(m['ticker'])}.html" for m in asset_meta.values()}
+    stale_cat = stale_pages(CAT_DIR, planned_cat, force_prune)
+    stale_spon = stale_pages(SPON_DIR, planned_spon, force_prune)
+    check_markers()
+    rules = load_redirects()
+
     # ---- asset detail pages -------------------------------------------------
+    written_cat, written_spon = set(), set()
     asset_index = {}  # asset -> (slug, ticker, next catalyst)
     for asset, meta in asset_meta.items():
         cats, nxt, ticker, slug = meta["cats"], meta["nxt"], meta["ticker"], meta["slug"]
@@ -455,7 +842,7 @@ def main():
         window = (nxt.get("event_window") or nxt.get("event_date") or "").strip()
         confidence = (nxt.get("confidence") or "").strip()
         desc_tail = []
-        if phase_lbl and phase_lbl != "clinical-stage":
+        if phase_lbl and phase_lbl != NO_PHASE:
             desc_tail.append(phase_lbl)
         desc_tail.append(f"sponsored by {company_disp}" if company_disp == ticker
                           else f"sponsored by {company_disp} ({ticker})")
@@ -511,7 +898,7 @@ def main():
         ld_dataset = {
             "@context": "https://schema.org", "@type": "Dataset",
             "name": f"{asset} ({ticker}) forward catalyst record",
-            "description": (f"Forward clinical/regulatory catalyst for the clinical-stage asset {asset}, "
+            "description": (f"Forward clinical/regulatory catalyst for {asset}, "
                             f"linked to listed sponsor {company_disp} ({ticker}): {etype} on {cd} from trial {nct}."),
             "url": url,
             "creator": {"@type": "Organization", "name": "DataEngineered", "url": SITE},
@@ -542,9 +929,31 @@ def main():
             rows_html = f"""
       <div class="card" style="margin-top:22px">
         <h3>All tracked catalysts for {data(asset)}</h3>
-        <table class="tbl"><thead><tr><th>Date</th><th>Event</th><th>Confidence</th><th>Trial</th></tr></thead>
-        <tbody>{trs}</tbody></table>
+        <div class="tblwrap"><table class="tbl"><thead><tr><th>Date</th><th>Event</th><th>Confidence</th><th>Trial</th></tr></thead>
+        <tbody>{trs}</tbody></table></div>
       </div>"""
+
+        # every trial the sample links to this asset, not just the catalyst's own: shown
+        # when there is more than the one trial the cards above already describe
+        cat_ncts = {(c.get("nct_id") or "").strip() for c in cats}
+        trials_html = ""
+        if len(mrows) > 1:
+            trials_html = f"""
+      <div class="card" style="margin-top:22px">
+        <h3>Trials for {data(asset)} in the CSA sample</h3>
+        {trials_table(by_completion(mrows), cat_ncts)}
+        <p class="note">Each trial links to its ClinicalTrials.gov record; primary completion dates are as registered there.</p>
+      </div>"""
+        # other tracked assets studied in the same trials (combinations, multi-drug studies)
+        co = []
+        for m in by_completion(mrows):
+            nct_m = (m.get("nct_id") or "").strip()
+            others = sorted(assets_by_nct.get(nct_m, set()) - {asset})
+            if others:
+                links = ", ".join(f'<a href="../catalysts/{asset_meta[o]["slug"]}" translate="no">{esc(o)}</a>' for o in others)
+                co.append(f"<span>{data(nct_m)}: {links}</span>")
+        co_html = (f'\n    <p class="note">Other tracked assets in the same trials &mdash; {"; ".join(co)}.</p>'
+                   if co else "")
 
         cond_disp = esc(conditions[:160] + ("…" if len(conditions) > 160 else "")) if conditions else "&mdash;"
         body = f"""<body>
@@ -584,11 +993,11 @@ def main():
         <div class="row"><span class="k">Listed as</span><span class="v accent" translate="no">{esc(ticker)}</span></div>
         <div class="row"><span class="k">Condition(s)</span><span class="v" style="max-width:58%" translate="no">{cond_disp}</span></div>
       </div>
-    </div>
-{rows_html}
+    </div>{co_html}
+{rows_html}{trials_html}
 {ADVICE}
     <div class="cta">
-      <p>This is one row of the free CSA sample. The full snapshot carries <b>2,221 forward catalysts</b>, <b>955</b> of them linked to <b>124 listed sponsors</b>.</p>
+      <p>This page is one record from the free CSA sample. {SCOPE_LINE}</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
       &nbsp;
       <a class="btn" href="../sponsors/{slugify(ticker)}">More {data(ticker)} catalysts</a>
@@ -600,6 +1009,7 @@ def main():
         page = head(title, desc, url, "article", [ld_dataset, ld_crumbs]) + "\n" + body
         with open(os.path.join(CAT_DIR, f"{slug}.html"), "w", encoding="utf-8") as f:
             f.write(page)
+        written_cat.add(f"{slug}.html")
         sitemap_entries.append((url, os.path.join(CAT_DIR, f"{slug}.html"), "monthly", "0.8"))
 
     # ---- sponsor pass 1: precompute every sponsor's metadata up front, for the
@@ -622,6 +1032,17 @@ def main():
     sponsors_by_name = sorted(sponsor_meta.keys(), key=lambda t: sponsor_meta[t]["company_disp"].lower())
     sponsor_pos = {t: i for i, t in enumerate(sponsors_by_name)}
     used_sponsor_titles = set()
+
+    # every condition each sponsor's tracked assets are studied in (case-folded key ->
+    # first spelling seen), for the indication list and the same-indication sponsor links
+    sponsor_conditions = {}
+    for ticker, smeta in sponsor_meta.items():
+        conds = {}
+        for a, *_ in smeta["items"]:
+            for m in m_by_asset.get(a, []):
+                for cnd in all_conditions(m.get("conditions")):
+                    conds.setdefault(cnd.lower(), cnd)
+        sponsor_conditions[ticker] = conds
 
     # ---- sponsor hub pages --------------------------------------------------
     for ticker, smeta in sponsor_meta.items():
@@ -657,11 +1078,23 @@ def main():
         prose_html = sponsor_prose(company_disp, ticker, items, c_by_asset, m_by_asset)
 
         # related: every one of this sponsor's own catalysts (uncapped, per the
-        # brief), up to 2 sponsors with a readout in the same quarter, padded to
-        # >=3 with real name-order neighbours if needed, then the sponsor hub.
+        # brief), up to 3 sponsors with a tracked trial in one of the same conditions,
+        # up to 2 sponsors with a readout in the same quarter, padded to >=3 with real
+        # name-order neighbours if needed, then the sponsor hub.
         related_items = [(f"../catalysts/{slug2}", a2, (format_phase(phase2) or None), False)
                           for a2, slug2, _c2, _n2, phase2 in items]
         used_tickers = {ticker}
+        own_conds = sponsor_conditions[ticker]
+        shared = []
+        for t2 in sponsors_by_name:
+            if t2 == ticker:
+                continue
+            common = sorted(set(own_conds) & set(sponsor_conditions[t2]))
+            if common:
+                shared.append((-len(common), sponsor_pos[t2], t2, own_conds[common[0]]))
+        for _n, _p, t2, cond in sorted(shared)[:3]:
+            related_items.append((f"../sponsors/{slugify(t2)}", f"{sponsor_meta[t2]['company_disp']} ({t2})", cond, False))
+            used_tickers.add(t2)
         q = smeta["quarter"]
         added = 0
         if q:
@@ -678,10 +1111,51 @@ def main():
                                      lambda t2: f"{sponsor_meta[t2]['company_disp']} ({t2})")
         related_items.append(("../sponsors/", "All sponsors", None))
         related_html = related_block(related_items, "Related sponsors and catalysts", limit=None)
+        # a shared-condition reason is a condition name (data), not site copy
+        for _h, _l, why, *_ in related_items:
+            if why and not re.fullmatch(r"Q\d \d{4}", why) and why not in ("neighbouring record",) \
+                    and not why.startswith("Phase "):
+                related_html = related_html.replace(
+                    f'<span class="related-why">— {html.escape(why)}</span>',
+                    f'<span class="related-why">— <span translate="no">{html.escape(why)}</span></span>')
+
+        # the trials behind this sponsor's tracked assets, and every condition they cover
+        spon_rows = by_completion([dict(m, asset=a) for a, *_ in items for m in m_by_asset.get(a, [])])
+        # (asset, trial) pairs: a trial can hold one asset's catalyst and another's comparator arm
+        spon_ncts = {(a, (c.get("nct_id") or "").strip()) for a, *_ in items for c in c_by_asset[a]}
+        asset_hrefs = {a: f"../catalysts/{slug2}" for a, slug2, *_ in items}
+        n_trials = len({(m.get("nct_id") or "").strip() for m in spon_rows})
+        trial_word = "trial" if n_trials == 1 else "trials"
+        other_sponsor = any((m.get("ticker") or "").strip() != ticker for m in spon_rows)
+        comparator = any((m.get("arm_role") or "").strip() != "experimental" for m in spon_rows)
+        trials_scope = (", including trials another sponsor runs and trials where the asset is not the experimental arm"
+                        if other_sponsor and comparator else
+                        ", including trials another sponsor runs" if other_sponsor else
+                        ", including trials where the asset is not the experimental arm" if comparator else "")
+        spon_trials_html = f"""
+      <div class="card" style="margin-top:22px">
+        <h3>{n_trials} {trial_word} behind these assets</h3>
+        {trials_table(spon_rows, spon_ncts, asset_col=asset_hrefs)}
+        <p class="note">Every trial the CSA sample links to {data(ticker)}'s tracked assets{trials_scope}.</p>
+      </div>""" if spon_rows else ""
+        cond_names = list(own_conds.values())
+        indications_html = (f"""
+      <div class="card" style="margin-top:22px">
+        <h3>Conditions studied</h3>
+        <div class="chips">{"".join(f'<span class="chip" translate="no">{esc(cnd)}</span>' for cnd in cond_names[:40])}</div>{f'<p class="note">and {len(cond_names) - 40} more.</p>' if len(cond_names) > 40 else ""}
+      </div>""") if cond_names else ""
+        # the summary can be a newer edition than the sample; a full-snapshot count below
+        # the sample's own would read as a contradiction, so the panel waits for the sync
+        years = Counter(c["event_date"][:4] for a, *_ in items for c in c_by_asset[a])
+        full = panel_counts(summary.get(ticker) or {}, n_cats, n_assets, n_trials, years)
+        if summary.get(ticker) and not full:
+            print(f"note: {ticker} full-snapshot panel skipped: data/sponsor_summary.json "
+                  f"({summary_as_of}) counts are below this sample's own; copy both from one edition")
+        full_html = full_snapshot_panel(company_disp, ticker, full)
 
         cards = ""
         for asset, slug, _c, nxt, phase in items:
-            phase_lbl = format_phase(phase) or "clinical-stage"
+            phase_lbl = format_phase(phase) or NO_PHASE
             cards += f"""
         <div class="acard">
           <a class="name" href="../catalysts/{slug}" translate="no">{esc(asset)}</a>
@@ -690,8 +1164,8 @@ def main():
 
         ld_collection = {
             "@context": "https://schema.org", "@type": "CollectionPage",
-            "name": f"{company_disp} ({ticker}) — clinical-stage catalysts",
-            "description": (f"Forward clinical-stage catalysts for listed sponsor {company_disp} ({ticker}): "
+            "name": f"{company_disp} ({ticker}) — forward catalysts",
+            "description": (f"Forward trial catalysts for listed sponsor {company_disp} ({ticker}): "
                             f"{n_cats} tracked catalysts across {n_assets} assets."),
             "url": url,
         }
@@ -718,19 +1192,20 @@ def main():
     <section class="hero">
       <span class="eyebrow">Sponsor pipeline &middot; {data(ticker)}</span>
       <h1 translate="no">{esc(company_disp)}</h1>
-      <p class="sub">Forward clinical-stage catalysts linked to <b translate="no">{esc(ticker)}</b></p>
+      <p class="sub">Forward trial catalysts linked to <b translate="no">{esc(ticker)}</b></p>
       <div class="statbar">
         <div class="stat"><div class="n">{n_cats}</div><div class="l">Tracked catalysts (sample)</div></div>
-        <div class="stat"><div class="n">{n_assets}</div><div class="l">Clinical-stage assets</div></div>
+        <div class="stat"><div class="n">{n_assets}</div><div class="l">Tracked assets (sample)</div></div>
         <div class="stat"><div class="n">{esc(nearest)}</div><div class="l">Nearest catalyst</div></div>
       </div>
     </section>
     {prose_html}
     <div class="assetgrid">{cards}
     </div>
+{full_html}{spon_trials_html}{indications_html}
 {ADVICE}
     <div class="cta">
-      <p>This sponsor's catalysts are a slice of the free CSA sample. The full snapshot spans <b>124 listed sponsors</b> and <b>2,221 forward catalysts</b> (<b>955</b> ticker-linked).</p>
+      <p>This sponsor's catalysts are a slice of the free CSA sample. {SCOPE_LINE}</p>
       <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
     </div>
     {related_html}
@@ -740,13 +1215,43 @@ def main():
         page = head(title, desc, url, "website", [ld_collection, ld_crumbs, ld_list]) + "\n" + body
         with open(os.path.join(SPON_DIR, f"{slugify(ticker)}.html"), "w", encoding="utf-8") as f:
             f.write(page)
+        written_spon.add(f"{slugify(ticker)}.html")
         sitemap_entries.append((url, os.path.join(SPON_DIR, f"{slugify(ticker)}.html"), "monthly", "0.9"))
 
-    # ---- sitemap ------------------------------------------------------------
+    # ---- retire pages whose asset or sponsor left the sample ------------------
+    for directory, stale in ((CAT_DIR, stale_cat), (SPON_DIR, stale_spon)):
+        for f in stale:
+            os.remove(os.path.join(directory, f))
+    retired = [f"catalysts/{f}" for f in stale_cat] + [f"sponsors/{f}" for f in stale_spon]
+
+    # ---- redirects: renames made by the curation rules, plus scripts/redirects.json --
+    generated_paths = ({"/", "/catalysts/", "/sponsors/"}
+                       | {f"/catalysts/{f[:-5]}" for f in written_cat}
+                       | {f"/sponsors/{f[:-5]}" for f in written_spon})
+    renames = {f"/catalysts/{slugify(raw)}": f"/catalysts/{asset_meta[new]['slug']}"
+               for raw, new in renamed.items()
+               if new in asset_meta and slugify(raw) != asset_meta[new]["slug"]}
+    active, inactive = write_redirects(rules, renames, generated_paths)
+
+    # ---- hubs and homepage, then the sitemap last so its lastmod sees them -----
+    counts = {sec["slug"]: generate_hubs.build_section(sec) for sec in generate_hubs.SECTIONS}
+    generate_hubs.update_homepage(counts)
+    horizon = (today_d + datetime.timedelta(days=35)).isoformat()
+    n_rows = update_homepage_table(asset_meta, today, horizon)
     n = write_sitemap(ROOT, sitemap_entries)
 
     print(f"Generated {len(c_by_asset)} catalyst pages + {len(by_ticker)} sponsor hubs; "
           f"sitemap has {n} URLs.")
+    if past:
+        print(f"skipped {len(past)} catalyst row(s) dated before {today}")
+    if dropped:
+        print(f"curation dropped {len(dropped)} non-asset name(s): {', '.join(sorted(dropped))}")
+    if renamed:
+        print("curation renamed: " + ", ".join(f"{a} -> {b}" for a, b in sorted(renamed.items())))
+    print(f"retired {len(retired)} page(s)" + (f": {', '.join(retired)}" if retired else ""))
+    print(f"redirects: {len(active)} active, {len(inactive)} inactive (target gone or source back)")
+    print(f"hubs: {counts['catalysts']} catalysts, {counts['sponsors']} sponsors; "
+          f"homepage table: {n_rows} rows (upcoming as of {today})")
 
 
 if __name__ == "__main__":

@@ -4,13 +4,13 @@
 
 # 🧬 CSA — Clinical-Stage Asset Intelligence
 
-**Clinical trials, FDA and SEC — linked to the drug _asset_ and the _listed sponsor_, with a forward catalyst calendar · 2,221 catalysts (955 ticker-linked) · 124 listed sponsors · 1,890 resolved assets · 0 cross-molecule merges**
+**Clinical trials, FDA and SEC — linked to the drug _asset_ and the _listed sponsor_, with a forward catalyst calendar · 2,202 catalysts (955 ticker-linked) · 126 listed sponsors · 1,881 resolved assets · 0 cross-molecule merges**
 
 [![Free sample: 150 catalysts](https://img.shields.io/badge/Free%20Sample-150%20catalysts-brightgreen.svg)](samples/catalyst_calendar_sample.csv)
 [![Kaggle dataset](https://img.shields.io/badge/Kaggle-sample%20dataset-20beff.svg)](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample)
 [![🤗 Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-sample%20dataset-ffd21e.svg)](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample)
 [![Kaggle notebook](https://img.shields.io/badge/Kaggle-starter%20notebook-20beff.svg)](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter)
-[![Snapshot: 2026.09](https://img.shields.io/badge/Snapshot-2026.09-blue.svg)](CHANGELOG.md)
+[![Snapshot: 2026.10](https://img.shields.io/badge/Snapshot-2026.10-blue.svg)](CHANGELOG.md)
 [![Precision: 0 bad merges](https://img.shields.io/badge/Precision-0%20cross--molecule%20merges-0f6e6a.svg)](#how-the-linkage-is-built)
 [![Get the data](https://img.shields.io/badge/Get%20the%20data-CSA-2bb3a8.svg)](https://csa.dataengineered.io)
 
@@ -32,14 +32,14 @@ The guiding principle is **precision over recall**: a *wrong* asset↔ticker lin
 
 | | Full snapshot | Free sample |
 | :--- | ---: | ---: |
-| Forward catalysts | **2,221** (955 ticker-linked) | 150 |
-| Listed sponsors | **124** | 48 |
-| Resolved assets | **1,890** | 107 |
-| Asset↔ticker "tradeable core" | **597** | (subset) |
-| Trials resolved | **2,331** | (linked) |
+| Forward catalysts | **2,202** (955 ticker-linked) | 150 |
+| Listed sponsors | **126** | 47 |
+| Resolved assets | **1,881** | 106 |
+| Asset↔ticker "tradeable core" | **603** | (subset) |
+| Trials resolved | **2,332** | (linked) |
 | Formats | CSV · JSON | CSV |
 
-The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_sample.csv) is the **150 nearest-term catalysts** across 48 listed sponsors — a real taste of the schema and quality — with the [`samples/asset_master_sample.csv`](samples/asset_master_sample.csv) linkage rows behind them. Explore it on the [Kaggle dataset](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample) (with a [starter notebook](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter)) or the [🤗 Hugging Face dataset](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample). The full snapshot is at **[csa.dataengineered.io](https://csa.dataengineered.io)**.
+The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_sample.csv) is the **150 nearest-term catalysts** across 47 listed sponsors — a real taste of the schema and quality — with the [`samples/asset_master_sample.csv`](samples/asset_master_sample.csv) linkage rows behind them. Explore it on the [Kaggle dataset](https://www.kaggle.com/datasets/dataengineered/csa-clinical-stage-asset-intelligence-sample) (with a [starter notebook](https://www.kaggle.com/code/dataengineered/csa-clinical-stage-asset-intelligence-starter)) or the [🤗 Hugging Face dataset](https://huggingface.co/datasets/Ichlibitiche/csa-clinical-stage-asset-intelligence-sample). The full snapshot is at **[csa.dataengineered.io](https://csa.dataengineered.io)**.
 
 ## Scope (the honest version)
 
@@ -63,7 +63,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | Tier | What | Price |
 | :--- | :--- | :--- |
 | **Sample** | 150 nearest-term catalysts (this repo) | Free |
-| **Snapshot** | Full 2,221 catalysts (955 ticker-linked) · 1,890 assets · 597 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
+| **Snapshot** | Full 2,202 catalysts (955 ticker-linked) · 1,881 assets · 603 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
 | **API & enterprise terms** | New editions · Phase 2 & more areas · API delivery · custom gold sets — use the [contact form](https://csa.dataengineered.io/#contact) | quoted per engagement |
 
 **[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or use the [contact form](https://csa.dataengineered.io/#contact) (csa@dataengineered.io) for API / enterprise / invoice.
@@ -81,25 +81,43 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 import csv
 rows = list(csv.DictReader(open("samples/catalyst_calendar_sample.csv", encoding="utf-8")))
 print(len(rows), "catalysts across", len({r["ticker"] for r in rows}), "sponsors")
-# → 150 catalysts across 48 sponsors
+# → 150 catalysts across 47 sponsors
 soonest = min(rows, key=lambda r: r["event_date"])
 print(soonest["event_date"], soonest["ticker"], soonest["asset"], soonest["event_type"])
 ```
 
 A fuller example is in [`examples/load_sample.py`](examples/load_sample.py).
 
+## Site pages
+
+`python scripts/generate_seo_pages.py` builds the site from `samples/` in one run: one page
+per catalyst asset (`catalysts/`) and per listed sponsor (`sponsors/`), the two directory
+hubs, the homepage sample-calendar rows, the redirect map in `functions/_middleware.js`
+and `sitemap.xml` (written last). Sponsor pages also show the sponsor's counts in the full
+snapshot from `data/sponsor_summary.json` (copied from csa-poc `site/` each edition).
+
+- A page whose asset or sponsor left the sample is deleted by that run, so never delete
+  catalyst or sponsor pages by hand. The run checks everything before it writes, and
+  refuses to delete more than a third of either directory unless given `--force-prune`.
+- Only forward catalysts are shown: rows dated before the run (or `CSA_AS_OF=YYYY-MM-DD`)
+  are skipped, and the homepage table lists catalysts at least a month out.
+- A retired URL with a true successor (a renamed or merged asset) belongs in
+  `scripts/redirects.json`. The middleware serves the active rules (Cloudflare Pages does
+  not apply `_redirects` to requests a Function serves). A rule whose target page is gone
+  stays recorded but inactive, and a URL with no successor simply returns 404.
+
 ## Localized pages (i18n)
 
-The site pages (`index.html`, `404.html`, `catalysts/`, `sponsors/`) are also published
-under `/es/`, `/de/`, `/fr/` and `/pt-br/`. Those copies are generated by
-`scripts/i18n_common.py` (config in `i18n.config.json`, translations in
-`locales/<lang>.json`). The English pages at the root stay the source of truth, so never
-hand-edit the `<lang>/` directories.
+The homepage and the 404 page (`index.html`, `404.html`) are also published under `/es/`,
+`/de/`, `/fr/` and `/pt-br/`. Catalyst, sponsor and directory pages are English-only since
+2026-10-08; the middleware 301s their former translated URLs to the English page. Those
+copies are generated by `scripts/i18n_common.py` (config in `i18n.config.json`,
+translations in `locales/<lang>.json`). The English pages at the root stay the source of
+truth, so never hand-edit the `<lang>/` directories.
 
-- After regenerating the English pages (`python scripts/generate_seo_pages.py`,
-  `python scripts/generate_hubs.py`) or editing `index.html`, run
-  `python scripts/i18n_common.py build`, then `python scripts/i18n_common.py check`
-  (must report 0 errors).
+- After regenerating the English pages (`python scripts/generate_seo_pages.py`) or
+  editing `index.html`, run `python scripts/i18n_common.py build`, then
+  `python scripts/i18n_common.py check` (must report 0 errors).
 - New or changed copy: `python scripts/i18n_common.py todo`, translate the todo files per
   the portfolio's `scripts/i18n_style.md`, `merge` them, then `build` and `check` again.
   Data values (assets, sponsors, tickers, NCT ids, CSV enums) are marked

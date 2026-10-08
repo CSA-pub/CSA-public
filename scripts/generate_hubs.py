@@ -16,7 +16,9 @@ catalyst to its sponsor: that asset-to-ticker linkage is precision-first
 (a wrong link is worse than a missed one) and a directory page is not the
 place to introduce one.
 
-Run from the repo root:  python scripts/generate_hubs.py
+scripts/generate_seo_pages.py runs this after it writes (and retires) the detail
+pages and before it writes the sitemap, so a normal regeneration needs only that
+script. Running this one alone still works:  python scripts/generate_hubs.py
 """
 
 import html as htmllib
@@ -43,21 +45,23 @@ SECTIONS = [
         # title is fit via seo_common.fit_title once the entry count (n) is known --
         # see build_section() -- so it stays <=60 chars instead of the fixed string
         # this used to be ("Catalyst Directory — Every Tracked Clinical-Stage
-        # Readout | CSA", 63 chars, over budget).
-        "title_options": lambda n: [f"{n} clinical-stage catalysts", "catalyst directory"],
+        # Readout | CSA", 63 chars, over budget). n counts the asset pages, not catalysts
+        # (an asset can have several), and not "clinical-stage": many tracked assets are
+        # already approved and in Phase 3 for a new indication.
+        "title_options": lambda n: [f"{n} drug assets", "catalyst directory"],
         "desc": ("Every forward clinical and regulatory catalyst tracked by CSA, each linked "
                  "to its own source-linked record. Not investment advice."),
-        "lede": ("One page per tracked forward catalyst. Each record carries the trial phase, "
-                 "event type, expected date, date confidence, NCT id and the source it was "
-                 "derived from."),
-        "label": "tracked catalysts",
+        "lede": ("One page per tracked drug asset and its forward catalysts. Each record carries "
+                 "the trial phase, event type, expected date, date confidence, NCT id and the "
+                 "source it was derived from."),
+        "label": "tracked assets",
     },
     {
         "slug": "sponsors",
         "h1": "Sponsor directory",
         "title_options": lambda n: [f"{n} sponsors", "directory"],
-        "desc": ("Every listed sponsor tracked by CSA, each with its forward clinical-stage "
-                 "catalysts and pipeline. Not investment advice."),
+        "desc": ("Every listed sponsor tracked by CSA, each with its forward trial "
+                 "catalysts and the Phase 3 trials behind them. Not investment advice."),
         "lede": ("One page per listed sponsor, with the forward catalysts tracked against it. "
                  "Every asset-to-ticker linkage is verified against the trial record before "
                  "it is published."),
