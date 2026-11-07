@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-11-07
+
+- **More repository files off the website**: the site still served `examples/load_sample.py`, `assets/README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `DATA_DICTIONARY.md`, `SOURCES.md` and `SAMPLE_PREVIEW.md` (no page on this site links these three) and the i18n tool's marker file in each language folder (`/es/_i18n-generated.txt` and its `de`, `fr`, `pt-br` copies). They now answer the site's normal 404 page and stay available here on GitHub. The list also refuses `/kaggle/`, `/notebooks/` and `/tests/` should this repository add them. Files the site links stay served: `LICENSE`, the free samples, `llms.txt` and the sitemap. No page or data changes (2026-11-07).
+
 ## Site update — 2026-10-08
 
 Fixes for the Google Search Console page-indexing report (697 URLs "Discovered – currently not indexed", 40 "Crawled – currently not indexed", 17 "Not found (404)"), shipped with edition 2026.10 below.
