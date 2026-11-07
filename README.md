@@ -16,7 +16,7 @@
 
 **[→ Get the full dataset at csa.dataengineered.io](https://csa.dataengineered.io)**
 
-**Free sample:** [150 catalysts](samples/catalyst_calendar_sample.csv) · **Full dataset: $499 one-time** → [Buy on Stripe](https://buy.stripe.com/dRmcN67BefzwazV2I83840d)
+**Free sample:** [150 catalysts](samples/catalyst_calendar_sample.csv) · **Full dataset: $99 one-time** → [Buy on Stripe](https://buy.stripe.com/5kQbJ2aNqgDA23p6Yo3840m)
 
 </div>
 
@@ -63,7 +63,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 | Tier | What | Price |
 | :--- | :--- | :--- |
 | **Sample** | 150 nearest-term catalysts (this repo) | Free |
-| **Snapshot** | Full 2,202 catalysts (955 ticker-linked) · 1,881 assets · 603 tradeable-core · CSV + JSON · commercial license | **$499** one-time |
+| **Snapshot** | Full 2,202 catalysts (955 ticker-linked) · 1,881 assets · 603 tradeable-core · CSV + JSON · commercial license | **$99** one-time |
 | **API & enterprise terms** | New editions · Phase 2 & more areas · API delivery · custom gold sets — use the [contact form](https://csa.dataengineered.io/#contact) | quoted per engagement |
 
 **[→ Get it at csa.dataengineered.io](https://csa.dataengineered.io)** · or use the [contact form](https://csa.dataengineered.io/#contact) (csa@dataengineered.io) for API / enterprise / invoice.

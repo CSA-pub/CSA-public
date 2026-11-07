@@ -491,7 +491,7 @@ ADVICE = """      <div class="advice">
 
 FOOTER = """  <footer>
     <div class="container">
-      <p>CSA &mdash; Clinical-Stage Asset Intelligence &middot; <a href="/#pricing">Full snapshot ($499)</a> &middot; <a href="/">csa.dataengineered.io</a></p>
+      <p>CSA &mdash; Clinical-Stage Asset Intelligence &middot; <a href="/#pricing">Full snapshot ($99)</a> &middot; <a href="/">csa.dataengineered.io</a></p>
       <div class="catalog-line" style="text-align:center; margin-top:14px; font-size:0.85rem; opacity:0.85;"><a href="https://dataengineered.io/">Part of the DataEngineered catalog &rarr;</a> &middot; <a href="https://dataengineered.io/about">About</a> &middot; <a href="https://dataengineered.io/terms">Terms</a> &middot; <a href="https://dataengineered.io/privacy">Privacy</a> &middot; <a href="https://dataengineered.io/refund-policy">Refund policy</a></div>
     </div>
   </footer>
@@ -998,7 +998,7 @@ def main(argv=None):
 {ADVICE}
     <div class="cta">
       <p>This page is one record from the free CSA sample. {SCOPE_LINE}</p>
-      <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
+      <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $99 &rarr;</a>
       &nbsp;
       <a class="btn" href="../sponsors/{slugify(ticker)}">More {data(ticker)} catalysts</a>
     </div>
@@ -1206,7 +1206,7 @@ def main(argv=None):
 {ADVICE}
     <div class="cta">
       <p>This sponsor's catalysts are a slice of the free CSA sample. {SCOPE_LINE}</p>
-      <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $499 &rarr;</a>
+      <a class="btn primary" href="/#pricing">Get the full dataset &mdash; $99 &rarr;</a>
     </div>
     {related_html}
   </main>
