@@ -8,6 +8,7 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 
 ## Site update — 2026-11-07
 
+- **Snapshot price $499 → $99.** Same data, files and commercial license; one-time payment, instant download. The buy button points at the new Stripe checkout on every language's homepage, and the price changed on the homepage (pricing card, intro line, `Product` JSON-LD offer), on every catalyst, sponsor and directory page, in `README.md` and in `llms.txt`. Pages were regenerated with `CSA_AS_OF=2026-10-08`, the date of the last regeneration, so the price is the only content change; every sitemap `lastmod` moves to 2026-11-07 because every page carries the price. Buyers of the $499 snapshot keep their download page.
 - **More repository files off the website**: the site still served `examples/load_sample.py`, `assets/README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `DATA_DICTIONARY.md`, `SOURCES.md` and `SAMPLE_PREVIEW.md` (no page on this site links these three) and the i18n tool's marker file in each language folder (`/es/_i18n-generated.txt` and its `de`, `fr`, `pt-br` copies). They now answer the site's normal 404 page and stay available here on GitHub. The list also refuses `/kaggle/`, `/notebooks/` and `/tests/` should this repository add them. Files the site links stay served: `LICENSE`, the free samples, `llms.txt` and the sitemap. No page or data changes (2026-11-07).
 
 ## Site update — 2026-10-08
