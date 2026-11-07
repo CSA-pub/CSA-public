@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-06",
+ "as_of": "2026-11-06",
  "note": "Per-ticker counts from the full CSA snapshot, for the shopfront's sponsor pages. Counts only: no asset names, dates or trial ids.",
  "sponsors": {
   "AAPG": {
@@ -12,21 +12,21 @@
    }
   },
   "ABBV": {
-   "forward_catalysts": 56,
+   "forward_catalysts": 59,
    "assets": 28,
-   "trials": 210,
+   "trials": 219,
    "catalysts_by_year": {
-    "2026": 1,
-    "2027": 16,
+    "2026": 3,
+    "2027": 15,
     "2028": 10,
-    "2029": 7,
-    "2030": 7,
-    "2031": 2,
-    "2032": 4,
+    "2029": 9,
+    "2030": 5,
+    "2031": 3,
+    "2032": 5,
     "2033": 2,
     "2034": 2,
     "2036": 2,
-    "2040": 3
+    "2041": 3
    }
   },
   "ADRX": {
@@ -72,13 +72,13 @@
    }
   },
   "AMGN": {
-   "forward_catalysts": 30,
+   "forward_catalysts": 32,
    "assets": 13,
-   "trials": 61,
+   "trials": 63,
    "catalysts_by_year": {
     "2026": 1,
-    "2027": 9,
-    "2028": 8,
+    "2027": 10,
+    "2028": 9,
     "2029": 4,
     "2030": 4,
     "2031": 3,
@@ -102,10 +102,18 @@
     "2029": 1
    }
   },
+  "ARQT": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
+   }
+  },
   "ARWR": {
    "forward_catalysts": 4,
    "assets": 2,
-   "trials": 6,
+   "trials": 4,
    "catalysts_by_year": {
     "2027": 1,
     "2028": 2,
@@ -115,7 +123,7 @@
   "ATNM": {
    "forward_catalysts": 3,
    "assets": 3,
-   "trials": 18,
+   "trials": 20,
    "catalysts_by_year": {
     "2029": 3
    }
@@ -137,15 +145,15 @@
    }
   },
   "AZN": {
-   "forward_catalysts": 126,
-   "assets": 52,
-   "trials": 394,
+   "forward_catalysts": 128,
+   "assets": 54,
+   "trials": 403,
    "catalysts_by_year": {
-    "2026": 4,
-    "2027": 28,
-    "2028": 35,
+    "2026": 1,
+    "2027": 33,
+    "2028": 34,
     "2029": 36,
-    "2030": 13,
+    "2030": 14,
     "2031": 6,
     "2032": 1,
     "2033": 3
@@ -185,23 +193,21 @@
    }
   },
   "BIIB": {
-   "forward_catalysts": 3,
+   "forward_catalysts": 2,
    "assets": 1,
    "trials": 5,
    "catalysts_by_year": {
-    "2026": 1,
     "2029": 1,
     "2032": 1
    }
   },
   "BMY": {
-   "forward_catalysts": 40,
+   "forward_catalysts": 39,
    "assets": 24,
-   "trials": 174,
+   "trials": 178,
    "catalysts_by_year": {
-    "2026": 1,
-    "2027": 15,
-    "2028": 6,
+    "2027": 16,
+    "2028": 5,
     "2029": 5,
     "2030": 8,
     "2031": 4,
@@ -211,10 +217,10 @@
   "BNTX": {
    "forward_catalysts": 8,
    "assets": 6,
-   "trials": 26,
+   "trials": 25,
    "catalysts_by_year": {
-    "2028": 3,
-    "2029": 4,
+    "2028": 1,
+    "2029": 6,
     "2031": 1
    }
   },
@@ -314,7 +320,7 @@
    "trials": 2,
    "catalysts_by_year": {
     "2027": 1,
-    "2028": 1
+    "2029": 1
    }
   },
   "DMAC": {
@@ -339,6 +345,14 @@
    "trials": 3,
    "catalysts_by_year": {
     "2035": 2
+   }
+  },
+  "ELVN": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 1
    }
   },
   "ERAS": {
@@ -386,16 +400,18 @@
    }
   },
   "GILD": {
-   "forward_catalysts": 20,
-   "assets": 10,
-   "trials": 43,
+   "forward_catalysts": 30,
+   "assets": 14,
+   "trials": 121,
    "catalysts_by_year": {
     "2026": 1,
     "2027": 2,
     "2028": 6,
     "2029": 4,
     "2030": 2,
-    "2031": 5
+    "2031": 5,
+    "2039": 5,
+    "2042": 5
    }
   },
   "GLSI": {
@@ -407,12 +423,12 @@
    }
   },
   "GMAB": {
-   "forward_catalysts": 17,
+   "forward_catalysts": 19,
    "assets": 7,
-   "trials": 95,
+   "trials": 98,
    "catalysts_by_year": {
     "2027": 3,
-    "2028": 3,
+    "2028": 5,
     "2029": 7,
     "2030": 1,
     "2037": 3
@@ -421,7 +437,7 @@
   "GNLX": {
    "forward_catalysts": 3,
    "assets": 3,
-   "trials": 2,
+   "trials": 3,
    "catalysts_by_year": {
     "2026": 3
    }
@@ -435,18 +451,18 @@
    }
   },
   "GRFS": {
-   "forward_catalysts": 3,
-   "assets": 3,
-   "trials": 3,
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 2,
    "catalysts_by_year": {
-    "2028": 2,
+    "2028": 1,
     "2029": 1
    }
   },
   "HCM": {
    "forward_catalysts": 8,
    "assets": 8,
-   "trials": 39,
+   "trials": 40,
    "catalysts_by_year": {
     "2028": 7,
     "2029": 1
@@ -507,7 +523,7 @@
   "IMNN": {
    "forward_catalysts": 3,
    "assets": 3,
-   "trials": 29,
+   "trials": 28,
    "catalysts_by_year": {
     "2032": 3
    }
@@ -545,11 +561,11 @@
    }
   },
   "INCY": {
-   "forward_catalysts": 12,
+   "forward_catalysts": 11,
    "assets": 8,
    "trials": 38,
    "catalysts_by_year": {
-    "2026": 2,
+    "2026": 1,
     "2027": 1,
     "2028": 8,
     "2032": 1
@@ -582,18 +598,10 @@
     "2028": 1
    }
   },
-  "IVA": {
-   "forward_catalysts": 1,
-   "assets": 1,
-   "trials": 1,
-   "catalysts_by_year": {
-    "2027": 1
-   }
-  },
   "JAZZ": {
    "forward_catalysts": 4,
    "assets": 3,
-   "trials": 20,
+   "trials": 19,
    "catalysts_by_year": {
     "2028": 4
    }
@@ -633,7 +641,7 @@
   "KPTI": {
    "forward_catalysts": 1,
    "assets": 1,
-   "trials": 10,
+   "trials": 9,
    "catalysts_by_year": {
     "2026": 1
    }
@@ -641,7 +649,7 @@
   "KURA": {
    "forward_catalysts": 5,
    "assets": 5,
-   "trials": 41,
+   "trials": 40,
    "catalysts_by_year": {
     "2031": 5
    }
@@ -655,14 +663,14 @@
    }
   },
   "LLY": {
-   "forward_catalysts": 53,
-   "assets": 23,
-   "trials": 126,
+   "forward_catalysts": 56,
+   "assets": 24,
+   "trials": 128,
    "catalysts_by_year": {
-    "2026": 3,
+    "2026": 2,
     "2027": 13,
     "2028": 14,
-    "2029": 16,
+    "2029": 20,
     "2030": 4,
     "2031": 3
    }
@@ -725,29 +733,29 @@
    }
   },
   "MLTX": {
-   "forward_catalysts": 4,
+   "forward_catalysts": 3,
    "assets": 1,
    "trials": 5,
    "catalysts_by_year": {
-    "2027": 2,
+    "2027": 1,
     "2028": 2
    }
   },
   "MRK": {
-   "forward_catalysts": 128,
-   "assets": 58,
-   "trials": 284,
+   "forward_catalysts": 131,
+   "assets": 62,
+   "trials": 288,
    "catalysts_by_year": {
-    "2026": 2,
-    "2027": 18,
-    "2028": 24,
-    "2029": 21,
+    "2026": 1,
+    "2027": 15,
+    "2028": 25,
+    "2029": 22,
     "2030": 7,
-    "2031": 9,
-    "2032": 13,
+    "2031": 11,
+    "2032": 12,
     "2033": 17,
     "2034": 8,
-    "2037": 1,
+    "2037": 5,
     "2039": 2,
     "2043": 6
    }
@@ -804,24 +812,24 @@
    }
   },
   "NVO": {
-   "forward_catalysts": 31,
+   "forward_catalysts": 33,
    "assets": 6,
-   "trials": 52,
+   "trials": 53,
    "catalysts_by_year": {
     "2027": 8,
-    "2028": 14,
+    "2028": 15,
     "2029": 7,
-    "2030": 2
+    "2030": 3
    }
   },
   "NVS": {
-   "forward_catalysts": 50,
+   "forward_catalysts": 48,
    "assets": 32,
-   "trials": 107,
+   "trials": 104,
    "catalysts_by_year": {
-    "2026": 2,
+    "2026": 1,
     "2027": 16,
-    "2028": 17,
+    "2028": 16,
     "2029": 7,
     "2030": 4,
     "2031": 1,
@@ -830,20 +838,11 @@
     "2035": 1
    }
   },
-  "OGN": {
-   "forward_catalysts": 1,
-   "assets": 1,
-   "trials": 2,
-   "catalysts_by_year": {
-    "2026": 1
-   }
-  },
   "OLMA": {
-   "forward_catalysts": 3,
+   "forward_catalysts": 2,
    "assets": 2,
    "trials": 13,
    "catalysts_by_year": {
-    "2026": 1,
     "2028": 2
    }
   },
@@ -860,16 +859,25 @@
    }
   },
   "PFE": {
-   "forward_catalysts": 63,
-   "assets": 38,
-   "trials": 202,
+   "forward_catalysts": 68,
+   "assets": 37,
+   "trials": 216,
    "catalysts_by_year": {
-    "2026": 15,
-    "2027": 11,
-    "2028": 13,
-    "2029": 12,
+    "2026": 9,
+    "2027": 15,
+    "2028": 17,
+    "2029": 13,
     "2030": 9,
+    "2031": 2,
     "2032": 3
+   }
+  },
+  "PGEN": {
+   "forward_catalysts": 1,
+   "assets": 1,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2029": 1
    }
   },
   "PHVS": {
@@ -907,23 +915,23 @@
    }
   },
   "REGN": {
-   "forward_catalysts": 32,
+   "forward_catalysts": 34,
    "assets": 15,
-   "trials": 114,
+   "trials": 113,
    "catalysts_by_year": {
-    "2026": 1,
     "2027": 5,
-    "2028": 3,
-    "2029": 16,
+    "2028": 4,
+    "2029": 17,
     "2030": 2,
     "2031": 3,
-    "2033": 2
+    "2033": 2,
+    "2035": 1
    }
   },
   "REPL": {
    "forward_catalysts": 3,
    "assets": 3,
-   "trials": 12,
+   "trials": 11,
    "catalysts_by_year": {
     "2030": 3
    }
@@ -931,7 +939,7 @@
   "RLAY": {
    "forward_catalysts": 2,
    "assets": 2,
-   "trials": 31,
+   "trials": 30,
    "catalysts_by_year": {
     "2028": 2
    }
@@ -955,7 +963,7 @@
   "RVMD": {
    "forward_catalysts": 8,
    "assets": 3,
-   "trials": 26,
+   "trials": 25,
    "catalysts_by_year": {
     "2027": 1,
     "2028": 3,
@@ -970,13 +978,21 @@
     "2027": 1
    }
   },
+  "SCNLD": {
+   "forward_catalysts": 2,
+   "assets": 2,
+   "trials": 1,
+   "catalysts_by_year": {
+    "2028": 2
+   }
+  },
   "SKBBY": {
-   "forward_catalysts": 7,
+   "forward_catalysts": 8,
    "assets": 4,
-   "trials": 53,
+   "trials": 55,
    "catalysts_by_year": {
     "2026": 3,
-    "2027": 4
+    "2027": 5
    }
   },
   "SMMT": {
@@ -997,26 +1013,25 @@
    }
   },
   "SNY": {
-   "forward_catalysts": 20,
-   "assets": 13,
-   "trials": 91,
+   "forward_catalysts": 21,
+   "assets": 14,
+   "trials": 96,
    "catalysts_by_year": {
     "2027": 6,
-    "2028": 3,
+    "2028": 4,
     "2029": 5,
     "2030": 6
    }
   },
   "TAK": {
    "forward_catalysts": 18,
-   "assets": 8,
-   "trials": 36,
+   "assets": 7,
+   "trials": 37,
    "catalysts_by_year": {
-    "2026": 1,
     "2027": 6,
     "2028": 5,
     "2029": 2,
-    "2030": 2,
+    "2030": 3,
     "2033": 2
    }
   },
@@ -1077,11 +1092,12 @@
    }
   },
   "VIK": {
-   "forward_catalysts": 1,
+   "forward_catalysts": 3,
    "assets": 1,
-   "trials": 2,
+   "trials": 4,
    "catalysts_by_year": {
-    "2027": 1
+    "2027": 1,
+    "2028": 2
    }
   },
   "VNDA": {

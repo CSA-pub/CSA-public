@@ -10,6 +10,24 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 
 - **Snapshot price $499 → $99.** Same data, files and commercial license; one-time payment, instant download. The buy button points at the new Stripe checkout on every language's homepage, and the price changed on the homepage (pricing card, intro line, `Product` JSON-LD offer), on every catalyst, sponsor and directory page, in `README.md` and in `llms.txt`. Pages were regenerated with `CSA_AS_OF=2026-10-08`, the date of the last regeneration, so the price is the only content change; every sitemap `lastmod` moves to 2026-11-07 because every page carries the price. Buyers of the $499 snapshot keep their download page.
 - **More repository files off the website**: the site still served `examples/load_sample.py`, `assets/README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `DATA_DICTIONARY.md`, `SOURCES.md` and `SAMPLE_PREVIEW.md` (no page on this site links these three) and the i18n tool's marker file in each language folder (`/es/_i18n-generated.txt` and its `de`, `fr`, `pt-br` copies). They now answer the site's normal 404 page and stay available here on GitHub. The list also refuses `/kaggle/`, `/notebooks/` and `/tests/` should this repository add them. Files the site links stay served: `LICENSE`, the free samples, `llms.txt` and the sitemap. No page or data changes (2026-11-07).
+- **Count-free share image.** `og-image.png` still read "2,103 catalysts" and "139 sponsors", the 2026.07 figures that counted rows with no ticker (see 2026.09). The new `og-image-v2.png` carries no counts: its one figure, 0 cross-molecule merges, is the precision gate no edition ships without, and its illustrative timeline shows readouts only. The homepage `og:image`, `twitter:image` and `Product` JSON-LD, the webmanifest icon, every catalyst, sponsor and directory page and the service-worker precache point at it (cache `v2026.11.1`). `og-image.png` is deleted and answers 404: PNGs are served as immutable for a year, so the middleware refuses the old path rather than let a cache keep serving it. The README banner `assets/kaggle-cover.png` showed the same figures and is redrawn in place. `scripts/render_cards.py` draws both.
+- **Pricing card label without an edition**: "One-time download · edition 2026.10" read as the edition a buyer gets, but the ZIP is rebuilt every month and the label was only updated by hand. It now reads "One-time purchase · latest monthly snapshot" (the download page stays valid for re-downloads). The webmanifest description drops its 2026.10 counts for the same reason.
+- **Pricing card claim corrected**: "603 tradeable-core assets … across 126 sponsors" paired two different counts. 126 is the number of listed sponsors with a forward catalyst; the tradeable-core assets span more of them (145 in 2026.10, 147 in 2026.11). The bullet no longer gives a sponsor count; the 128 listed sponsors stay with the catalysts they describe.
+
+## 2026.11 — 2026-11-06
+
+- Monthly refresh (CI run 2026-11-06); the precision gate passed with 0 cross-molecule
+  merges. Published on the shopfront 2026-11-07.
+- **2,237** forward catalysts (2,202 in 2026.10), **988** of them linked to **128** listed
+  sponsors (955, 126); **1,888** resolved assets (1,881); **607** tradeable core (603);
+  **2,349** trials (2,332).
+- Free sample rebuilt: 150 nearest-term ticker-linked catalysts from 2026-11-30,
+  44 sponsors, 104 assets.
+- Site pages regenerated on 2026-11-07. Ten pages left with their catalysts, all dated
+  October 2026, and return 404 (no successor): catalysts belzutifan, binimetinib,
+  deucravacitinib, encorafenib, litifilimab, palazestrant, tapinarof; sponsors BIIB, OGN,
+  OLMA. Five catalyst pages are new or back: baricitinib, cenvacibart, monalizumab,
+  oleclumab, petosemtamab. The sitemap lists 155 URLs.
 
 ## Site update — 2026-10-08
 

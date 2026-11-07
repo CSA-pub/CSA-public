@@ -12,11 +12,11 @@
  * served from the cache.
  */
 
-const CACHE_NAME = 'csa-public-cache-v2026.10.1';
+const CACHE_NAME = 'csa-public-cache-v2026.11.1';
 const CORE_ASSETS = [
   '/',
   '/favicon.svg',
-  '/og-image.png',
+  '/og-image-v2.png',
   '/samples/catalyst_calendar_sample.csv',
   '/sitemap.xml',
   '/site.webmanifest'

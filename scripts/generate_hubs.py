@@ -133,7 +133,7 @@ PAGE = """<!DOCTYPE html>
   <meta property="og:description" content="{desc}" />
   <meta property="og:url" content="{base}/{slug}/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="{base}/og-image.png" />
+  <meta property="og:image" content="{base}/og-image-v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json">
   {{"@context": "https://schema.org", "@type": "CollectionPage", "name": {jname}, "description": {jdesc}, "url": "{base}/{slug}/", "isPartOf": {{"@type": "WebSite", "name": "CSA", "url": "{base}"}}, "publisher": {{"@type": "Organization", "name": "DataEngineered", "url": "{base}"}}}}

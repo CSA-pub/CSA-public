@@ -103,13 +103,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/baxdrostat-dapagliflozin</loc>
+    <loc>https://csa.dataengineered.io/catalysts/baricitinib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/belzutifan</loc>
+    <loc>https://csa.dataengineered.io/catalysts/baxdrostat-dapagliflozin</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -122,12 +122,6 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/catalysts/berobenatide</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/catalysts/binimetinib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -169,6 +163,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://csa.dataengineered.io/catalysts/cenvacibart</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://csa.dataengineered.io/catalysts/cretostimogene-grenadenorepvec</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -188,12 +188,6 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/catalysts/datopotamab-deruxtecan</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/catalysts/deucravacitinib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -242,12 +236,6 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/catalysts/elranatamab</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/catalysts/encorafenib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -331,12 +319,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/litifilimab</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://csa.dataengineered.io/catalysts/livmoniplimab</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -391,6 +373,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://csa.dataengineered.io/catalysts/monalizumab</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://csa.dataengineered.io/catalysts/nemtabrutinib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -410,6 +398,12 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/catalysts/odronextamab</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://csa.dataengineered.io/catalysts/oleclumab</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -451,13 +445,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/palazestrant</loc>
+    <loc>https://csa.dataengineered.io/catalysts/pelabresib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/pelabresib</loc>
+    <loc>https://csa.dataengineered.io/catalysts/petosemtamab</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -607,12 +601,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://csa.dataengineered.io/catalysts/tapinarof</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://csa.dataengineered.io/catalysts/tarlatamab</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -746,12 +734,6 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/sponsors/bctx</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/sponsors/biib</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -896,18 +878,6 @@
   </url>
   <url>
     <loc>https://csa.dataengineered.io/sponsors/nvs</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/sponsors/ogn</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://csa.dataengineered.io/sponsors/olma</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

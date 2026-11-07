@@ -463,7 +463,7 @@ def head(title, desc, url, og_type, jsonld_blocks):
   <meta property="og:description" content="{desc}" />
   <meta property="og:url" content="{url}" />
   <meta property="og:type" content="{og_type}" />
-  <meta property="og:image" content="{SITE}/og-image.png" />
+  <meta property="og:image" content="{SITE}/og-image-v2.png" />
   <meta name="twitter:card" content="summary_large_image" />
 {ld}
   <link rel="preconnect" href="https://fonts.googleapis.com">
