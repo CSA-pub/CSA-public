@@ -2,12 +2,14 @@
 
 All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 
-> The dataset is refreshed monthly, so live figures move between snapshots. A
-> count-claim gate asserts the corpus counts against the shopfront on every build,
-> so the advertised numbers and the shipped data can never silently diverge.
+> The dataset is refreshed monthly, so live figures move between snapshots. On every
+> build a count-claim gate recomputes the headline counts from the packaged files and
+> fails the build if they differ from the snapshot's own `scope_manifest.json`. The
+> figures on the website are updated by hand after each edition.
 
 ## Site update — 2026-11-08
 
+- **What the count-claim gate checks, stated correctly.** This file's header and `DATA_DICTIONARY.md` said the gate checks the corpus counts against the website, so the advertised numbers "can never silently diverge". It does not: the gate holds each archive to its own `scope_manifest.json`, and the website's figures are updated by hand after each edition (after the 2026.11 refresh on 2026-11-06 the site showed 2026.10 figures until 2026-11-08). Both texts now say so. Documentation only; no page or data change.
 - **Catalyst types and sources now match the shipped calendar.** Every v1 catalyst is a trial readout (`event_type = READOUT`), and none is a PDUFA or other FDA-decision row. The calendar is dated from active Phase 3 protocols' estimated primary-completion dates on ClinicalTrials.gov. The site and docs still described a second, SEC 8-K channel, with PDUFA and AdComm dates ranking above protocol estimates. On the homepage, the timeline legend now separates day-precise and month-precise estimates (it said "company-disclosed (8-K)"), the method card is "Protocol-dated readouts" (it was "Dual-channel catalysts"), and the dates FAQ explains that Phase 3 protocol estimates are graded `medium`. `README.md`, `llms.txt`, `DATA_DICTIONARY.md`, `SOURCES.md` and `SAMPLE_PREVIEW.md` were changed to match. The schema docs still list `PDUFA`, `ADCOMM`, `CRL`, `APPROVAL_DECISION` and `source = sec_8k` as defined values. Translations updated. No data or count changes.
 
 ## Site update — 2026-11-07
