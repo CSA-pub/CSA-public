@@ -22,7 +22,7 @@
 
 ---
 
-CSA links four public sources — **ClinicalTrials.gov**, **openFDA / Drugs@FDA**, **SEC EDGAR** and **FDA GSRS/UNII** — down to the individual **drug asset** and the **listed sponsor** behind it, and compiles a **forward catalyst calendar**: the upcoming trial readouts and FDA decision dates that move clinical-stage biotech, each with a graded date and a **source URL** so every row can be re-verified.
+CSA links four public sources — **ClinicalTrials.gov**, **openFDA / Drugs@FDA**, **SEC EDGAR** and **FDA GSRS/UNII** — down to the individual **drug asset** and the **listed sponsor** behind it, and compiles a **forward catalyst calendar**: the upcoming trial readouts that move clinical-stage biotech, each with a graded date and a **source URL** so every row can be re-verified.
 
 The guiding principle is **precision over recall**: a *wrong* asset↔ticker link is far more damaging than a missed one. Assets are keyed to their FDA-registered **active-moiety UNII set** (not fuzzy name matching), and a post-clustering guard means **no asset spans two different active moieties** — audited to **0 cross-molecule merges** on the full run. Uncertain pairs are held for review rather than merged.
 
@@ -46,7 +46,7 @@ The free [`samples/catalyst_calendar_sample.csv`](samples/catalyst_calendar_samp
 The v1 snapshot is deliberately scoped, and says so up front:
 
 - **Coverage:** active, **industry-sponsored, Phase 3, interventional** trials in **cardiometabolic, oncology and immunology**. Phase 2 and additional therapeutic areas are planned, not yet shipped.
-- **Catalyst channels:** two, and every row names its own — `sec_8k` (dates disclosed in SEC 8-K filings) and `clinicaltrials` (active late-phase protocol primary-completion estimates). Company-disclosed exact dates rank above protocol estimates.
+- **Catalyst channel:** v1's calendar is trial readouts (`event_type = READOUT`) dated from active Phase 3 protocols' estimated primary-completion dates on ClinicalTrials.gov (`source = clinicaltrials`). The schema also defines regulatory event types (`PDUFA`, `ADCOMM`, `CRL`, `APPROVAL_DECISION`) and an `sec_8k` source for dates parsed from SEC 8-K text; v1 ships no regulatory-type rows.
 - **Confidence, not certainty:** every catalyst carries a `confidence` grade and a `date_precision`. Protocol dates slip; they are never presented as commitments.
 - **Redistribution-clean:** every primary source is U.S. Government / public domain. No license-encumbered source (DrugBank, ChEMBL, MedDRA) is included.
 
@@ -54,7 +54,7 @@ The v1 snapshot is deliberately scoped, and says so up front:
 
 - **Active-moiety resolution.** Each asset is keyed to its FDA-registered **UNII set** via GSRS, not fuzzy names. A post-clustering moiety-consistency guard means one asset never spans two complete moieties — **0 cross-molecule merges** audited on the full run; ambiguous pairs are held for review, never auto-merged.
 - **Sponsor → listed ticker.** Lead sponsors are resolved through acquisitions to the **primary US listing**, so the asset maps to the security you can actually trade.
-- **Dual-channel catalysts.** SEC 8-K disclosure text + active late-phase ClinicalTrials.gov protocol readouts, each row stamped with its `source` and a `source_url`.
+- **Readout catalysts.** Active Phase 3 ClinicalTrials.gov primary-completion estimates, credited only to the sponsor's own experimental-arm asset (comparators and standard-of-care backbones excluded), each row stamped with its `source` and a `source_url`.
 
 See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`](SOURCES.md) for the upstream licenses.
 
@@ -71,7 +71,7 @@ See [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) for every field and [`SOURCES.md`
 ## Use cases
 
 - Biotech-focused funds & analysts — a forward catalyst calendar keyed to tradeable tickers
-- Event-driven screening — trial readouts and PDUFA dates as structured, sourced rows
+- Event-driven screening — upcoming Phase 3 trial readouts as structured, sourced rows
 - Competitive/landscape intelligence — asset ↔ sponsor ↔ trial maps across a therapeutic area
 - ML / RAG corpora over clinical-stage pipelines and their listed sponsors
 

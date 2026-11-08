@@ -27,8 +27,8 @@ spans event types, phases and therapeutic areas.)
 | 2026-12-31 | PFE | lorlatinib | READOUT | medium | NCT05059522 |
 
 Each row also carries `event_window` (the date as originally disclosed),
-`date_precision`, `source` (`sec_8k` / `clinicaltrials`), and a `source_url` back
-to the ClinicalTrials.gov study or SEC filing.
+`date_precision`, `source` (`clinicaltrials`: a ClinicalTrials.gov protocol date),
+and a `source_url` back to the ClinicalTrials.gov study.
 
 ## Asset linkage (`samples/asset_master_sample.csv`)
 

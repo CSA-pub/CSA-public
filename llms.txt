@@ -1,12 +1,12 @@
 # CSA — Clinical-Stage Asset Intelligence
 
-> A dataset that links ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR and FDA GSRS/UNII down to the individual drug asset and the listed sponsor behind it, and compiles a forward catalyst calendar — upcoming trial readouts and FDA decision dates — with a graded date and a source URL on every row.
+> A dataset that links ClinicalTrials.gov, openFDA/Drugs@FDA, SEC EDGAR and FDA GSRS/UNII down to the individual drug asset and the listed sponsor behind it, and compiles a forward catalyst calendar of upcoming Phase 3 trial readouts, with a graded date and a source URL on every row.
 
 ## What it is
-- One row per forward catalyst, linked to a drug `asset` and its listed sponsor `ticker`, with an `event_type` (READOUT / PDUFA), a graded `confidence`, a `date_precision`, and a `source_url` to re-verify.
+- One row per forward catalyst, linked to a drug `asset` and its listed sponsor `ticker`, with an `event_type` (`READOUT` in v1), a graded `confidence`, a `date_precision`, and a `source_url` to re-verify.
 - Assets are keyed to their FDA-registered active-moiety UNII set (GSRS), not fuzzy names; a moiety-consistency guard means no asset spans two moieties — audited to 0 cross-molecule merges. Precision over recall: uncertain pairs are held for review, never auto-merged.
 - Sponsors resolve through acquisitions to the primary US listing, so an asset maps to a tradeable ticker.
-- Dual catalyst channels: `sec_8k` (SEC 8-K disclosure text) and `clinicaltrials` (active late-phase protocol primary-completion). Every row names its source.
+- Catalyst channel: trial readouts dated from active Phase 3 protocol primary-completion estimates on ClinicalTrials.gov (`source = clinicaltrials`); v1 has no PDUFA or other FDA-decision rows. Every row names its source.
 - v1 scope: active, industry-sponsored, Phase-3 interventional trials in cardiometabolic, oncology and immunology. Phase 2 and more areas are planned, not yet shipped.
 
 ## Key pages

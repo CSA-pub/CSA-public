@@ -5,12 +5,6 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
- "05330cf4ef61bb63": {
-  "src": "<0>○</0> protocol readout (est.)",
-  "t": "<0>○</0> résultats selon le protocole (est.)",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
  "05706360ea467452": {
   "src": "<0>{1} forward catalysts</0> ({2} linked to the trial sponsor's own ticker) with confidence grade + source URL per row.",
   "t": "<0>{1} catalyseurs à venir</0> ({2} liés au ticker propre du promoteur de l’essai) avec niveau de confiance + URL source par ligne."
@@ -42,6 +36,12 @@
  "0ae3598327eca192": {
   "src": "Active, industry-sponsored, Phase {0} interventional trials in cardiometabolic, oncology and immunology: <1>{2} trials</1> resolved to <3>{4} assets</3>, <5>{6}</5> of them the sponsor's own asset linked to a listed ticker, plus <7>{8} forward catalysts</7>, <9>{10}</9> of them linked to <11>{12} listed sponsors</11>. CSV + JSON with a scope manifest. Phase {13} and more areas are the roadmap.",
   "t": "Essais interventionnels de phase {0} actifs et financés par l’industrie en cardiométabolisme, oncologie et immunologie : <1>{2} essais</1> résolus en <3>{4} actifs</3>, dont <5>{6}</5> actifs propres au promoteur liés à un ticker coté, plus <7>{8} catalyseurs à venir</7>, dont <9>{10}</9> liés à <11>{12} promoteurs cotés</11>. CSV + JSON avec un manifeste de périmètre. La phase {13} et d’autres domaines figurent dans la feuille de route."
+ },
+ "0b7e738edc26f373": {
+  "src": "<0>●</0> dated to the day (est.)",
+  "t": "<0>●</0> date au jour près (est.)",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
  },
  "0b941ea96a6f2ce8": {
   "src": "Expected date",
@@ -224,6 +224,12 @@
  "2eb56be3c2d93cda": {
   "src": "Sources",
   "t": "Sources"
+ },
+ "30615e6b3545fe13": {
+  "src": "They're estimates, and labelled as such. Catalysts are protocol primary-completion dates that sponsors register on ClinicalTrials.gov, and those <0>routinely slip</0> — so each carries a confidence grade (Phase {1} protocol estimates are graded {2}) and a {3}, and none is presented as a commitment. Every row links to its {4} so you can re-verify.",
+  "t": "Ce sont des estimations, présentées comme telles. Les catalyseurs sont les dates d’achèvement principal que les promoteurs enregistrent dans leurs protocoles sur ClinicalTrials.gov, et ces dates <0>glissent régulièrement</0> — chacune porte donc un niveau de confiance (les estimations de protocole de phase {1} sont notées {2}) et un {3}, et aucune n’est présentée comme un engagement. Chaque ligne renvoie à sa {4} pour que vous puissiez revérifier.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
  },
  "30a4f292052dd3b5": {
   "src": "<0>{1}</0> · FAQ",
@@ -413,6 +419,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "50a5e758c35b0237": {
+  "src": "Catalysts are scheduled data readouts: an active Phase {0} trial's estimated primary-completion date on <1>ClinicalTrials.gov</1>, credited only to the sponsor's own experimental-arm asset — comparators and standard-of-care backbones are left out. Every row carries its source and source URL.",
+  "t": "Les catalyseurs sont des publications de résultats programmées : la date d’achèvement principal estimée d’un essai de phase {0} actif sur <1>ClinicalTrials.gov</1>, attribuée uniquement à l’actif propre du promoteur dans le bras expérimental — les comparateurs et les traitements de fond standard sont exclus. Chaque ligne indique sa source et son URL source.",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
+ },
  "514d61d50dff4d85": {
   "src": "Clinical trials, FDA, and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar. Public-domain sources; data, not advice.",
   "t": "Essais cliniques, FDA et SEC liés à l’actif médicamenteux et au promoteur coté, avec un calendrier des catalyseurs. Sources publiques ; des données, pas un conseil.",
@@ -434,12 +446,6 @@
  "5586cf3db2afa20f": {
   "src": "Ticker",
   "t": "Ticker",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "56018948fd200f88": {
-  "src": "{0} + {1} · {2} + {3} per row",
-  "t": "{0} + {1} · {2} + {3} par ligne",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
@@ -715,6 +721,12 @@
   "src": "ticker-linked catalysts",
   "t": "catalyseurs liés à un ticker"
  },
+ "8677e9387a04a1b9": {
+  "src": "Protocol-dated readouts",
+  "t": "Résultats datés par le protocole",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
+ },
  "88306943fea7e76f": {
   "src": "Method",
   "t": "Méthode",
@@ -760,12 +772,6 @@
  "8e072025366d8304": {
   "src": "Refund policy",
   "t": "Politique de remboursement",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "8e1f4d86e90cf2ec": {
-  "src": "Dual-channel catalysts",
-  "t": "Catalyseurs à double canal",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
@@ -829,6 +835,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "9d9619d8cad47cd7": {
+  "src": "<0>○</0> dated to the month (est.)",
+  "t": "<0>○</0> date au mois près (est.)",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
+ },
  "9f5380b1d5512120": {
   "src": "Nearest catalyst",
   "t": "Catalyseur le plus proche",
@@ -877,11 +889,11 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
- "a67fd1cd345443b5": {
-  "src": "They're graded. Company-disclosed exact dates (from {0}-Ks) rank above protocol primary-completion estimates, which <1>routinely slip</1> — so they carry a lower confidence and are never presented as commitments. Every row links to its {2} so you can re-verify.",
-  "t": "Elles sont notées. Les dates exactes publiées par les entreprises (issues des {0}-K) priment sur les estimations d’achèvement principal prévues au protocole, qui <1>glissent régulièrement</1> — elles portent donc une confiance plus faible et ne sont jamais présentées comme des engagements. Chaque ligne renvoie à sa {2} pour que vous puissiez revérifier.",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
+ "a6954f7bd04135c9": {
+  "src": "{0} · {1} + {2} per row",
+  "t": "{0} · {1} + {2} par ligne",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-08"
  },
  "a6a5e887986166fd": {
   "src": "Assets are keyed by their FDA-registered <0>active-moiety UNII set</0>, not fuzzy name matching, and a post-clustering guard means <1>no asset spans two different active moieties</1> — audited to <2>{3} cross-molecule merges</2> on the full run. Uncertain pairs are held for review rather than merged. Precision is the guarantee that matters; a wrong link is the costly error.",
@@ -992,12 +1004,6 @@
  "baf546d85e54f5b7": {
   "src": "{0} forward catalysts tracked for {1} across {2} assets in Phase {3}, nearest {4} {5}. Not investment advice.",
   "t": "{0} catalyseurs à venir suivis pour {1} sur {2} actifs en phase {3}, le plus proche : {4} {5}. Pas un conseil en investissement.",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "bbbf6dc41206dae5": {
-  "src": "Two precision-first channels: <0>SEC {1}-K</0> disclosure text (PDUFA, AdComm, announced readouts) and <2>ClinicalTrials.gov</2> protocol readouts. Every row carries its source and trial id.",
-  "t": "Deux canaux axés sur la précision : le texte des publications <0>SEC {1}-K</0> (PDUFA, AdComm, résultats annoncés) et les résultats prévus aux protocoles de <2>ClinicalTrials.gov</2>. Chaque ligne indique sa source et l’identifiant de l’essai.",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
@@ -1154,12 +1160,6 @@
  "d412c2577c7f5f0f": {
   "src": "Alex Chen, Example Capital",
   "t": "Alex Chen, Example Capital",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "d4486b56b0428c84": {
-  "src": "<0>●</0> company-disclosed ({1}-K)",
-  "t": "<0>●</0> publié par l’entreprise ({1}-K)",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
