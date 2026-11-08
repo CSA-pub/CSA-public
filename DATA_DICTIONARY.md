@@ -60,7 +60,7 @@ FDA regulatory events matched to the resolved assets: `asset`,
 3. **Sponsor → listed ticker.** Lead sponsors are resolved through acquisitions to the primary US listing.
 4. **Readout catalysts.** `clinicaltrials` — active Phase 3 protocol primary-completion dates, credited only to the sponsor's own experimental-arm asset; standard-of-care backbone agents in combination arms are excluded. Each row carries `confidence` and `date_precision`.
 
-**Update frequency: monthly** (snapshot `2026.11`). A count-claim gate asserts the corpus counts against the shopfront on every build, so advertised numbers and shipped data can't silently diverge.
+**Update frequency: monthly** (snapshot `2026.11`). On every build a count-claim gate recomputes the headline counts from the packaged files and fails the build if they differ from the snapshot's own `scope_manifest.json`, so the archive always matches its manifest. The figures on the website are updated by hand after each edition, so for a few days after a refresh they can trail the latest snapshot.
 
 ## Notes
 
