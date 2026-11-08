@@ -898,7 +898,7 @@ def main(argv=None):
         ld_dataset = {
             "@context": "https://schema.org", "@type": "Dataset",
             "name": f"{asset} ({ticker}) forward catalyst record",
-            "description": (f"Forward clinical/regulatory catalyst for {asset}, "
+            "description": (f"Forward clinical-trial catalyst for {asset}, "
                             f"linked to listed sponsor {company_disp} ({ticker}): {etype} on {cd} from trial {nct}."),
             "url": url,
             "creator": {"@type": "Organization", "name": "DataEngineered", "url": SITE},

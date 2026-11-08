@@ -6,8 +6,8 @@ CSVs live in [`samples/`](samples/); full field documentation in
 
 The sample is the **150 nearest-term forward catalysts** across **44 listed
 sponsors** and **104 assets** — curated to clean, single-sponsor drug
-assets. (This v1 sample is scoped to active Phase-3 readouts; the full snapshot
-spans event types, phases and therapeutic areas.)
+assets. (The full snapshot has the same v1 scope, active Phase-3 trial readouts in
+cardiometabolic, oncology and immunology, without the sample's single-sponsor curation.)
 
 ## Forward catalysts (`samples/catalyst_calendar_sample.csv`)
 
@@ -45,8 +45,7 @@ a listed ticker:
 
 ---
 
-The full snapshot adds the `regulatory_events` table (FDA approvals/applications),
-both catalyst channels across more event types, and the complete **2,237-catalyst**
-calendar — see the [README](README.md#pricing) for access.
+The full snapshot adds the `regulatory_events` table (FDA approval events matched to
+the assets) and the complete **2,237-catalyst** calendar — see the [README](README.md#pricing) for access.
 
 *CSA is data, not investment advice.*
