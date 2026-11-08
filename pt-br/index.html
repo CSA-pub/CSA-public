@@ -485,8 +485,8 @@
 </svg>
 </div>
 <div class="tl-legend">
-<span><b>●</b> divulgado pela empresa (8-K)</span>
-<span><b>○</b> resultados previstos no protocolo (est.)</span>
+<span><b>●</b> data com precisão de dia (est.)</span>
+<span><b>○</b> data com precisão de mês (est.)</span>
 </div>
 </div>
 </div>
@@ -518,9 +518,9 @@
 </div>
 <div class="card">
 <div class="tag">Fontes</div>
-<h3>Catalisadores de canal duplo</h3>
-<p>Dois canais focados em precisão: o texto de divulgações <b>SEC 8-K</b> (PDUFA, AdComm, resultados anunciados) e os resultados previstos nos protocolos do <b>ClinicalTrials.gov</b>. Cada linha traz sua fonte e o identificador do estudo.</p>
-<div class="proof"><b translate="no">PDUFA</b> + <b translate="no">READOUT</b> · <code>source</code> + <code>nct_id</code> por linha</div>
+<h3>Resultados com data do protocolo</h3>
+<p>Os catalisadores são divulgações de resultados programadas: a data estimada de conclusão primária de um estudo de fase 3 ativo no <b>ClinicalTrials.gov</b>, atribuída apenas ao ativo próprio do patrocinador no braço experimental; comparadores e tratamentos de base padrão ficam de fora. Cada linha traz sua fonte e a URL da fonte.</p>
+<div class="proof"><b translate="no">READOUT</b> · <code>source</code> + <code>source_url</code> por linha</div>
 </div>
 </div>
 </div>
@@ -597,7 +597,7 @@
 <div class="qa"><h4>O que exatamente está incluído no snapshot v1?</h4><p>Estudos intervencionais de fase 3, ativos e patrocinados pela indústria, em cardiometabolismo, oncologia e imunologia: <b>2.349 estudos</b> resolvidos em <b>1.888 ativos</b>, <b>607</b> deles ativos próprios do patrocinador vinculados a um ticker listado, além de <b>2.237 catalisadores futuros</b>, <b>988</b> deles vinculados a <b>128 patrocinadores listados</b>. CSV + JSON com um manifesto de escopo. A fase 2 e mais áreas estão no roadmap.</p></div>
 <div class="qa"><h4>Como vocês garantem que o vínculo ativo↔ticker está correto?</h4><p>Os ativos são identificados pelo seu <b>conjunto UNII de frações ativas</b> registrado na FDA, não por correspondência aproximada de nomes, e uma verificação pós-agrupamento garante que <b>nenhum ativo abranja duas frações ativas diferentes</b>: auditado com <b>0 fusões entre moléculas</b> na execução completa. Pares incertos ficam retidos para revisão em vez de serem fundidos. A precisão é a garantia que importa; um vínculo errado é o erro caro.</p></div>
 <div class="qa"><h4>Os dados estão livres de restrições para licenciar e redistribuir?</h4><p>Sim. Todas as fontes primárias são do governo dos EUA / de domínio público: <code>ClinicalTrials.gov</code>, <code>openFDA</code>, <code>SEC EDGAR</code>, <code>GSRS/UNII</code>. Nenhuma fonte com restrições de licença (DrugBank, ChEMBL, MedDRA) está incluída. Sua licença comercial vem dentro do arquivo.</p></div>
-<div class="qa"><h4>As datas dos catalisadores são confiáveis?</h4><p>Elas são classificadas. Datas exatas divulgadas pela empresa (em formulários 8-K) têm prioridade sobre estimativas de conclusão primária do protocolo, que <b>costumam atrasar</b>; por isso recebem confiança menor e nunca são apresentadas como compromissos. Cada linha aponta para sua <code>source_url</code> para que você possa verificar novamente.</p></div>
+<div class="qa"><h4>As datas dos catalisadores são confiáveis?</h4><p>São estimativas, e são apresentadas como tal. Os catalisadores são datas de conclusão primária que os patrocinadores registram nos protocolos do ClinicalTrials.gov, e essas datas <b>costumam atrasar</b>; por isso cada uma recebe um nível de confiança (estimativas de protocolo de fase 3 recebem o nível <code>medium</code>) e um <code>date_precision</code>, e nenhuma é apresentada como compromisso. Cada linha aponta para sua <code>source_url</code> para que você possa verificar novamente.</p></div>
 <div class="qa"><h4>Isto é recomendação de investimento?</h4><p><b>Não.</b> O CSA é um conjunto de dados: informação, não recomendação nem aconselhamento. Veja o aviso acima e a licença dentro do arquivo.</p></div>
 </div>
 </div>

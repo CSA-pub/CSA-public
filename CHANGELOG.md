@@ -6,6 +6,10 @@ All notable changes to the CSA (Clinical-Stage Asset Intelligence) snapshots.
 > count-claim gate asserts the corpus counts against the shopfront on every build,
 > so the advertised numbers and the shipped data can never silently diverge.
 
+## Site update — 2026-11-08
+
+- **Catalyst types and sources now match the shipped calendar.** Every v1 catalyst is a trial readout (`event_type = READOUT`), and none is a PDUFA or other FDA-decision row. The calendar is dated from active Phase 3 protocols' estimated primary-completion dates on ClinicalTrials.gov. The site and docs still described a second, SEC 8-K channel, with PDUFA and AdComm dates ranking above protocol estimates. On the homepage, the timeline legend now separates day-precise and month-precise estimates (it said "company-disclosed (8-K)"), the method card is "Protocol-dated readouts" (it was "Dual-channel catalysts"), and the dates FAQ explains that Phase 3 protocol estimates are graded `medium`. `README.md`, `llms.txt`, `DATA_DICTIONARY.md`, `SOURCES.md` and `SAMPLE_PREVIEW.md` were changed to match. The schema docs still list `PDUFA`, `ADCOMM`, `CRL`, `APPROVAL_DECISION` and `source = sec_8k` as defined values. Translations updated. No data or count changes.
+
 ## Site update — 2026-11-07
 
 - **Snapshot price $499 → $99.** Same data, files and commercial license; one-time payment, instant download. The buy button points at the new Stripe checkout on every language's homepage, and the price changed on the homepage (pricing card, intro line, `Product` JSON-LD offer), on every catalyst, sponsor and directory page, in `README.md` and in `llms.txt`. Pages were regenerated with `CSA_AS_OF=2026-10-08`, the date of the last regeneration, so the price is the only content change; every sitemap `lastmod` moves to 2026-11-07 because every page carries the price. Buyers of the $499 snapshot keep their download page.

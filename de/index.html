@@ -485,8 +485,8 @@
 </svg>
 </div>
 <div class="tl-legend">
-<span><b>●</b> vom Unternehmen offengelegt (8-K)</span>
-<span><b>○</b> Protokoll-Readout (geschätzt)</span>
+<span><b>●</b> taggenau datiert (geschätzt)</span>
+<span><b>○</b> monatsgenau datiert (geschätzt)</span>
 </div>
 </div>
 </div>
@@ -518,9 +518,9 @@
 </div>
 <div class="card">
 <div class="tag">Quellen</div>
-<h3>Katalysatoren aus zwei Kanälen</h3>
-<p>Zwei auf Präzision ausgelegte Kanäle: Offenlegungstexte aus <b>SEC 8-K</b> (PDUFA, AdComm, angekündigte Readouts) und Protokoll-Readouts aus <b>ClinicalTrials.gov</b>. Jede Zeile enthält ihre Quelle und die Studien-ID.</p>
-<div class="proof"><b translate="no">PDUFA</b> + <b translate="no">READOUT</b> · <code>source</code> + <code>nct_id</code> pro Zeile</div>
+<h3>Readouts mit Protokolldatum</h3>
+<p>Katalysatoren sind geplante Daten-Readouts: das geschätzte Primary-Completion-Datum einer aktiven Phase-3-Studie auf <b>ClinicalTrials.gov</b>, ausschließlich dem eigenen Asset des Sponsors im experimentellen Arm zugeordnet — Vergleichspräparate und Standardtherapien als Kombinationsbasis bleiben außen vor. Jede Zeile enthält ihre Quelle und die Quell-URL.</p>
+<div class="proof"><b translate="no">READOUT</b> · <code>source</code> + <code>source_url</code> pro Zeile</div>
 </div>
 </div>
 </div>
@@ -597,7 +597,7 @@
 <div class="qa"><h4>Was genau enthält der Snapshot v1?</h4><p>Aktive, von der Industrie gesponserte interventionelle Phase-3-Studien in den Bereichen Kardiometabolik, Onkologie und Immunologie: <b>2.349 Studien</b>, aufgelöst zu <b>1.888 Assets</b>, davon <b>607</b> eigene Assets des Sponsors mit Verknüpfung zu einem börsennotierten Ticker, dazu <b>2.237 bevorstehende Katalysatoren</b>, davon <b>988</b> mit Verknüpfung zu <b>128 börsennotierten Sponsoren</b>. CSV + JSON mit Scope-Manifest. Phase 2 und weitere Bereiche stehen auf der Roadmap.</p></div>
 <div class="qa"><h4>Wie stellen Sie sicher, dass die Asset↔Ticker-Verknüpfung stimmt?</h4><p>Assets werden über ihr bei der FDA registriertes <b>UNII-Set der aktiven Wirkstoffeinheiten</b> identifiziert, nicht über unscharfen Namensabgleich, und eine Prüfung nach dem Clustering bedeutet: <b>Kein Asset umfasst zwei verschiedene aktive Wirkstoffeinheiten</b> — geprüft mit <b>0 molekülübergreifenden Zusammenführungen</b> im vollständigen Durchlauf. Unsichere Paare werden zur Prüfung zurückgehalten statt zusammengeführt. Präzision ist die Garantie, auf die es ankommt; eine falsche Verknüpfung ist der kostspielige Fehler.</p></div>
 <div class="qa"><h4>Dürfen die Daten bedenkenlos lizenziert und weitergegeben werden?</h4><p>Ja. Jede Primärquelle stammt von der US-Regierung / ist gemeinfrei: <code>ClinicalTrials.gov</code>, <code>openFDA</code>, <code>SEC EDGAR</code>, <code>GSRS/UNII</code>. Keine lizenzbelastete Quelle (DrugBank, ChEMBL, MedDRA) ist enthalten. Ihre kommerzielle Lizenz liegt dem Archiv bei.</p></div>
-<div class="qa"><h4>Sind die Katalysator-Termine verlässlich?</h4><p>Sie sind eingestuft. Von Unternehmen offengelegte exakte Termine (aus 8-Ks) rangieren über Schätzungen der Primary Completion laut Protokoll, die sich <b>regelmäßig verschieben</b> — diese tragen daher eine niedrigere Konfidenz und werden nie als Zusagen dargestellt. Jede Zeile verlinkt auf ihre <code>source_url</code>, damit Sie erneut prüfen können.</p></div>
+<div class="qa"><h4>Sind die Katalysator-Termine verlässlich?</h4><p>Es sind Schätzungen, und sie sind als solche gekennzeichnet. Katalysatoren sind Primary-Completion-Daten laut Protokoll, die Sponsoren auf ClinicalTrials.gov registrieren, und diese <b>verschieben sich regelmäßig</b> — daher trägt jeder eine Konfidenzstufe (Schätzungen aus Phase-3-Protokollen sind als <code>medium</code> eingestuft) und eine <code>date_precision</code>, und keiner wird als Zusage dargestellt. Jede Zeile verlinkt auf ihre <code>source_url</code>, damit Sie erneut prüfen können.</p></div>
 <div class="qa"><h4>Ist das eine Anlageberatung?</h4><p><b>Nein.</b> CSA ist ein Datensatz — eine Information, keine Beratung oder Empfehlung. Siehe den Hinweis oben und die Lizenz im Archiv.</p></div>
 </div>
 </div>

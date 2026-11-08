@@ -49,7 +49,7 @@ SECTIONS = [
         # (an asset can have several), and not "clinical-stage": many tracked assets are
         # already approved and in Phase 3 for a new indication.
         "title_options": lambda n: [f"{n} drug assets", "catalyst directory"],
-        "desc": ("Every forward clinical and regulatory catalyst tracked by CSA, each linked "
+        "desc": ("Every forward clinical-trial catalyst tracked by CSA, each linked "
                  "to its own source-linked record. Not investment advice."),
         "lede": ("One page per tracked drug asset and its forward catalysts. Each record carries "
                  "the trial phase, event type, expected date, date confidence, NCT id and the "

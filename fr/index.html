@@ -485,8 +485,8 @@
 </svg>
 </div>
 <div class="tl-legend">
-<span><b>●</b> publié par l’entreprise (8-K)</span>
-<span><b>○</b> résultats selon le protocole (est.)</span>
+<span><b>●</b> date au jour près (est.)</span>
+<span><b>○</b> date au mois près (est.)</span>
 </div>
 </div>
 </div>
@@ -518,9 +518,9 @@
 </div>
 <div class="card">
 <div class="tag">Sources</div>
-<h3>Catalyseurs à double canal</h3>
-<p>Deux canaux axés sur la précision : le texte des publications <b>SEC 8-K</b> (PDUFA, AdComm, résultats annoncés) et les résultats prévus aux protocoles de <b>ClinicalTrials.gov</b>. Chaque ligne indique sa source et l’identifiant de l’essai.</p>
-<div class="proof"><b translate="no">PDUFA</b> + <b translate="no">READOUT</b> · <code>source</code> + <code>nct_id</code> par ligne</div>
+<h3>Résultats datés par le protocole</h3>
+<p>Les catalyseurs sont des publications de résultats programmées : la date d’achèvement principal estimée d’un essai de phase 3 actif sur <b>ClinicalTrials.gov</b>, attribuée uniquement à l’actif propre du promoteur dans le bras expérimental — les comparateurs et les traitements de fond standard sont exclus. Chaque ligne indique sa source et son URL source.</p>
+<div class="proof"><b translate="no">READOUT</b> · <code>source</code> + <code>source_url</code> par ligne</div>
 </div>
 </div>
 </div>
@@ -597,7 +597,7 @@
 <div class="qa"><h4>Que contient exactement le snapshot v1 ?</h4><p>Essais interventionnels de phase 3 actifs et financés par l’industrie en cardiométabolisme, oncologie et immunologie : <b>2 349 essais</b> résolus en <b>1 888 actifs</b>, dont <b>607</b> actifs propres au promoteur liés à un ticker coté, plus <b>2 237 catalyseurs à venir</b>, dont <b>988</b> liés à <b>128 promoteurs cotés</b>. CSV + JSON avec un manifeste de périmètre. La phase 2 et d’autres domaines figurent dans la feuille de route.</p></div>
 <div class="qa"><h4>Comment garantissez-vous que le lien actif↔ticker est correct ?</h4><p>Les actifs sont identifiés par leur <b>ensemble d’UNII de fractions actives</b> enregistré auprès de la FDA, et non par une correspondance approximative des noms, et un contrôle post-regroupement garantit qu’<b>aucun actif ne couvre deux fractions actives différentes</b> — audité à <b>0 fusions inter-molécules</b> sur l’exécution complète. Les paires incertaines sont mises de côté pour examen plutôt que fusionnées. La précision est la garantie qui compte ; un lien erroné est l’erreur coûteuse.</p></div>
 <div class="qa"><h4>Les données peuvent-elles être licenciées et redistribuées sans restriction ?</h4><p>Oui. Toutes les sources primaires proviennent du gouvernement américain / du domaine public : <code>ClinicalTrials.gov</code>, <code>openFDA</code>, <code>SEC EDGAR</code>, <code>GSRS/UNII</code>. Aucune source soumise à licence (DrugBank, ChEMBL, MedDRA) n’est incluse. Votre licence commerciale est fournie dans l’archive.</p></div>
-<div class="qa"><h4>Les dates des catalyseurs sont-elles fiables ?</h4><p>Elles sont notées. Les dates exactes publiées par les entreprises (issues des 8-K) priment sur les estimations d’achèvement principal prévues au protocole, qui <b>glissent régulièrement</b> — elles portent donc une confiance plus faible et ne sont jamais présentées comme des engagements. Chaque ligne renvoie à sa <code>source_url</code> pour que vous puissiez revérifier.</p></div>
+<div class="qa"><h4>Les dates des catalyseurs sont-elles fiables ?</h4><p>Ce sont des estimations, présentées comme telles. Les catalyseurs sont les dates d’achèvement principal que les promoteurs enregistrent dans leurs protocoles sur ClinicalTrials.gov, et ces dates <b>glissent régulièrement</b> — chacune porte donc un niveau de confiance (les estimations de protocole de phase 3 sont notées <code>medium</code>) et un <code>date_precision</code>, et aucune n’est présentée comme un engagement. Chaque ligne renvoie à sa <code>source_url</code> pour que vous puissiez revérifier.</p></div>
 <div class="qa"><h4>S’agit-il d’un conseil en investissement ?</h4><p><b>Non.</b> CSA est un jeu de données — une information, pas un conseil ni une recommandation. Voir l’avertissement ci-dessus et la licence incluse dans l’archive.</p></div>
 </div>
 </div>
