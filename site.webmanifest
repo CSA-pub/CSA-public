@@ -1,7 +1,7 @@
 {
   "name": "CSA — Clinical-Stage Asset Intelligence",
   "short_name": "CSA",
-  "description": "Clinical trials, FDA and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar. 2,202 catalysts, 955 linked to 126 listed sponsors, audited to 0 cross-molecule merges.",
+  "description": "Clinical trials, FDA and SEC linked to the drug asset and the listed sponsor, with a forward catalyst calendar, refreshed monthly and audited to 0 cross-molecule merges.",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#0B1315",
@@ -15,7 +15,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "/og-image.png",
+      "src": "/og-image-v2.png",
       "sizes": "1200x630",
       "type": "image/png",
       "purpose": "any"

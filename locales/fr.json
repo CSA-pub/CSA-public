@@ -119,6 +119,12 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
+ "1683457ef78ca699": {
+  "src": "One-time purchase · latest monthly snapshot",
+  "t": "Paiement unique · snapshot mensuel le plus récent",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
+ },
  "178aca1654c1c46e": {
   "src": "{0} — ({1}) catalysts | CSA",
   "t": "{0} — ({1}) catalyseurs | CSA",
@@ -191,12 +197,6 @@
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
- "299048be51597061": {
-  "src": "<0>{1} tradeable-core assets</0> (sponsor's own, linked to a listed ticker) across {2} sponsors.",
-  "t": "<0>{1} actifs cœurs négociables</0> (propres au promoteur, liés à un ticker coté) répartis sur {2} promoteurs.",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
  "2a32c7edb752c522": {
   "src": "<0>CSA</0> — Clinical-Stage Asset Intelligence · © {1} DataEngineered",
   "t": "<0>CSA</0> — Clinical-Stage Asset Intelligence · © {1} DataEngineered",
@@ -208,6 +208,12 @@
   "t": "Notre prestataire de formulaires est actuellement injoignable. Écrivez-nous à {0} en indiquant :",
   "by": "claude-opus-5",
   "at": "2026-09-17"
+ },
+ "2ad4f0f8fd175a4a": {
+  "src": "<0>{1} tradeable-core assets</0> (the sponsor's own asset, linked to its listed ticker).",
+  "t": "<0>{1} actifs cœurs négociables</0> (l’actif propre du promoteur, lié à son ticker coté).",
+  "by": "claude-opus-5-5",
+  "at": "2026-11-07"
  },
  "2d7e5e5fc4761518": {
   "src": "{0} · Phase {1}",
@@ -784,12 +790,6 @@
  "91966d428cc2d870": {
   "src": "{0} listed sponsors",
   "t": "{0} promoteurs cotés",
-  "by": "claude-opus-5",
-  "at": "2026-09-17"
- },
- "92651a54415dc4fb": {
-  "src": "One-time download · edition {0}",
-  "t": "Téléchargement à paiement unique · édition {0}",
   "by": "claude-opus-5",
   "at": "2026-09-17"
  },
